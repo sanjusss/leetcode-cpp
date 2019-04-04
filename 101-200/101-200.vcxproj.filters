@@ -21,6 +21,12 @@
     <ClInclude Include="0136.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0066.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0001.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0189.hpp">

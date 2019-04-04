@@ -18,19 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="0001.hpp" />
-    <ClInclude Include="0066.hpp" />
-    <ClInclude Include="0122.hpp" />
-    <ClInclude Include="0136.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="0189.hpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{83E5C225-44C8-4A2A-81FB-30EF778438DC}</ProjectGuid>
-    <RootNamespace>My101200</RootNamespace>
+    <ProjectGuid>{EA56B744-3340-42AD-BA9A-62513BAC3F4C}</ProjectGuid>
+    <RootNamespace>My301400</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -131,6 +122,9 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="0350.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
