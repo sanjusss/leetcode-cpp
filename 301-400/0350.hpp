@@ -41,10 +41,10 @@ namespace _0350
 
         //vector<int> intersect(vector<int>& nums1, vector<int>& nums2)
         //{
-        //    multiset<int> set1(nums1.begin(), nums1.end());
-        //    multiset<int> set2(nums2.begin(), nums2.end());
+        //    sort(nums1.begin(), nums1.end());
+        //    sort(nums2.begin(), nums2.end());
         //    vector<int> res;
-        //    set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), insert_iterator<vector<int>>(res, res.begin()));
+        //    set_intersection(nums1.begin(), nums1.end(), nums2.begin(), nums2.end(), insert_iterator<vector<int>>(res, res.begin()));
         //    return res;
         //}
     };
