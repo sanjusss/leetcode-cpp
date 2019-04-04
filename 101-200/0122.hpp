@@ -35,9 +35,4 @@ namespace _0122
             return profit;
         }
     };
-
-    void Test()
-    {
-
-    }
 }
