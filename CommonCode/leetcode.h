@@ -6,5 +6,6 @@
 #include <list>
 #include <set>
 #include <iterator>
+#include <string>
 
 using namespace std;
