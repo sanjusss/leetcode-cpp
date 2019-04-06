@@ -13,7 +13,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "301-400", "301-400\301-400.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "101-200", "101-200\101-200.vcxproj", "{B2971394-9C95-4DCF-B287-0C7BD37ABC66}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonCode", "CommonCode\CommonCode.vcxitems", "{C138796D-1D6B-428E-8BB4-CE1C5E0DB62B}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{53b0280f-48ac-4d75-8da1-fdfe37d7b0ba}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{b2971394-9c95-4dcf-b287-0c7bd37abc66}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{c138796d-1d6b-428e-8bb4-ce1c5e0db62b}*SharedItemsImports = 9
+		CommonCode\CommonCode.vcxitems*{df80b3b8-6ab9-47f8-aced-3bbb147a3df0}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{ea56b744-3340-42ad-ba9a-62513bac3f4c}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86

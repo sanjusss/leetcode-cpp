@@ -1,26 +1,22 @@
-#include <vector>
+#include "leetcode.h"
 
-using namespace std;
-namespace _0026
+class Solution
 {
-    class Solution
+public:
+    int removeDuplicates(vector<int>& nums)
     {
-    public:
-        int removeDuplicates(vector<int>& nums)
+        int index = 0;
+        int last = INT_MIN;
+        for (int i : nums)
         {
-            int index = 0;
-            int last = INT_MIN;
-            for (int i : nums)
+            if (i != last)
             {
-                if (i != last)
-                {
-                    last = i;
-                    nums[index] = i;
-                    ++index;
-                }
+                last = i;
+                nums[index] = i;
+                ++index;
             }
-
-            return index;
         }
-    };
-}
+
+        return index;
+    }
+};

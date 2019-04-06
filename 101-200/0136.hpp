@@ -1,21 +1,16 @@
-#include <vector>
+#include "leetcode.h"
 
-using namespace std;
-
-namespace _0136
+class Solution 
 {
-    class Solution 
+public:
+    int singleNumber(vector<int> &nums) 
     {
-    public:
-        int singleNumber(vector<int> &nums) 
+        int n = 0;
+        for (int i : nums)
         {
-            int n = 0;
-            for (int i : nums)
-            {
-                n ^= i;
-            }
-
-            return n;
+            n ^= i;
         }
-    };
-}
+
+        return n;
+    }
+};

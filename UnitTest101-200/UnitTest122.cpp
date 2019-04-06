@@ -3,7 +3,6 @@
 #include "../101-200/0122.hpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-using namespace _0122;
 
 namespace UnitTest101200
 {
