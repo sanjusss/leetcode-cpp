@@ -1,5 +1,5 @@
 #pragma once
-#pragma warning(disable:28182)
+
 #include "leetcode.h"
 
 class Solution 

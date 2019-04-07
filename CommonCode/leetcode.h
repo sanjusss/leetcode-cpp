@@ -11,4 +11,8 @@
 #include "treenode.h"
 #include "listnode.h"
 
+#pragma warning(disable:28182)
+#pragma warning(disable:26451)
+#pragma warning(disable:4267)
+#pragma warning(disable:4244)
 using namespace std;
