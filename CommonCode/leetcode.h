@@ -7,6 +7,7 @@
 #include <set>
 #include <iterator>
 #include <string>
+#include <stack>
 
 #include "treenode.h"
 #include "listnode.h"
