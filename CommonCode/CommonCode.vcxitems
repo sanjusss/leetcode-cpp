@@ -15,5 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)leetcode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)stringconvert.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)treenode.h" />
   </ItemGroup>
 </Project>

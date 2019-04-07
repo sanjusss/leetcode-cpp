@@ -8,4 +8,6 @@
 #include <iterator>
 #include <string>
 
+#include "treenode.h"
+
 using namespace std;
