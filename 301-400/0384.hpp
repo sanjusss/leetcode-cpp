@@ -20,7 +20,14 @@ public:
     /** Returns a random shuffling of the array. */
     vector<int> shuffle() 
     {
-        ::shuffle(m_arr.begin(), m_arr.end(), m_rd);
+        //::shuffle(m_arr.begin(), m_arr.end(), m_rd);//一步到位
+        uniform_int_distribution<int> dis;
+        int max = m_arr.size() - 1;
+        for (int i = max; i > 0; --i)
+        {
+            swap(m_arr[i], m_arr[dis(m_rd, uniform_int_distribution<int>::param_type(0, i))]);
+        }
+
         return m_arr;
     }
 
