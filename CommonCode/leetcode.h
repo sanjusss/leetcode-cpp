@@ -8,6 +8,7 @@
 #include <iterator>
 #include <string>
 #include <stack>
+#include <queue>
 
 #include "treenode.h"
 #include "listnode.h"
