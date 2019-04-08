@@ -9,6 +9,8 @@
 #include <string>
 #include <stack>
 #include <queue>
+#include <random>
+#include <ctime>
 
 #include "treenode.h"
 #include "listnode.h"
