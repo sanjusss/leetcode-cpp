@@ -16,6 +16,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)leetcode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)listnode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)node.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)stringconvert.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)treenode.h" />
   </ItemGroup>
