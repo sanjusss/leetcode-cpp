@@ -15,34 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="0217.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0283.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0242.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0237.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0206.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0234.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0278.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0204.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0268.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0279.hpp">
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest279.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
