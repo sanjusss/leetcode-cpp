@@ -52,6 +52,70 @@ public:
         return res;
     }
 
+    static vector<string> toStringArray(string s)
+    {
+        s.erase(remove(s.begin(), s.end(), '['), s.end());
+        s.erase(remove(s.begin(), s.end(), ']'), s.end());
+        s.erase(remove(s.begin(), s.end(), '"'), s.end());
+        return split(s, ",");
+    }
+
+    static vector<vector<string>> toString2DArray(string s)
+    {
+        if (s.substr(0, 2) == "[[")
+        {
+            s.erase(0, 2);
+        }
+
+        if (s.substr(s.length() - 2, 2) == "]]")
+        {
+            s.erase(s.length() - 2, 2);
+        }
+
+        vector<string> strs = split(s, "],[");
+        vector<vector<string>> res;
+        for (auto i : strs)
+        {
+            res.push_back(toStringArray(i));
+        }
+
+        return res;
+    }
+
+    static vector<char> toCharArray(string s)
+    {
+        auto strs = toStringArray(s);
+        vector<char> res;
+        for (auto i : strs)
+        {
+            res.push_back(i[0]);
+        }
+
+        return res;
+    }
+
+    static vector<vector<char>> toChar2DArray(string s)
+    {
+        if (s.substr(0, 2) == "[[")
+        {
+            s.erase(0, 2);
+        }
+
+        if (s.substr(s.length() - 2, 2) == "]]")
+        {
+            s.erase(s.length() - 2, 2);
+        }
+
+        vector<string> strs = split(s, "],[");
+        vector<vector<char>> res;
+        for (auto i : strs)
+        {
+            res.push_back(toCharArray(i));
+        }
+
+        return res;
+    }
+
     static vector<string> split(const string& s, const string& seperator)
     {
         vector<string> output;
