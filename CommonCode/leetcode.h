@@ -11,6 +11,7 @@
 #include <queue>
 #include <random>
 #include <ctime>
+#include <limits>
 
 #include "treenode.h"
 #include "listnode.h"
