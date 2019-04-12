@@ -13,7 +13,7 @@ namespace UnitTest101200
 
         TEST_METHOD(TestMethod1)
         {
-            auto grid = StringConvertor::toChar2DArray("[[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"0\",\"0\",\"1\",\"0\",\"0\"],[\"0\",\"0\",\"0\",\"1\",\"1\"]]");
+            auto grid = toChar2DArray("[[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"0\",\"0\",\"1\",\"0\",\"0\"],[\"0\",\"0\",\"0\",\"1\",\"1\"]]");
             int expected = 3;
 
             Solution s;
@@ -24,7 +24,7 @@ namespace UnitTest101200
 
         TEST_METHOD(TestMethod2)
         {
-            auto grid = StringConvertor::toChar2DArray("[[\"1\"],[\"1\"]]");
+            auto grid = toChar2DArray("[[\"1\"],[\"1\"]]");
             int expected = 1;
 
             Solution s;

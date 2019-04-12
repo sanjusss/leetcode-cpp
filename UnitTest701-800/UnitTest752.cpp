@@ -13,7 +13,7 @@ namespace UnitTest701800
 		
 		TEST_METHOD(TestMethod1)
 		{
-            auto deadends = StringConvertor::toStringArray("[\"0201\",\"0101\",\"0102\",\"1212\",\"2002\"]");
+            auto deadends = toStringArray("[\"0201\",\"0101\",\"0102\",\"1212\",\"2002\"]");
             string target = "0202";
             int expected = 6;
 
