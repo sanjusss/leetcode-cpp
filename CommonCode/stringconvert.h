@@ -10,7 +10,7 @@ namespace Microsoft
     {
         namespace CppUnitTestFramework
         {
-            std::vector<std::string> split(const std::string& s, const std::string& seperator)
+            inline std::vector<std::string> split(const std::string& s, const std::string& seperator)
             {
                 std::vector<std::string> output;
 
@@ -31,7 +31,7 @@ namespace Microsoft
                 return output;
             }
 
-            std::vector<int> toIntArray(std::string s)
+            inline std::vector<int> toIntArray(std::string s)
             {
                 if (s[0] == '[')
                 {
@@ -53,7 +53,7 @@ namespace Microsoft
                 return res;
             }
 
-            std::vector<std::vector<int>> toInt2DArray(std::string s)
+            inline std::vector<std::vector<int>> toInt2DArray(std::string s)
             {
                 if (s.substr(0, 2) == "[[")
                 {
@@ -75,7 +75,7 @@ namespace Microsoft
                 return res;
             }
 
-            std::vector<std::string> toStringArray(std::string s)
+            inline std::vector<std::string> toStringArray(std::string s)
             {
                 s.erase(std::remove(s.begin(), s.end(), '['), s.end());
                 s.erase(std::remove(s.begin(), s.end(), ']'), s.end());
@@ -83,7 +83,7 @@ namespace Microsoft
                 return split(s, ",");
             }
 
-            std::vector<std::vector<std::string>> toString2DArray(std::string s)
+            inline std::vector<std::vector<std::string>> toString2DArray(std::string s)
             {
                 if (s.substr(0, 2) == "[[")
                 {
@@ -105,7 +105,7 @@ namespace Microsoft
                 return res;
             }
 
-            std::vector<char> toCharArray(std::string s)
+            inline std::vector<char> toCharArray(std::string s)
             {
                 auto strs = toStringArray(s);
                 std::vector<char> res;
@@ -117,7 +117,7 @@ namespace Microsoft
                 return res;
             }
 
-            std::vector<std::vector<char>> toChar2DArray(std::string s)
+            inline std::vector<std::vector<char>> toChar2DArray(std::string s)
             {
                 if (s.substr(0, 2) == "[[")
                 {
