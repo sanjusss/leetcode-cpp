@@ -18,10 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="131\5016.hpp" />
+    <ClInclude Include="131\5017.hpp" />
+    <ClInclude Include="131\5018.hpp" />
+    <ClInclude Include="131\5019.hpp" />
+    <ClInclude Include="132\5024.hpp" />
+    <ClInclude Include="132\5025.hpp" />
+    <ClInclude Include="132\5030.hpp" />
+    <ClInclude Include="132\5031.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{BB975AA7-F92C-4C0C-A302-9A605F817803}</ProjectGuid>
-    <RootNamespace>C132</RootNamespace>
+    <ProjectGuid>{D71B03EF-0D46-4C4C-BB59-18B19A9433F9}</ProjectGuid>
+    <RootNamespace>C1XX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,7 +81,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -82,7 +92,7 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -123,12 +133,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="5024.hpp" />
-    <ClInclude Include="5025.hpp" />
-    <ClInclude Include="5030.hpp" />
-    <ClInclude Include="5031.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

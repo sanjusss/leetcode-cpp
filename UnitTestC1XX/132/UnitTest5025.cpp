@@ -1,13 +1,12 @@
-#include "pch.h"
 #include "CppUnitTest.h"
-#include "../C132/5025.hpp"
+#include "132/5025.hpp"
 #include "unittest.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTestC132
 {
-	TEST_CLASS(UnitTestC132)
+	TEST_CLASS(UnitTest5025)
 	{
 	public:
 		
