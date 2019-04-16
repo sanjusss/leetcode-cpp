@@ -4,20 +4,36 @@
 class Solution 
 {
 public:
-    //空间使用为O(K)
-    vector<int> getRow(int rowIndex) 
+    //空间使用为O(K)，时间复杂度O(N)
+    vector<int> getRow(int rowIndex)
     {
         vector<int> n(rowIndex + 1, 1);
-        for (int i = 1; i <= rowIndex; ++i)
+        int mid = rowIndex / 2;
+        int64_t prev = 1;
+        for (int i = 1; i <= mid; ++i)
         {
-            for (int j = i - 1; j >= 1; --j)
-            {
-                n[j] = n[j - 1] + n[j];
-            }
+            prev = prev * (rowIndex + 1 - i) / i;
+            n[i] = (int)prev;
+            n[rowIndex - i] = prev;
         }
 
         return n;
     }
+
+    ////空间使用为O(K)，时间复杂度O(N^2)
+    //vector<int> getRow(int rowIndex) 
+    //{
+    //    vector<int> n(rowIndex + 1, 1);
+    //    for (int i = 1; i <= rowIndex; ++i)
+    //    {
+    //        for (int j = i - 1; j >= 1; --j)
+    //        {
+    //            n[j] = n[j - 1] + n[j];
+    //        }
+    //    }
+
+    //    return n;
+    //}
     //空间使用为O(2K-1)
     //vector<int> getRow(int rowIndex)
     //{
