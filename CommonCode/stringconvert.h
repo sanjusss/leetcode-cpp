@@ -3,6 +3,9 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <memory>
+
+#include "listnode.h"
 
 namespace Microsoft
 {
@@ -137,6 +140,20 @@ namespace Microsoft
                 }
 
                 return res;
+            }
+
+            inline ListNode* toListNode(std::string s)
+            {
+                auto arr = toIntArray(s);
+                std::shared_ptr<ListNode> root(new ListNode(0));
+                auto head = root.get();
+                for (auto i : arr)
+                {
+                    head->next = new ListNode(i);
+                    head = head->next;
+                }
+
+                return root->next;
             }
         }
     }
