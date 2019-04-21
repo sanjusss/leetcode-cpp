@@ -19,6 +19,9 @@
     <Filter Include="头文件\132">
       <UniqueIdentifier>{8a1b506b-1bd5-4a89-bdb5-f852b2e93bb7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\133">
+      <UniqueIdentifier>{53c050d4-5db3-46b4-a7ef-0f8a41f3da6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="131\5016.hpp">
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="132\5031.hpp">
       <Filter>头文件\132</Filter>
+    </ClInclude>
+    <ClInclude Include="133\1032.hpp">
+      <Filter>头文件\133</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
