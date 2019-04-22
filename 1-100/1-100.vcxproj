@@ -141,6 +141,7 @@
     <ClInclude Include="0048.hpp" />
     <ClInclude Include="0053.hpp" />
     <ClInclude Include="0054.hpp" />
+    <ClInclude Include="0061.hpp" />
     <ClInclude Include="0066.hpp" />
     <ClInclude Include="0067.hpp" />
     <ClInclude Include="0070.hpp" />
