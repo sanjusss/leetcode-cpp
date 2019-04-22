@@ -47,5 +47,12 @@ namespace UnitTest701800
             list.addAtIndex(3, 4);
             list.addAtIndex(3, 1);
         }
+
+        TEST_METHOD(TestMethod5)
+        {
+            MyLinkedList list;
+            list.addAtIndex(-1, 2);
+            Assert::AreEqual(2, list.get(0));
+        }
     };
 }
