@@ -12,6 +12,8 @@
 #include <random>
 #include <ctime>
 #include <limits>
+#include <unordered_set>
+#include <unordered_map>
 
 #include "treenode.h"
 #include "listnode.h"
