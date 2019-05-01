@@ -3,6 +3,25 @@
 class Solution 
 {
 public:
+    // π”√π˛œ£”≥…‰
+    //vector<int> twoSum(vector<int>& nums, int target) 
+    //{
+    //    unordered_map<int, int> hash;
+    //    for (int i = 0; i < nums.size(); ++i)
+    //    {
+    //        if (hash.count(target - nums[i]) > 0)
+    //        {
+    //            return { hash[target - nums[i]], i };
+    //        }
+    //        else if (hash.count(nums[i]) == 0)
+    //        {
+    //            hash[nums[i]] = i;
+    //        }
+    //    }
+
+    //    return { -1, -1 };
+    //}
+
     vector<int> twoSum(vector<int>& nums, int target) 
     {
         multimap<int, int> vs;
