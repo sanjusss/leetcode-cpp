@@ -139,6 +139,7 @@
     <ClInclude Include="0278.hpp" />
     <ClInclude Include="0279.hpp" />
     <ClInclude Include="0283.hpp" />
+    <ClInclude Include="205.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
