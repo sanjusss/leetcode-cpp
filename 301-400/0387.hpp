@@ -47,6 +47,26 @@ public:
     //int firstUniqChar(string s)
     //{
     //    int length = s.length();
+    //    unordered_map<char, int> csum;
+    //    for (auto i : s)
+    //    {
+    //        ++csum[i];
+    //    }
+
+    //    for (int i = 0; i < length; ++i)
+    //    {
+    //        if (csum[s[i]] == 1)
+    //        {
+    //            return i;
+    //        }
+    //    }
+
+    //    return -1;
+    //}
+
+    //int firstUniqChar(string s)
+    //{
+    //    int length = s.length();
     //    map<char, int> ci;
     //    for (int i = 0; i < length; ++i)
     //    {
