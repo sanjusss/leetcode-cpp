@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClInclude Include="0412.hpp" />
     <ClInclude Include="0430.hpp" />
+    <ClInclude Include="0454.hpp" />
     <ClInclude Include="0461.hpp" />
     <ClInclude Include="0485.hpp" />
     <ClInclude Include="0494.hpp" />
