@@ -39,8 +39,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "801-900", "801-900\801-900.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C1XX", "C1XX\C1XX.vcxproj", "{D71B03EF-0D46-4C4C-BB59-18B19A9433F9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestC1XX", "UnitTestC1XX\UnitTestC1XX.vcxproj", "{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D0XX", "D0XX\D0XX.vcxproj", "{AB4E81F9-0C80-4781-91EC-B69389044932}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestD0xx", "UnitTestD0xx\UnitTestD0xx.vcxproj", "{8BA1F196-B31E-4096-87F9-CCE41CD196AB}"
@@ -51,7 +49,6 @@ Global
 		CommonCode\CommonCode.vcxitems*{09b0a2c5-f962-4f30-8984-d2350216ed37}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{53b0280f-48ac-4d75-8da1-fdfe37d7b0ba}*SharedItemsImports = 4
-		CommonCode\CommonCode.vcxitems*{5dbd5ebf-385e-4145-84dd-74dda84bba14}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{5f09166f-33bc-4bab-91db-ed9d638e8a52}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{6f80c1ed-6dfd-4306-be4b-9706be863420}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{7836fcc8-66d3-4499-9b4b-6cb47d160f64}*SharedItemsImports = 4
@@ -203,14 +200,6 @@ Global
 		{D71B03EF-0D46-4C4C-BB59-18B19A9433F9}.Release|x64.Build.0 = Release|x64
 		{D71B03EF-0D46-4C4C-BB59-18B19A9433F9}.Release|x86.ActiveCfg = Release|Win32
 		{D71B03EF-0D46-4C4C-BB59-18B19A9433F9}.Release|x86.Build.0 = Release|Win32
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Debug|x64.ActiveCfg = Debug|x64
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Debug|x64.Build.0 = Debug|x64
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Debug|x86.ActiveCfg = Debug|Win32
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Debug|x86.Build.0 = Debug|Win32
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Release|x64.ActiveCfg = Release|x64
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Release|x64.Build.0 = Release|x64
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Release|x86.ActiveCfg = Release|Win32
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14}.Release|x86.Build.0 = Release|Win32
 		{AB4E81F9-0C80-4781-91EC-B69389044932}.Debug|x64.ActiveCfg = Debug|x64
 		{AB4E81F9-0C80-4781-91EC-B69389044932}.Debug|x64.Build.0 = Debug|x64
 		{AB4E81F9-0C80-4781-91EC-B69389044932}.Debug|x86.ActiveCfg = Debug|Win32
@@ -233,7 +222,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D71B03EF-0D46-4C4C-BB59-18B19A9433F9} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
-		{5DBD5EBF-385E-4145-84DD-74DDA84BBA14} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 		{AB4E81F9-0C80-4781-91EC-B69389044932} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 		{8BA1F196-B31E-4096-87F9-CCE41CD196AB} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 	EndGlobalSection
