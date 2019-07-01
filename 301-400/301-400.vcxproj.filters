@@ -45,5 +45,11 @@
     <ClInclude Include="0359.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0347.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0380.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

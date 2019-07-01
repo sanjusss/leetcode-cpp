@@ -13,19 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\131">
-      <UniqueIdentifier>{e78e067c-b548-45b8-9d57-430aa038abda}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\132">
-      <UniqueIdentifier>{63f07293-aa02-482a-892c-e83035133c56}</UniqueIdentifier>
+    <Filter Include="源文件\003">
+      <UniqueIdentifier>{669b3354-bc84-4e69-bc67-40dff0c6ca48}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="131\UnitTest5019.cpp">
-      <Filter>源文件\131</Filter>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="132\UnitTest5025.cpp">
-      <Filter>源文件\132</Filter>
+    <ClCompile Include="UnitTest5035.cpp">
+      <Filter>源文件\003</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

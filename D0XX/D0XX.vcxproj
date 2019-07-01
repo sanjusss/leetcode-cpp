@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{15169182-C720-4149-BF07-58D19BFE96DA}</ProjectGuid>
-    <RootNamespace>My201300</RootNamespace>
+    <ProjectGuid>{AB4E81F9-0C80-4781-91EC-B69389044932}</ProjectGuid>
+    <RootNamespace>D0XX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -82,7 +82,7 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -124,28 +124,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="0202.hpp" />
-    <ClInclude Include="0203.hpp" />
-    <ClInclude Include="0204.hpp" />
-    <ClInclude Include="0206.hpp" />
-    <ClInclude Include="0209.hpp" />
-    <ClInclude Include="0217.hpp" />
-    <ClInclude Include="0219.hpp" />
-    <ClInclude Include="0225.hpp" />
-    <ClInclude Include="0232.hpp" />
-    <ClInclude Include="0234.hpp" />
-    <ClInclude Include="0237.hpp" />
-    <ClInclude Include="0242.hpp" />
-    <ClInclude Include="0249.hpp" />
-    <ClInclude Include="0252.hpp" />
-    <ClInclude Include="0253.hpp" />
-    <ClInclude Include="0268.hpp" />
-    <ClInclude Include="0278.hpp" />
-    <ClInclude Include="0279.hpp" />
-    <ClInclude Include="0283.hpp" />
-    <ClInclude Include="0286.hpp" />
-    <ClInclude Include="0205.hpp" />
-    <ClInclude Include="0288.hpp" />
+    <ClInclude Include="5021.hpp" />
+    <ClInclude Include="5022.hpp" />
+    <ClInclude Include="5023.hpp" />
+    <ClInclude Include="5035.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
