@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "listnode.h"
+#include "..\Json\single_include\nlohmann\json.hpp"
 
 namespace Microsoft
 {
@@ -13,6 +14,13 @@ namespace Microsoft
     {
         namespace CppUnitTestFramework
         {
+            template<class _T>
+            inline std::vector<_T> toArray(std::string s)
+            {
+                auto j = nlohmann::json::parse(s);
+                return j.get<std::vector<_T>>();
+            }
+
             inline std::vector<std::string> split(const std::string& s, const std::string& seperator)
             {
                 std::vector<std::string> output;
@@ -36,85 +44,31 @@ namespace Microsoft
 
             inline std::vector<int> toIntArray(std::string s)
             {
-                if (s[0] == '[')
-                {
-                    s.erase(0, 1);
-                }
-
-                if (s[s.length() - 1] == ']')
-                {
-                    s.erase(s.length() - 1, 1);
-                }
-
-                std::vector<std::string> strs = split(s, ",");
-                std::vector<int> res;
-                for (auto i : strs)
-                {
-                    res.push_back(stoi(i));
-                }
-
-                return res;
+                return toArray<int>(s);
             }
 
             inline std::vector<std::vector<int>> toInt2DArray(std::string s)
             {
-                if (s.substr(0, 2) == "[[")
-                {
-                    s.erase(0, 2);
-                }
-
-                if (s.substr(s.length() - 2, 2) == "]]")
-                {
-                    s.erase(s.length() - 2, 2);
-                }
-
-                std::vector<std::string> strs = split(s, "],[");
-                std::vector<std::vector<int>> res;
-                for (auto i : strs)
-                {
-                    res.push_back(toIntArray(i));
-                }
-
-                return res;
+                return toArray<std::vector<int>>(s);
             }
 
             inline std::vector<std::string> toStringArray(std::string s)
             {
-                s.erase(std::remove(s.begin(), s.end(), '['), s.end());
-                s.erase(std::remove(s.begin(), s.end(), ']'), s.end());
-                s.erase(std::remove(s.begin(), s.end(), '"'), s.end());
-                return split(s, ",");
+                return toArray<std::string>(s);
             }
 
             inline std::vector<std::vector<std::string>> toString2DArray(std::string s)
             {
-                if (s.substr(0, 2) == "[[")
-                {
-                    s.erase(0, 2);
-                }
-
-                if (s.substr(s.length() - 2, 2) == "]]")
-                {
-                    s.erase(s.length() - 2, 2);
-                }
-
-                std::vector<std::string> strs = split(s, "],[");
-                std::vector<std::vector<std::string>> res;
-                for (auto i : strs)
-                {
-                    res.push_back(toStringArray(i));
-                }
-
-                return res;
+                return toArray<std::vector<std::string>>(s);
             }
 
             inline std::vector<char> toCharArray(std::string s)
             {
-                auto strs = toStringArray(s);
+                auto strings = toArray<std::string>(s);
                 std::vector<char> res;
-                for (auto i : strs)
+                for (auto i : strings)
                 {
-                    res.push_back(i[0]);
+                    res.push_back(i.front());
                 }
 
                 return res;
@@ -122,24 +76,20 @@ namespace Microsoft
 
             inline std::vector<std::vector<char>> toChar2DArray(std::string s)
             {
-                if (s.substr(0, 2) == "[[")
+                auto strings = toArray<std::vector<std::string>>(s);
+                std::vector<std::vector<char>> results;
+                for (auto i : strings)
                 {
-                    s.erase(0, 2);
+                    std::vector<char> res;
+                    for (auto j : i)
+                    {
+                        res.push_back(j.front());
+                    }
+
+                    results.push_back(res);
                 }
 
-                if (s.substr(s.length() - 2, 2) == "]]")
-                {
-                    s.erase(s.length() - 2, 2);
-                }
-
-                std::vector<std::string> strs = split(s, "],[");
-                std::vector<std::vector<char>> res;
-                for (auto i : strs)
-                {
-                    res.push_back(toCharArray(i));
-                }
-
-                return res;
+                return results;
             }
 
             inline ListNode* toListNode(std::string s)

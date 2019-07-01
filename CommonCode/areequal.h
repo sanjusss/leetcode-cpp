@@ -2,8 +2,6 @@
 
 #include <vector>
 
-#include "listnode.h"
-
 namespace Microsoft 
 {
     namespace VisualStudio 
@@ -24,27 +22,6 @@ namespace Microsoft
                     {
                         res += L",";
                     }
-                }
-
-                res += L"]";
-                return res;
-            }
-
-            inline std::wstring ToString(ListNode* t)
-            {
-                std::wstring res;
-                res += L"[";
-
-                ListNode* head = t;
-                while (head != nullptr)
-                {
-                    res += ToString(head->val);
-                    if (head->next != nullptr)
-                    {
-                        res += L",";
-                    }
-
-                    head = head->next;
                 }
 
                 res += L"]";

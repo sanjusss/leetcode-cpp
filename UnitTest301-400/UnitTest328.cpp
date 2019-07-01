@@ -19,13 +19,13 @@ namespace UnitTest301400
         void doTest(string srcHead, string srcExpected)
         {
             auto head = toListNode(srcHead);
+            auto headRemovers = createListNodeAutoRemovers(head);
             auto expected = toListNode(srcExpected);
+            auto expectedRemovers = createListNodeAutoRemovers(expected);
 
             Solution sln;
             auto actual = sln.oddEvenList(head);
-            Assert::AreEqual(expected, actual);
-            freeListNode(expected);
-            freeListNode(actual);
+            Assert::AreEqual(*expected, *actual);
         }
     };
 }

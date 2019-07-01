@@ -14,9 +14,11 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Json\single_include\nlohmann\json.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)areequal.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)leetcode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)listnode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)listnodeunittest.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)stringconvert.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)treenode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)unittest.h" />
