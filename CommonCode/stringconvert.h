@@ -4,9 +4,12 @@
 #include <vector>
 #include <algorithm>
 #include <memory>
+#include <queue>
+
+#include "..\Json\single_include\nlohmann\json.hpp"
 
 #include "listnode.h"
-#include "..\Json\single_include\nlohmann\json.hpp"
+#include "treenode.h"
 
 namespace Microsoft
 {
@@ -40,6 +43,18 @@ namespace Microsoft
                 output.push_back(s.substr(prev_pos, pos - prev_pos)); // Last word
 
                 return output;
+            }
+            
+            inline std::string replaceAllString(std::string str, const std::string& from, const std::string& to) 
+            {
+                size_t start_pos = 0;
+                while ((start_pos = str.find(from, start_pos)) != std::string::npos) 
+                {
+                    str.replace(start_pos, from.length(), to);
+                    start_pos += to.length(); // Handles case where 'to' is a substring of 'from'
+                }
+
+                return str;
             }
 
             inline std::vector<int> toIntArray(std::string s)
@@ -104,6 +119,49 @@ namespace Microsoft
                 }
 
                 return root->next;
+            }
+
+            inline TreeNode* toTreeNode(std::string s)
+            {
+                int null = INT_MIN;
+                s = replaceAllString(s, "null", std::to_string(null));
+                auto arr = toIntArray(s);
+                if (arr.size() == 0)
+                {
+                    return nullptr;
+                }
+
+                TreeNode* root = new TreeNode(arr.front());
+                std::queue<TreeNode*> nodes({ root });
+                int i = 1;
+                int length = arr.size();
+                while (i < length && nodes.empty() == false)
+                {
+                    int maxi = std::min(length, i + (int)nodes.size() * 2);
+                    while (i < maxi)
+                    {
+                        TreeNode* parent = nodes.front();
+                        TreeNode* child = arr[i] == null ? nullptr : new TreeNode(arr[i]);
+                        if (i % 2 == 0)
+                        {
+                            parent->right = child;
+                            nodes.pop();
+                        }
+                        else
+                        {
+                            parent->left = child;
+                        }
+
+                        if (child != nullptr)
+                        {
+                            nodes.push(child);
+                        }
+
+                        ++i;
+                    }
+                }
+
+                return root;
             }
         }
     }

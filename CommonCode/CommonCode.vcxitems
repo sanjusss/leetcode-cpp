@@ -21,6 +21,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)listnodeunittest.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)stringconvert.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)treenode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)treenodeunittest.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)unittest.h" />
   </ItemGroup>
 </Project>

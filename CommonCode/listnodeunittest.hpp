@@ -2,6 +2,7 @@
 
 #include <stdexcept>
 #include <memory>
+#include <string>
 
 #include "listnode.h"
 
@@ -51,7 +52,7 @@ namespace Microsoft
                 const ListNode* head = &node;
                 while (head != nullptr)
                 {
-                    res += ToString(head->val);
+                    res += std::to_wstring(head->val);
                     if (head->next != nullptr)
                     {
                         res += L",";
