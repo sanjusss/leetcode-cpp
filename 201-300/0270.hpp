@@ -6,8 +6,8 @@ class Solution
 public:
     int closestValue(TreeNode* root, double target)
     {
-        double left = INFINITY;
-        double right = INFINITY;
+        int left = -1;
+        int right = -1;
         auto head = root;
         while (head != nullptr)
         {
@@ -23,11 +23,11 @@ public:
             }
         }
 
-        if (left == INFINITY)
+        if (left == -1)
         {
             return right;
         }
-        else if (right == INFINITY)
+        else if (right == -1)
         {
             return left;
         }
