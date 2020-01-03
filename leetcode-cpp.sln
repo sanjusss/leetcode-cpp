@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "普通题目的单元测试
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestC1xx", "UnitTestC1xx\UnitTestC1xx.vcxproj", "{A6DCAA5A-37ED-4683-A518-5EE79CD912C7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest401-500", "UnitTest401-500\UnitTest401-500.vcxproj", "{61A6454E-D7EB-4195-954A-40E088145101}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
@@ -56,6 +58,7 @@ Global
 		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{53b0280f-48ac-4d75-8da1-fdfe37d7b0ba}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{5f09166f-33bc-4bab-91db-ed9d638e8a52}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{61a6454e-d7eb-4195-954a-40e088145101}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{6f80c1ed-6dfd-4306-be4b-9706be863420}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{7836fcc8-66d3-4499-9b4b-6cb47d160f64}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{83cc1eb1-0efd-4c46-93f0-e1264f1f6477}*SharedItemsImports = 4
@@ -231,6 +234,14 @@ Global
 		{A6DCAA5A-37ED-4683-A518-5EE79CD912C7}.Release|x64.Build.0 = Release|x64
 		{A6DCAA5A-37ED-4683-A518-5EE79CD912C7}.Release|x86.ActiveCfg = Release|Win32
 		{A6DCAA5A-37ED-4683-A518-5EE79CD912C7}.Release|x86.Build.0 = Release|Win32
+		{61A6454E-D7EB-4195-954A-40E088145101}.Debug|x64.ActiveCfg = Debug|x64
+		{61A6454E-D7EB-4195-954A-40E088145101}.Debug|x64.Build.0 = Debug|x64
+		{61A6454E-D7EB-4195-954A-40E088145101}.Debug|x86.ActiveCfg = Debug|Win32
+		{61A6454E-D7EB-4195-954A-40E088145101}.Debug|x86.Build.0 = Debug|Win32
+		{61A6454E-D7EB-4195-954A-40E088145101}.Release|x64.ActiveCfg = Release|x64
+		{61A6454E-D7EB-4195-954A-40E088145101}.Release|x64.Build.0 = Release|x64
+		{61A6454E-D7EB-4195-954A-40E088145101}.Release|x86.ActiveCfg = Release|Win32
+		{61A6454E-D7EB-4195-954A-40E088145101}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -255,6 +266,7 @@ Global
 		{AB4E81F9-0C80-4781-91EC-B69389044932} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 		{8BA1F196-B31E-4096-87F9-CCE41CD196AB} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 		{A6DCAA5A-37ED-4683-A518-5EE79CD912C7} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
+		{61A6454E-D7EB-4195-954A-40E088145101} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}
