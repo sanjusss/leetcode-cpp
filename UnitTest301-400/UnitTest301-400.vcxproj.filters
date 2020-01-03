@@ -27,6 +27,9 @@
     <ClCompile Include="UnitTest322.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="UnitTest395.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
