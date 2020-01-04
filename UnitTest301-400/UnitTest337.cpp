@@ -23,6 +23,12 @@ namespace UnitTest301400
                 9);
         }
 
+        TEST_METHOD(TestMethod3)
+        {
+            check("[2,1,3,null,4]",
+                7);
+        }
+
         void check(string rootSrc, int expected)
         {
             auto root = toTreeNode(rootSrc);
