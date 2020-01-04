@@ -22,15 +22,15 @@ private:
             return;
         }
 
-        int leftUse;
+        int leftMax;
         int leftNotUse;
-        rob(node->left, leftUse, leftNotUse);
+        rob(node->left, leftMax, leftNotUse);
 
-        int rightUse;
+        int rightMax;
         int rightNotUse;
-        rob(node->right, rightUse, rightNotUse);
+        rob(node->right, rightMax, rightNotUse);
 
-        notUse = leftUse + rightUse;
+        notUse = leftMax + rightMax;
         maxValue = max(leftNotUse + rightNotUse + node->val, notUse);
     }
 };
