@@ -6,16 +6,16 @@ class Solution
 public:
     int rob(TreeNode* root) 
     {
-        int use;
+        int maxValue;
         int notUse;
-        rob(root, use, notUse);
-        return max(use, notUse);
+        rob(root, maxValue, notUse);
+        return maxValue;
     }
 
 private:
-    void rob(TreeNode* node, int& use, int& notUse)
+    void rob(TreeNode* node, int& maxValue, int& notUse)
     {
-        use = 0;
+        maxValue = 0;
         notUse = 0;
         if (node == nullptr)
         {
@@ -31,7 +31,7 @@ private:
         rob(node->right, rightUse, rightNotUse);
 
         notUse = leftUse + rightUse;
-        use = max(leftNotUse + rightNotUse + node->val, notUse);
+        maxValue = max(leftNotUse + rightNotUse + node->val, notUse);
     }
 };
 
