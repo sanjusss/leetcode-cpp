@@ -51,13 +51,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestC1xx", "UnitTestC1x
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest401-500", "UnitTest401-500\UnitTest401-500.vcxproj", "{61A6454E-D7EB-4195-954A-40E088145101}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1101-1200", "1101-1200\1101-1200.vcxproj", "{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1101-1200", "UnitTest1101-1200\UnitTest1101-1200.vcxproj", "{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{031f65da-0be8-4db9-bf3a-1d99d5c856b2}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{09b0a2c5-f962-4f30-8984-d2350216ed37}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{53b0280f-48ac-4d75-8da1-fdfe37d7b0ba}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{5f09166f-33bc-4bab-91db-ed9d638e8a52}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{60450917-2a56-4b1d-9d4e-84bc0fbdf0db}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{61a6454e-d7eb-4195-954a-40e088145101}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{6f80c1ed-6dfd-4306-be4b-9706be863420}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{7836fcc8-66d3-4499-9b4b-6cb47d160f64}*SharedItemsImports = 4
@@ -242,6 +248,22 @@ Global
 		{61A6454E-D7EB-4195-954A-40E088145101}.Release|x64.Build.0 = Release|x64
 		{61A6454E-D7EB-4195-954A-40E088145101}.Release|x86.ActiveCfg = Release|Win32
 		{61A6454E-D7EB-4195-954A-40E088145101}.Release|x86.Build.0 = Release|Win32
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Debug|x64.ActiveCfg = Debug|x64
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Debug|x64.Build.0 = Debug|x64
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Debug|x86.ActiveCfg = Debug|Win32
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Debug|x86.Build.0 = Debug|Win32
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Release|x64.ActiveCfg = Release|x64
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Release|x64.Build.0 = Release|x64
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Release|x86.ActiveCfg = Release|Win32
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB}.Release|x86.Build.0 = Release|Win32
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Debug|x64.ActiveCfg = Debug|x64
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Debug|x64.Build.0 = Debug|x64
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Debug|x86.ActiveCfg = Debug|Win32
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Debug|x86.Build.0 = Debug|Win32
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Release|x64.ActiveCfg = Release|x64
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Release|x64.Build.0 = Release|x64
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Release|x86.ActiveCfg = Release|Win32
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -267,6 +289,8 @@ Global
 		{8BA1F196-B31E-4096-87F9-CCE41CD196AB} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 		{A6DCAA5A-37ED-4683-A518-5EE79CD912C7} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 		{61A6454E-D7EB-4195-954A-40E088145101} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
+		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
+		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}

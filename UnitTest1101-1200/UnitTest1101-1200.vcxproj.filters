@@ -18,13 +18,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UnitTest542.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitTest557.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitTest516.cpp">
+    <ClCompile Include="UnitTest1143.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

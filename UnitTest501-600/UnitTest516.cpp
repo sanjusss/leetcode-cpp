@@ -1,25 +1,30 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../501-600/0557.hpp"
+#include "../501-600/0516.hpp"
 #include "unittest.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest101200
 {
-    TEST_CLASS(UnitTest557)
+    TEST_CLASS(UnitTest516)
     {
     public:
 
         TEST_METHOD(TestMethod1)
         {
-            doTest("Let's take LeetCode contest", "s'teL ekat edoCteeL tsetnoc");
+            check("bbbab", 4);
         }
 
-        void doTest(string s, string expected)
+        TEST_METHOD(TestMethod2)
+        {
+            check("cbbd", 2);
+        }
+
+        void check(string s, int expected)
         {
             Solution sln;
-            auto actual = sln.reverseWords(s);
+            auto actual = sln.longestPalindromeSubseq(s);
             Assert::AreEqual(expected, actual);
         }
     };
