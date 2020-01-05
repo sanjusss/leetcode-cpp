@@ -176,14 +176,11 @@
     <ClCompile Include="UnitTest5.cpp" />
     <ClCompile Include="UnitTest54.cpp" />
     <ClCompile Include="UnitTest69.cpp" />
+    <ClCompile Include="UnitTest84.cpp" />
+    <ClCompile Include="UnitTest85.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\1-100\1-100.vcxproj">
-      <Project>{df80b3b8-6ab9-47f8-aced-3bbb147a3df0}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
