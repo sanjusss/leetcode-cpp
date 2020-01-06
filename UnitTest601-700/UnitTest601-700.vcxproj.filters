@@ -15,16 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="0622.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0652.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0658.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="0679.hpp">
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest679.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
