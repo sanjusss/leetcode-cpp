@@ -57,6 +57,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1101-1200", "UnitTe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest601-700", "UnitTest601-700\UnitTest601-700.vcxproj", "{14BB97E8-73D3-41F2-B34B-7F5C486C26F9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LCP", "LCP", "{0F1549EF-6C80-4C11-8CE0-5118D76911D0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LCP", "LCP\LCP.vcxproj", "{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestLCP", "UnitTestLCP\UnitTestLCP.vcxproj", "{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
@@ -74,11 +80,13 @@ Global
 		CommonCode\CommonCode.vcxitems*{8ba1f196-b31e-4096-87f9-cce41cd196ab}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{98e19f4f-e3b9-4ea9-a7b6-c0a3c31d03dd}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{9d8012d7-2f77-4cbd-881b-7f02083532b1}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{a10eb6ac-d291-4bfa-9d07-69c0ce34927d}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{a6dcaa5a-37ed-4683-a518-5ee79cd912c7}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{ab4e81f9-0c80-4781-91ec-b69389044932}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{b2971394-9c95-4dcf-b287-0c7bd37abc66}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{bf16f221-1789-4be7-b4a5-3b12303ffd3c}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{c138796d-1d6b-428e-8bb4-ce1c5e0db62b}*SharedItemsImports = 9
+		CommonCode\CommonCode.vcxitems*{ca8adc49-a65c-4258-813e-5bf6f571e0a2}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{d71b03ef-0d46-4c4c-bb59-18b19a9433f9}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{df80b3b8-6ab9-47f8-aced-3bbb147a3df0}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{ea56b744-3340-42ad-ba9a-62513bac3f4c}*SharedItemsImports = 4
@@ -275,6 +283,22 @@ Global
 		{14BB97E8-73D3-41F2-B34B-7F5C486C26F9}.Release|x64.Build.0 = Release|x64
 		{14BB97E8-73D3-41F2-B34B-7F5C486C26F9}.Release|x86.ActiveCfg = Release|Win32
 		{14BB97E8-73D3-41F2-B34B-7F5C486C26F9}.Release|x86.Build.0 = Release|Win32
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Debug|x64.ActiveCfg = Debug|x64
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Debug|x64.Build.0 = Debug|x64
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Debug|x86.ActiveCfg = Debug|Win32
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Debug|x86.Build.0 = Debug|Win32
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Release|x64.ActiveCfg = Release|x64
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Release|x64.Build.0 = Release|x64
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Release|x86.ActiveCfg = Release|Win32
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2}.Release|x86.Build.0 = Release|Win32
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Debug|x64.ActiveCfg = Debug|x64
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Debug|x64.Build.0 = Debug|x64
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Debug|x86.ActiveCfg = Debug|Win32
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Debug|x86.Build.0 = Debug|Win32
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Release|x64.ActiveCfg = Release|x64
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Release|x64.Build.0 = Release|x64
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Release|x86.ActiveCfg = Release|Win32
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -303,6 +327,8 @@ Global
 		{60450917-2A56-4B1D-9D4E-84BC0FBDF0DB} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
 		{031F65DA-0BE8-4DB9-BF3A-1D99D5C856B2} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 		{14BB97E8-73D3-41F2-B34B-7F5C486C26F9} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
+		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2} = {0F1549EF-6C80-4C11-8CE0-5118D76911D0}
+		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D} = {0F1549EF-6C80-4C11-8CE0-5118D76911D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}
