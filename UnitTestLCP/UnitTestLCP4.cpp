@@ -39,6 +39,13 @@ namespace UnitTestLCP
 				6);
 		}
 
+		TEST_METHOD(TestMethod5)
+		{
+			check(4, 4,
+				"[]",
+				8);
+		}
+
 	private:
 		void check(int n, int m, string brokenSrc, int expected)
 		{

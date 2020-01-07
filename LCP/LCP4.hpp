@@ -45,13 +45,15 @@ public:
         int ans = 0;
         for (int u = 0; u < size; ++u)
         {
-            if (matches[u] == -1)
+            if (matches[u] >= 0)
             {
-                fill(checks.begin(), checks.end(), false);
-                if (dfs(u, conn, matches, checks))
-                {
-                    ++ans;
-                }
+                continue;
+            }
+
+            fill(checks.begin(), checks.end(), false);
+            if (dfs(u, conn, matches, checks))
+            {
+                ++ans;
             }
         }
 
@@ -61,7 +63,6 @@ public:
 private:
     bool dfs(int u, const vector<vector<int>>& conn, vector<int>& matches, vector<bool>& checks)
     {
-        checks[u] = true;
         for (int v : conn[u])
         {
             if (checks[v])
@@ -69,7 +70,8 @@ private:
                 continue;
             }
 
-            if (matches[v] == -1 || dfs(v, conn, matches, checks))
+            checks[v] = true;
+            if (matches[v] == -1 || dfs(matches[v], conn, matches, checks))
             {
                 matches[v] = u;
                 matches[u] = v;
