@@ -66,7 +66,6 @@ public:
         uint64_t test;
         while (left < right)
         {
-            mid = (left + right) / 2;
             mid = left + (right - left) / 2;
             if (test == K)
             {
