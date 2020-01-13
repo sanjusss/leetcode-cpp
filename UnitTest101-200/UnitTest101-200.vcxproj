@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="UnitTest103.cpp" />
     <ClCompile Include="UnitTest124.cpp" />
     <ClCompile Include="UnitTest154.cpp" />
     <ClCompile Include="pch.cpp">
