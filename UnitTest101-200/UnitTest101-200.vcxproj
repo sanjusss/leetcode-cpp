@@ -165,6 +165,7 @@
     <ClCompile Include="UnitTest105.cpp" />
     <ClCompile Include="UnitTest106.cpp" />
     <ClCompile Include="UnitTest124.cpp" />
+    <ClCompile Include="UnitTest145.cpp" />
     <ClCompile Include="UnitTest154.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
