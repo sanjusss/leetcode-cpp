@@ -126,7 +126,10 @@
   <ItemGroup>
     <ClInclude Include="0101.hpp" />
     <ClInclude Include="0102.hpp" />
+    <ClInclude Include="0103.hpp" />
     <ClInclude Include="0104.hpp" />
+    <ClInclude Include="0105.hpp" />
+    <ClInclude Include="0106.hpp" />
     <ClInclude Include="0108.hpp" />
     <ClInclude Include="0118.hpp" />
     <ClInclude Include="0119.hpp" />
@@ -139,6 +142,8 @@
     <ClInclude Include="0138.hpp" />
     <ClInclude Include="0141.hpp" />
     <ClInclude Include="0142.hpp" />
+    <ClInclude Include="0144.hpp" />
+    <ClInclude Include="0145.hpp" />
     <ClInclude Include="0150.hpp" />
     <ClInclude Include="0151.hpp" />
     <ClInclude Include="0153.hpp" />
