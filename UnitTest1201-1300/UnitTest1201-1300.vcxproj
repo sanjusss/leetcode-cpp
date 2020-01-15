@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{1AE18683-0105-4BCC-943F-CCA5C1B44229}</ProjectGuid>
+    <ProjectGuid>{48D0FD4B-2598-4D47-9185-320C23B4B979}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>UnitTest801900</RootNamespace>
+    <RootNamespace>UnitTest12011300</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectSubType>NativeUnitTestProject</ProjectSubType>
   </PropertyGroup>
@@ -163,7 +163,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="UnitTest875.cpp" />
+    <ClCompile Include="UnitTest1204.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

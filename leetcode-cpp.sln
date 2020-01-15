@@ -65,6 +65,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestLCP", "UnitTestLCP\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest801-900", "UnitTest801-900\UnitTest801-900.vcxproj", "{1AE18683-0105-4BCC-943F-CCA5C1B44229}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1201-1300", "1201-1300\1201-1300.vcxproj", "{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1201-1300", "UnitTest1201-1300\UnitTest1201-1300.vcxproj", "{48D0FD4B-2598-4D47-9185-320C23B4B979}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
@@ -73,11 +77,13 @@ Global
 		CommonCode\CommonCode.vcxitems*{14bb97e8-73d3-41f2-b34b-7f5c486c26f9}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{1ae18683-0105-4bcc-943f-cca5c1b44229}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{48d0fd4b-2598-4d47-9185-320c23b4b979}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{53b0280f-48ac-4d75-8da1-fdfe37d7b0ba}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{5f09166f-33bc-4bab-91db-ed9d638e8a52}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{60450917-2a56-4b1d-9d4e-84bc0fbdf0db}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{61a6454e-d7eb-4195-954a-40e088145101}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{6f80c1ed-6dfd-4306-be4b-9706be863420}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{74f4e7ea-aabb-4682-be05-a54c41a39ce7}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{7836fcc8-66d3-4499-9b4b-6cb47d160f64}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{83cc1eb1-0efd-4c46-93f0-e1264f1f6477}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{8ba1f196-b31e-4096-87f9-cce41cd196ab}*SharedItemsImports = 4
@@ -310,6 +316,22 @@ Global
 		{1AE18683-0105-4BCC-943F-CCA5C1B44229}.Release|x64.Build.0 = Release|x64
 		{1AE18683-0105-4BCC-943F-CCA5C1B44229}.Release|x86.ActiveCfg = Release|Win32
 		{1AE18683-0105-4BCC-943F-CCA5C1B44229}.Release|x86.Build.0 = Release|Win32
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Debug|x64.ActiveCfg = Debug|x64
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Debug|x64.Build.0 = Debug|x64
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Debug|x86.ActiveCfg = Debug|Win32
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Debug|x86.Build.0 = Debug|Win32
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Release|x64.ActiveCfg = Release|x64
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Release|x64.Build.0 = Release|x64
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Release|x86.ActiveCfg = Release|Win32
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7}.Release|x86.Build.0 = Release|Win32
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Debug|x64.ActiveCfg = Debug|x64
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Debug|x64.Build.0 = Debug|x64
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Debug|x86.ActiveCfg = Debug|Win32
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Debug|x86.Build.0 = Debug|Win32
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Release|x64.ActiveCfg = Release|x64
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Release|x64.Build.0 = Release|x64
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Release|x86.ActiveCfg = Release|Win32
+		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -341,6 +363,8 @@ Global
 		{CA8ADC49-A65C-4258-813E-5BF6F571E0A2} = {0F1549EF-6C80-4C11-8CE0-5118D76911D0}
 		{A10EB6AC-D291-4BFA-9D07-69C0CE34927D} = {0F1549EF-6C80-4C11-8CE0-5118D76911D0}
 		{1AE18683-0105-4BCC-943F-CCA5C1B44229} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
+		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
+		{48D0FD4B-2598-4D47-9185-320C23B4B979} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}
