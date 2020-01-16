@@ -50,33 +50,61 @@ public:
 //    }
 //};
 
-class Solution 
+//class Solution 
+//{
+//public:
+//    Node* connect(Node* root) 
+//    {
+//        Node* cur = root;
+//        Node* start = root;
+//        while (cur != nullptr)
+//        {
+//            if (cur->left != nullptr)
+//            {
+//                cur->left->next = cur->right;
+//                if (cur->next != nullptr)
+//                {
+//                    cur->right->next = cur->next->left;
+//                }
+//            }
+//
+//            if (cur->next != nullptr)
+//            {
+//                cur = cur->next;
+//            }
+//            else
+//            {
+//                cur = start->left;
+//                start = cur;
+//            }
+//        }
+//
+//        return root;
+//    }
+//};
+
+class Solution
 {
 public:
-    Node* connect(Node* root) 
+    Node* connect(Node* root)
     {
         Node* cur = root;
-        Node* start = root;
-        while (cur != nullptr)
+        Node head;
+        Node* pre = &head;
+        while (cur != nullptr && cur->left != nullptr)
         {
-            if (cur->left != nullptr)
+            do
             {
+                pre->next = cur->left;
                 cur->left->next = cur->right;
-                if (cur->next != nullptr)
-                {
-                    cur->right->next = cur->next->left;
-                }
-            }
+                pre = cur->right;
 
-            if (cur->next != nullptr)
-            {
                 cur = cur->next;
-            }
-            else
-            {
-                cur = start->left;
-                start = cur;
-            }
+            } while (cur != nullptr);
+
+            cur = head.next;
+            pre = &head;
+            pre->next = nullptr;
         }
 
         return root;
