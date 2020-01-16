@@ -1,7 +1,8 @@
 #pragma once
 #include "leetcode.h"
 
-class Node {
+class Node 
+{
 public:
     int val;
     Node* left;
