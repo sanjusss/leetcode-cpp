@@ -129,6 +129,9 @@
     <ClInclude Include="0017.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0046.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="0047.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
