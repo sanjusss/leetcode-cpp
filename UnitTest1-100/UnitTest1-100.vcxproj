@@ -170,6 +170,7 @@
     <ClCompile Include="UnitTest17.cpp" />
     <ClCompile Include="UnitTest28.cpp" />
     <ClCompile Include="UnitTest3.cpp" />
+    <ClCompile Include="UnitTest31.cpp" />
     <ClCompile Include="UnitTest32.cpp" />
     <ClCompile Include="UnitTest34.cpp" />
     <ClCompile Include="UnitTest37.cpp" />
