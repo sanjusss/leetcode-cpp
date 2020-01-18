@@ -181,6 +181,7 @@
     <ClCompile Include="UnitTest5.cpp" />
     <ClCompile Include="UnitTest54.cpp" />
     <ClCompile Include="UnitTest6.cpp" />
+    <ClCompile Include="UnitTest60.cpp" />
     <ClCompile Include="UnitTest69.cpp" />
     <ClCompile Include="UnitTest84.cpp" />
     <ClCompile Include="UnitTest85.cpp" />
