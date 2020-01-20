@@ -17,34 +17,73 @@
 //    }
 //};
 
-class Solution 
+//class Solution 
+//{
+//public:
+//    vector<vector<int>> permute(vector<int>& nums) 
+//    {
+//        vector<vector<int>> ans;
+//        vector<int> next;
+//        permute(nums, next, ans);
+//        return ans;
+//    }
+//    
+//private:
+//    void permute(vector<int>& nums, vector<int>& cur, vector<vector<int>>& ans)
+//    {
+//        if (cur.size() == nums.size())
+//        {
+//            ans.push_back(cur);
+//            return;
+//        }
+//
+//        for (auto i : nums)
+//        {
+//            if (find(cur.begin(), cur.end(), i) == cur.end())
+//            {
+//                vector<int> next = cur;
+//                next.push_back(i);
+//                permute(nums, next, ans);
+//            }
+//        }
+//    }
+//};
+
+class Solution
 {
 public:
-    vector<vector<int>> permute(vector<int>& nums) 
+    vector<vector<int>> permute(vector<int>& nums)
     {
         vector<vector<int>> ans;
-        vector<int> next;
-        permute(nums, next, ans);
+        sort(nums.begin(), nums.end());
+        do
+        {
+            ans.push_back(nums);
+        } while (nextPermutation(nums));
+        
         return ans;
     }
-    
+
 private:
-    void permute(vector<int>& nums, vector<int>& cur, vector<vector<int>>& ans)
+    bool nextPermutation(vector<int>& nums)
     {
-        if (cur.size() == nums.size())
+        if (nums.empty())
         {
-            ans.push_back(cur);
-            return;
+            return false;
         }
 
-        for (auto i : nums)
+        for (auto i = prev(nums.end()); i != nums.begin(); --i)
         {
-            if (find(cur.begin(), cur.end(), i) == cur.end())
+            auto j = prev(i);
+            if (*j < *i)
             {
-                vector<int> next = cur;
-                next.push_back(i);
-                permute(nums, next, ans);
+                reverse(i, nums.end());
+                i = upper_bound(i, nums.end(), *j);
+                swap(*j, *i);
+                return true;
             }
         }
+
+        return false;
     }
 };
