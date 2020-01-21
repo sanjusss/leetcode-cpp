@@ -16,23 +16,25 @@ public:
     int add(int val) 
     {
         addNum(val);
-        return *m_nums.begin();
+        return m_q.top();
     }
 
 private:
     void addNum(int val)
     {
-        if (m_nums.size() < m_k)
+        if (m_size < m_k)
         {
-            m_nums.insert(val);
+            m_q.push(val);
+            ++m_size;
         }
-        else if (val > * m_nums.begin())
+        else if (val > m_q.top())
         {
-            m_nums.erase(m_nums.begin());
-            m_nums.insert(val);
+            m_q.pop();
+            m_q.push(val);
         }
     }
 
     int m_k;
-    multiset<int> m_nums;
+    int m_size = 0;
+    priority_queue<int, vector<int>, greater<int>> m_q;
 };
