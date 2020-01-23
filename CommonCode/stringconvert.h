@@ -139,47 +139,62 @@ namespace Microsoft
                 return root->next;
             }
 
-            inline TreeNode* toTreeNode(std::string s)
+            inline TreeNode* toTreeNode(std::string data)
             {
-                int null = INT_MIN;
-                s = replaceAllString(s, "null", std::to_string(null));
-                auto arr = toIntArray(s);
-                if (arr.size() == 0)
-                {
-                    return nullptr;
-                }
+                data = data.substr(1, data.size() - 2);
+                std::vector<TreeNode*> nodes;
 
-                TreeNode* root = new TreeNode(arr.front());
-                std::queue<TreeNode*> nodes({ root });
-                int i = 1;
-                int length = arr.size();
-                while (i < length && nodes.empty() == false)
+                std::string::size_type prev_pos = 0;
+                std::string::size_type pos = 0;
+                while ((pos = data.find(',', pos)) != std::string::npos)
                 {
-                    int maxi = std::min(length, i + (int)nodes.size() * 2);
-                    while (i < maxi)
+                    std::string sub = data.substr(prev_pos, pos - prev_pos);
+                    ++pos;
+                    prev_pos = pos;
+                    if (sub == "null")
                     {
-                        TreeNode* parent = nodes.front();
-                        TreeNode* child = arr[i] == null ? nullptr : new TreeNode(arr[i]);
-                        if (i % 2 == 0)
-                        {
-                            parent->right = child;
-                            nodes.pop();
-                        }
-                        else
-                        {
-                            parent->left = child;
-                        }
-
-                        if (child != nullptr)
-                        {
-                            nodes.push(child);
-                        }
-
-                        ++i;
+                        nodes.push_back(nullptr);
+                    }
+                    else
+                    {
+                        nodes.push_back(new TreeNode(stoi(sub)));
                     }
                 }
 
-                return root;
+                std::string last = data.substr(prev_pos);
+                if (last.empty() == false)
+                {
+                    if (last == "null")
+                    {
+                        nodes.push_back(nullptr);
+                    }
+                    else
+                    {
+                        nodes.push_back(new TreeNode(stoi(last)));
+                    }
+                }
+
+                int prevLevelTwiceIndex = 0;
+                for (int i = 1; i < nodes.size(); ++i)
+                {
+                    while (nodes[prevLevelTwiceIndex / 2] == nullptr)
+                    {
+                        ++prevLevelTwiceIndex;
+                    }
+
+                    if (prevLevelTwiceIndex % 2 == 0)
+                    {
+                        nodes[prevLevelTwiceIndex / 2]->left = nodes[i];
+                    }
+                    else
+                    {
+                        nodes[prevLevelTwiceIndex / 2]->right = nodes[i];
+                    }
+
+                    ++prevLevelTwiceIndex;
+                }
+
+                return nodes.empty() ? nullptr : nodes.front();
             }
         }
     }
