@@ -1,13 +1,13 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../201-300/0224.hpp"
+#include "../201-300/0227.hpp"
 #include "unittest.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest201300
 {
-    TEST_CLASS(UnitTest224)
+    TEST_CLASS(UnitTest227)
     {
     public:
 
@@ -25,14 +25,26 @@ namespace UnitTest201300
 
         TEST_METHOD(TestMethod3)
         {
-            check("(1+(4+5+2)-3)+(6+8)",
-                23);
+            check("3+2*2",
+                7);
+        }
+
+        TEST_METHOD(TestMethod4)
+        {
+            check(" 3/2 ",
+                1);
+        }
+
+        TEST_METHOD(TestMethod5)
+        {
+            check(" 3+5 / 2 ",
+                5);
         }
 
     private:
         void check(string s, int expected)
         {
-            _0224::Solution sln;
+            _0227::Solution sln;
             auto actual = sln.calculate(s);
             Assert::AreEqual(expected, actual);
         }
