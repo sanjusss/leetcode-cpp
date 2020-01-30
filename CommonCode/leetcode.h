@@ -14,6 +14,7 @@
 #include <limits>
 #include <unordered_set>
 #include <unordered_map>
+#include <functional>
 
 #include "treenode.h"
 #include "listnode.h"
