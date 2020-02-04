@@ -57,6 +57,9 @@
     <ClCompile Include="UnitTest110.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="UnitTest127.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
