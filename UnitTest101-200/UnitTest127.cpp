@@ -30,7 +30,7 @@ namespace UnitTestC1xx
         void check(string beginWord, string endWord, string wordListSrc, int expected)
         {
             auto wordList = toStringArray(wordListSrc);
-            Solution sln;
+            _0127::Solution sln;
             auto actual = sln.ladderLength(beginWord, endWord, wordList);
             Assert::AreEqual(expected, actual);
         }
