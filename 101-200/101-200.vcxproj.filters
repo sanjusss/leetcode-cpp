@@ -144,5 +144,8 @@
     <ClInclude Include="0126.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\1-100\0169.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

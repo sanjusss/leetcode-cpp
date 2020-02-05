@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\1-100\0169.hpp" />
     <ClInclude Include="0101.hpp" />
     <ClInclude Include="0102.hpp" />
     <ClInclude Include="0103.hpp" />
