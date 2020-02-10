@@ -53,9 +53,11 @@ public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites)
     {
         vector<int> indegrees(numCourses);
-        for (auto& i : prerequisites)
+        vector<vector<int>> edges(numCourses);
+        for (auto& edge : prerequisites)
         {
-            ++indegrees[i[1]];
+            ++indegrees[edge[1]];
+            edges[edge[0]].push_back(edge[1]);
         }
 
         queue<int> q;
@@ -72,15 +74,11 @@ public:
             int i = q.front();
             q.pop();
             --numCourses;
-            for (auto& line : prerequisites)
+            for (auto& j : edges[i])
             {
-                if (line[0] == i)
+                if (--indegrees[j] == 0)
                 {
-                    --indegrees[line[1]];
-                    if (indegrees[line[1]] == 0)
-                    {
-                        q.push(line[1]);
-                    }
+                    q.push(j);
                 }
             }
         }
