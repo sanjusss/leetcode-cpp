@@ -189,6 +189,9 @@
     <ClCompile Include="UnitTest5320.cpp" />
     <ClCompile Include="UnitTest5321.cpp" />
     <ClCompile Include="UnitTest5322.cpp" />
+    <ClCompile Include="UnitTest5353.cpp" />
+    <ClCompile Include="UnitTest5354.cpp" />
+    <ClCompile Include="UnitTest5355.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
