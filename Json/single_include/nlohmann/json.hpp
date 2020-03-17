@@ -81,6 +81,12 @@ SOFTWARE.
 
 #include <cstddef> // size_t
 
+
+//disable warning
+#pragma warning(disable:28020)
+#pragma warning(disable:26444)
+#pragma warning(disable:26451)
+
 namespace nlohmann
 {
 namespace detail

@@ -69,10 +69,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1201-1300", "1201-1300\1201
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1201-1300", "UnitTest1201-1300\UnitTest1201-1300.vcxproj", "{48D0FD4B-2598-4D47-9185-320C23B4B979}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "程序员面试金典", "程序员面试金典", "{6A2C596D-6F88-42EF-9BA6-C0DD07ED611C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "程序员面试金典", "程序员面试金典\程序员面试金典.vcxproj", "{691E0487-114B-47D9-AFD2-757DCE18AAAD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "程序员面试金典UnitTest", "程序员面试金典UnitTest\程序员面试金典UnitTest.vcxproj", "{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{031f65da-0be8-4db9-bf3a-1d99d5c856b2}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{03c1c07c-b1d2-4ab9-aad2-e11de68bf53a}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{09b0a2c5-f962-4f30-8984-d2350216ed37}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{14bb97e8-73d3-41f2-b34b-7f5c486c26f9}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
@@ -82,6 +89,7 @@ Global
 		CommonCode\CommonCode.vcxitems*{5f09166f-33bc-4bab-91db-ed9d638e8a52}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{60450917-2a56-4b1d-9d4e-84bc0fbdf0db}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{61a6454e-d7eb-4195-954a-40e088145101}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{691e0487-114b-47d9-afd2-757dce18aaad}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{6f80c1ed-6dfd-4306-be4b-9706be863420}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{74f4e7ea-aabb-4682-be05-a54c41a39ce7}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{7836fcc8-66d3-4499-9b4b-6cb47d160f64}*SharedItemsImports = 4
@@ -332,6 +340,22 @@ Global
 		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Release|x64.Build.0 = Release|x64
 		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Release|x86.ActiveCfg = Release|Win32
 		{48D0FD4B-2598-4D47-9185-320C23B4B979}.Release|x86.Build.0 = Release|Win32
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Debug|x64.ActiveCfg = Debug|x64
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Debug|x64.Build.0 = Debug|x64
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Debug|x86.ActiveCfg = Debug|Win32
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Debug|x86.Build.0 = Debug|Win32
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Release|x64.ActiveCfg = Release|x64
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Release|x64.Build.0 = Release|x64
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Release|x86.ActiveCfg = Release|Win32
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD}.Release|x86.Build.0 = Release|Win32
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Debug|x64.ActiveCfg = Debug|x64
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Debug|x64.Build.0 = Debug|x64
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Debug|x86.ActiveCfg = Debug|Win32
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Debug|x86.Build.0 = Debug|Win32
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Release|x64.ActiveCfg = Release|x64
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Release|x64.Build.0 = Release|x64
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Release|x86.ActiveCfg = Release|Win32
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -365,6 +389,8 @@ Global
 		{1AE18683-0105-4BCC-943F-CCA5C1B44229} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 		{74F4E7EA-AABB-4682-BE05-A54C41A39CE7} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
 		{48D0FD4B-2598-4D47-9185-320C23B4B979} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
+		{691E0487-114B-47D9-AFD2-757DCE18AAAD} = {6A2C596D-6F88-42EF-9BA6-C0DD07ED611C}
+		{03C1C07C-B1D2-4AB9-AAD2-E11DE68BF53A} = {6A2C596D-6F88-42EF-9BA6-C0DD07ED611C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}

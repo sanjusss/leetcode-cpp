@@ -167,7 +167,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="UniTest5308.cpp" />
+    <ClCompile Include="UnitTest5308.cpp" />
     <ClCompile Include="UnitTest5266.cpp" />
     <ClCompile Include="UnitTest5249.cpp" />
     <ClCompile Include="UnitTest5255.cpp" />
@@ -185,6 +185,15 @@
     <ClCompile Include="UnitTest5316.cpp" />
     <ClCompile Include="UnitTest5317.cpp" />
     <ClCompile Include="UnitTest5318.cpp" />
+    <ClCompile Include="UnitTest5319.cpp" />
+    <ClCompile Include="UnitTest5320.cpp" />
+    <ClCompile Include="UnitTest5321.cpp" />
+    <ClCompile Include="UnitTest5322.cpp" />
+    <ClCompile Include="UnitTest5353.cpp" />
+    <ClCompile Include="UnitTest5354.cpp" />
+    <ClCompile Include="UnitTest5355.cpp" />
+    <ClCompile Include="UnitTest5356.cpp" />
+    <ClCompile Include="UnitTest5359.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

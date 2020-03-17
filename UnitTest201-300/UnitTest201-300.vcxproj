@@ -167,12 +167,23 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UnitTest207.cpp" />
     <ClCompile Include="UnitTest209.cpp" />
+    <ClCompile Include="UnitTest210.cpp" />
     <ClCompile Include="UnitTest213.cpp" />
+    <ClCompile Include="UnitTest215.cpp" />
+    <ClCompile Include="UnitTest224.cpp" />
+    <ClCompile Include="UnitTest227.cpp" />
     <ClCompile Include="UnitTest230.cpp" />
+    <ClCompile Include="UnitTest235.cpp" />
+    <ClCompile Include="UnitTest236.cpp" />
+    <ClCompile Include="UnitTest238.cpp" />
+    <ClCompile Include="UnitTest239.cpp" />
     <ClCompile Include="UnitTest270.cpp" />
     <ClCompile Include="UnitTest279.cpp" />
     <ClCompile Include="UnitTest287.cpp" />
+    <ClCompile Include="UnitTest289.cpp" />
+    <ClCompile Include="UnitTest297.cpp" />
     <ClCompile Include="UnitTest300.cpp" />
   </ItemGroup>
   <ItemGroup>

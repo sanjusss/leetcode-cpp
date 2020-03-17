@@ -129,5 +129,26 @@
     <ClInclude Include="0117.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0171.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0166.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0110.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0127.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0126.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\1-100\0169.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0130.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

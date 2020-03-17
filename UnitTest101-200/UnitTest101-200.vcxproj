@@ -164,7 +164,11 @@
     <ClCompile Include="UnitTest103.cpp" />
     <ClCompile Include="UnitTest105.cpp" />
     <ClCompile Include="UnitTest106.cpp" />
+    <ClCompile Include="UnitTest110.cpp" />
     <ClCompile Include="UnitTest124.cpp" />
+    <ClCompile Include="UnitTest126.cpp" />
+    <ClCompile Include="UnitTest127.cpp" />
+    <ClCompile Include="UnitTest130.cpp" />
     <ClCompile Include="UnitTest145.cpp" />
     <ClCompile Include="UnitTest154.cpp" />
     <ClCompile Include="pch.cpp">
@@ -177,6 +181,7 @@
     <ClCompile Include="UnitTest122.cpp" />
     <ClCompile Include="UnitTest138.cpp" />
     <ClCompile Include="UnitTest142.cpp" />
+    <ClCompile Include="UnitTest166.cpp" />
     <ClCompile Include="UnitTest200.cpp" />
   </ItemGroup>
   <ItemGroup>

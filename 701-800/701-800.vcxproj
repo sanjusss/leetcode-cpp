@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="0702.hpp" />
+    <ClInclude Include="0703.hpp" />
     <ClInclude Include="0704.hpp" />
     <ClInclude Include="0707.hpp" />
     <ClInclude Include="0724.hpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="0705.hpp" />
     <ClInclude Include="0771.hpp" />
     <ClInclude Include="0706.hpp" />
+    <ClInclude Include="0772.hpp" />
     <ClInclude Include="0774.hpp" />
     <ClInclude Include="0793.hpp" />
   </ItemGroup>

@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\1-100\0169.hpp" />
     <ClInclude Include="0101.hpp" />
     <ClInclude Include="0102.hpp" />
     <ClInclude Include="0103.hpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="0105.hpp" />
     <ClInclude Include="0106.hpp" />
     <ClInclude Include="0108.hpp" />
+    <ClInclude Include="0110.hpp" />
     <ClInclude Include="0116.hpp" />
     <ClInclude Include="0117.hpp" />
     <ClInclude Include="0118.hpp" />
@@ -139,7 +141,10 @@
     <ClInclude Include="0122.hpp" />
     <ClInclude Include="0124.hpp" />
     <ClInclude Include="0125.hpp" />
+    <ClInclude Include="0126.hpp" />
+    <ClInclude Include="0127.hpp" />
     <ClInclude Include="0128.hpp" />
+    <ClInclude Include="0130.hpp" />
     <ClInclude Include="0136.hpp" />
     <ClInclude Include="0138.hpp" />
     <ClInclude Include="0141.hpp" />
@@ -153,8 +158,10 @@
     <ClInclude Include="0155.hpp" />
     <ClInclude Include="0160.hpp" />
     <ClInclude Include="0162.hpp" />
+    <ClInclude Include="0166.hpp" />
     <ClInclude Include="0167.hpp" />
     <ClInclude Include="0170.hpp" />
+    <ClInclude Include="0171.hpp" />
     <ClInclude Include="0172.hpp" />
     <ClInclude Include="0189.hpp" />
     <ClInclude Include="0190.hpp" />

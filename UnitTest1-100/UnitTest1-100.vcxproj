@@ -167,14 +167,19 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UnitTest10.cpp" />
+    <ClCompile Include="UnitTest11.cpp" />
     <ClCompile Include="UnitTest17.cpp" />
     <ClCompile Include="UnitTest22.cpp" />
     <ClCompile Include="UnitTest28.cpp" />
+    <ClCompile Include="UnitTest29.cpp" />
     <ClCompile Include="UnitTest3.cpp" />
     <ClCompile Include="UnitTest31.cpp" />
     <ClCompile Include="UnitTest32.cpp" />
     <ClCompile Include="UnitTest34.cpp" />
     <ClCompile Include="UnitTest37.cpp" />
+    <ClCompile Include="UnitTest4.cpp" />
+    <ClCompile Include="UnitTest41.cpp" />
     <ClCompile Include="UnitTest43.cpp" />
     <ClCompile Include="UnitTest45.cpp" />
     <ClCompile Include="UnitTest46.cpp" />
@@ -182,10 +187,14 @@
     <ClCompile Include="UnitTest49.cpp" />
     <ClCompile Include="UnitTest5.cpp" />
     <ClCompile Include="UnitTest54.cpp" />
+    <ClCompile Include="UnitTest56.cpp" />
     <ClCompile Include="UnitTest6.cpp" />
     <ClCompile Include="UnitTest60.cpp" />
     <ClCompile Include="UnitTest69.cpp" />
+    <ClCompile Include="UnitTest75.cpp" />
+    <ClCompile Include="UnitTest76.cpp" />
     <ClCompile Include="UnitTest79.cpp" />
+    <ClCompile Include="UnitTest83.cpp" />
     <ClCompile Include="UnitTest84.cpp" />
     <ClCompile Include="UnitTest85.cpp" />
   </ItemGroup>

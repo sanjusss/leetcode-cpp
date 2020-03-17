@@ -96,5 +96,41 @@
     <ClInclude Include="0230.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0215.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0240.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0297.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0238.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0289.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0224.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0227.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0239.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0235.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0236.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0207.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0210.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

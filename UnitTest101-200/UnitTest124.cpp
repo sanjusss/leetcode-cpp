@@ -35,6 +35,12 @@ namespace UnitTestC1xx
                 48);
         }
 
+        TEST_METHOD(TestMethod5)
+        {
+            check("[-3]",
+                -3);
+        }
+
         void check(string rootSrc, int expected)
         {
             TreeNode* root = toTreeNode(rootSrc);

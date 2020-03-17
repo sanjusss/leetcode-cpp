@@ -67,6 +67,7 @@ public:
         while (left < right)
         {
             mid = left + (right - left) / 2;
+            test = trailingZeroes(mid);
             if (test == K)
             {
                 return 5;

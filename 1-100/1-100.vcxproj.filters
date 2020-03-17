@@ -153,6 +153,36 @@
     <ClInclude Include="0079.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0075.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0056.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0074.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0029.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0011.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0041.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0083.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0076.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0004.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="0010.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="0090.hpp">

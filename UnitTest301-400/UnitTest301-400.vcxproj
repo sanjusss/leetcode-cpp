@@ -167,10 +167,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UnitTest315.cpp" />
     <ClCompile Include="UnitTest322.cpp" />
     <ClCompile Include="UnitTest328.cpp" />
     <ClCompile Include="UnitTest329.cpp" />
     <ClCompile Include="UnitTest337.cpp" />
+    <ClCompile Include="UnitTest371.cpp" />
     <ClCompile Include="UnitTest394.cpp" />
     <ClCompile Include="UnitTest395.cpp" />
   </ItemGroup>
