@@ -34,6 +34,7 @@
     <ClInclude Include="5117.hpp" />
     <ClInclude Include="5118.hpp" />
     <ClInclude Include="5119.hpp" />
+    <ClInclude Include="5178.hpp" />
     <ClInclude Include="5179.hpp" />
     <ClInclude Include="5247.hpp" />
     <ClInclude Include="5248.hpp" />
@@ -80,6 +81,9 @@
     <ClInclude Include="5356.hpp" />
     <ClInclude Include="5357.hpp" />
     <ClInclude Include="5359.hpp" />
+    <ClInclude Include="5364.hpp" />
+    <ClInclude Include="5366.hpp" />
+    <ClInclude Include="5367.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
