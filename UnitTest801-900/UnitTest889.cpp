@@ -5,7 +5,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace UnitTest101200
+namespace UnitTest801900
 {
     TEST_CLASS(UnitTest889)
     {
