@@ -1,21 +1,41 @@
 #pragma once
 #include "leetcode.h"
 
-class Solution 
+//class Solution 
+//{
+//public:
+//    string longestPrefix(string s) 
+//    { 
+//        string_view prefix = s;
+//        string_view suffix = s;
+//        for (int i = s.size() - 1; i > 0; --i)
+//        {
+//            suffix.remove_prefix(1);
+//            prefix.remove_suffix(1);
+//            if (prefix == suffix)
+//            {
+//                return string(prefix);
+//            }
+//        }
+//
+//        return string();
+//    }
+//};
+
+class Solution
 {
 public:
-    string longestPrefix(string s) 
+    string longestPrefix(string s)
     {
-        int size = s.size(); 
-        string_view prefix = s;
-        string_view suffix = s;
-        for (int i = size - 1; i > 0; --i)
+        auto prefixEnd = s.end();
+        auto suffixBegin = s.begin();
+        for (int i = s.size() - 1; i > 0; --i)
         {
-            prefix.remove_prefix(1);
-            suffix.remove_suffix(1);
-            if (prefix == suffix)
+            --prefixEnd;
+            ++suffixBegin;
+            if (equal(s.begin(), prefixEnd, suffixBegin, s.end()))
             {
-                return string(prefix);
+                return string(s.begin(), prefixEnd);
             }
         }
 
