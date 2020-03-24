@@ -19,6 +19,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)leetcode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)listnode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)listnodeunittest.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)speedup.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)stringconvert.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)treenode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)treenodeunittest.hpp" />

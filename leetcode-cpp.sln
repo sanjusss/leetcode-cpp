@@ -83,11 +83,16 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "901-1000", "901-1000\901-10
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest901-1000", "UnitTest901-1000\UnitTest901-1000.vcxproj", "{B80B4E90-5138-44F8-84CC-B4DFB417E1ED}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10xx", "10xx\10xx.vcxproj", "{0684FFE2-B8B5-4F06-A705-32B27F69E695}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest10xx", "UnitTest10xx\UnitTest10xx.vcxproj", "{ADB827AF-D854-46E9-8C1D-5FD606CEB795}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{031f65da-0be8-4db9-bf3a-1d99d5c856b2}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{03c1c07c-b1d2-4ab9-aad2-e11de68bf53a}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{0684ffe2-b8b5-4f06-a705-32b27f69e695}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{09b0a2c5-f962-4f30-8984-d2350216ed37}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{14bb97e8-73d3-41f2-b34b-7f5c486c26f9}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
@@ -110,6 +115,7 @@ Global
 		CommonCode\CommonCode.vcxitems*{a10eb6ac-d291-4bfa-9d07-69c0ce34927d}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{a6dcaa5a-37ed-4683-a518-5ee79cd912c7}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{ab4e81f9-0c80-4781-91ec-b69389044932}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{adb827af-d854-46e9-8c1d-5fd606ceb795}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{b2971394-9c95-4dcf-b287-0c7bd37abc66}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{b80b4e90-5138-44f8-84cc-b4dfb417e1ed}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{bf16f221-1789-4be7-b4a5-3b12303ffd3c}*SharedItemsImports = 4
@@ -391,6 +397,22 @@ Global
 		{B80B4E90-5138-44F8-84CC-B4DFB417E1ED}.Release|x64.Build.0 = Release|x64
 		{B80B4E90-5138-44F8-84CC-B4DFB417E1ED}.Release|x86.ActiveCfg = Release|Win32
 		{B80B4E90-5138-44F8-84CC-B4DFB417E1ED}.Release|x86.Build.0 = Release|Win32
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Debug|x64.ActiveCfg = Debug|x64
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Debug|x64.Build.0 = Debug|x64
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Debug|x86.ActiveCfg = Debug|Win32
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Debug|x86.Build.0 = Debug|Win32
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Release|x64.ActiveCfg = Release|x64
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Release|x64.Build.0 = Release|x64
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Release|x86.ActiveCfg = Release|Win32
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695}.Release|x86.Build.0 = Release|Win32
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Debug|x64.ActiveCfg = Debug|x64
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Debug|x64.Build.0 = Debug|x64
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Debug|x86.ActiveCfg = Debug|Win32
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Debug|x86.Build.0 = Debug|Win32
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Release|x64.ActiveCfg = Release|x64
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Release|x64.Build.0 = Release|x64
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Release|x86.ActiveCfg = Release|Win32
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -429,6 +451,8 @@ Global
 		{9FBEA572-9015-43E2-8CEA-5344B7D4F1B4} = {50C95091-3923-4307-9CF3-9E99E8CAD056}
 		{60F3D693-A1A9-48B5-B79D-F358EB945398} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
 		{B80B4E90-5138-44F8-84CC-B4DFB417E1ED} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
+		{0684FFE2-B8B5-4F06-A705-32B27F69E695} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
+		{ADB827AF-D854-46E9-8C1D-5FD606CEB795} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}
