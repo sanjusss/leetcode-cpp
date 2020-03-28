@@ -25,6 +25,7 @@
 #pragma warning(disable:26451)
 #pragma warning(disable:4267)
 #pragma warning(disable:4244)
+#pragma warning(disable:6011)
 #pragma warning(disable:6100)
 #pragma warning(disable:6262)
 #pragma warning(disable:26495)
