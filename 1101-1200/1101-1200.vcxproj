@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="1143.hpp" />
     <ClInclude Include="1160.hpp" />
+    <ClInclude Include="1162.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
