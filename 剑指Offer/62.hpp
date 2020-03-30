@@ -1,18 +1,33 @@
 #pragma once
 #include "leetcode.h"
 
-class Solution 
+//class Solution 
+//{
+//public:
+//    int lastRemaining(int n, int m) 
+//    {
+//        if (n == 1)
+//        {
+//            return 0;
+//        }
+//        else
+//        {
+//            return (lastRemaining(n - 1, m) + m) % n;
+//        }
+//    }
+//};
+
+class Solution
 {
 public:
-    int lastRemaining(int n, int m) 
+    int lastRemaining(int n, int m)
     {
-        if (n == 1)
+        int ans = 0;
+        for (int i = 2; i <= n; ++i)
         {
-            return 0;
+            ans = (ans + m) % i;
         }
-        else
-        {
-            return (lastRemaining(n - 1, m) + m) % n;
-        }
+
+        return ans;
     }
 };
