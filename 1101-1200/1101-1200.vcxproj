@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="1111.hpp" />
     <ClInclude Include="1143.hpp" />
     <ClInclude Include="1160.hpp" />
     <ClInclude Include="1162.hpp" />
