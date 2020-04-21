@@ -163,7 +163,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="UnitTest1204.cpp" />
+    <ClCompile Include="UnitTest1224.cpp" />
+    <ClCompile Include="UnitTest1248.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

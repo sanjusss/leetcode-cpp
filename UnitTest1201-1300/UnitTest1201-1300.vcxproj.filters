@@ -18,7 +18,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UnitTest1204.cpp">
+    <ClCompile Include="UnitTest1248.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest1224.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
