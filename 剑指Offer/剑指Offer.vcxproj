@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="13.hpp" />
     <ClInclude Include="40.hpp" />
+    <ClInclude Include="51.hpp" />
     <ClInclude Include="57-2.hpp" />
     <ClInclude Include="59-2.hpp" />
     <ClInclude Include="62.hpp" />
