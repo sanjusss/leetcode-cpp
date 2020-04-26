@@ -202,9 +202,12 @@
     <ClCompile Include="UnitTest5371.cpp" />
     <ClCompile Include="UnitTest5389.cpp" />
     <ClCompile Include="UnitTest5390.cpp" />
+    <ClCompile Include="UnitTest5393.cpp" />
+    <ClCompile Include="UnitTest5394.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
