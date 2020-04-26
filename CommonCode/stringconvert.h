@@ -125,9 +125,8 @@ namespace Microsoft
                 return results;
             }
 
-            inline ListNode* toListNode(std::string s)
+            inline ListNode* toListNode(std::vector<int>& arr)
             {
-                auto arr = toIntArray(s);
                 std::shared_ptr<ListNode> root(new ListNode(0));
                 auto head = root.get();
                 for (auto i : arr)
@@ -137,6 +136,24 @@ namespace Microsoft
                 }
 
                 return root->next;
+            }
+
+            inline ListNode* toListNode(std::string s)
+            {
+                auto arr = toIntArray(s);
+                return toListNode(arr);
+            }
+
+            inline std::vector<ListNode*> toListNodeArray(std::string s)
+            {
+                std::vector<ListNode*> res;
+                auto arrs = toInt2DArray(s);
+                for (auto& arr : arrs)
+                {
+                    res.push_back(toListNode(arr));
+                }
+
+                return res;
             }
 
             inline TreeNode* toTreeNode(std::string data)
