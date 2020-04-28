@@ -166,6 +166,7 @@
     </ClCompile>
     <ClCompile Include="UnitTest13.cpp" />
     <ClCompile Include="UnitTest51.cpp" />
+    <ClCompile Include="UnitTest56-1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
