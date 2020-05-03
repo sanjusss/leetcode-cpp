@@ -97,6 +97,10 @@
     <ClInclude Include="5392.hpp" />
     <ClInclude Include="5393.hpp" />
     <ClInclude Include="5394.hpp" />
+    <ClInclude Include="5400.hpp" />
+    <ClInclude Include="5401.hpp" />
+    <ClInclude Include="5402.hpp" />
+    <ClInclude Include="5403.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
