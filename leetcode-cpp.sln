@@ -93,6 +93,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2020-spring", "2020-spring\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest2020-Spring", "UnitTest2020-Spring\UnitTest2020-Spring.vcxproj", "{8DAC8C97-4B1B-492A-95DF-9118DBBE8F13}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "13xx", "13xx\13xx.vcxproj", "{2ED350ED-31B9-4E2D-A9DA-646DA9849493}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest13xx", "UnitTest13xx\UnitTest13xx.vcxproj", "{9A849364-E945-4404-BCC5-F7AA4AF27A11}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
@@ -103,6 +107,7 @@ Global
 		CommonCode\CommonCode.vcxitems*{14bb97e8-73d3-41f2-b34b-7f5c486c26f9}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{15169182-c720-4149-bf07-58d19bfe96da}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{1ae18683-0105-4bcc-943f-cca5c1b44229}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{2ed350ed-31b9-4e2d-a9da-646da9849493}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{48d0fd4b-2598-4d47-9185-320c23b4b979}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{53b0280f-48ac-4d75-8da1-fdfe37d7b0ba}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{5f09166f-33bc-4bab-91db-ed9d638e8a52}*SharedItemsImports = 4
@@ -118,6 +123,7 @@ Global
 		CommonCode\CommonCode.vcxitems*{8ba1f196-b31e-4096-87f9-cce41cd196ab}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{8dac8c97-4b1b-492a-95df-9118dbbe8f13}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{98e19f4f-e3b9-4ea9-a7b6-c0a3c31d03dd}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{9a849364-e945-4404-bcc5-f7aa4af27a11}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{9d8012d7-2f77-4cbd-881b-7f02083532b1}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{9fbea572-9015-43e2-8cea-5344b7d4f1b4}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{a0b1a60f-0277-4e98-bf7f-5851bc0f5a2c}*SharedItemsImports = 4
@@ -446,6 +452,22 @@ Global
 		{8DAC8C97-4B1B-492A-95DF-9118DBBE8F13}.Release|x64.Build.0 = Release|x64
 		{8DAC8C97-4B1B-492A-95DF-9118DBBE8F13}.Release|x86.ActiveCfg = Release|Win32
 		{8DAC8C97-4B1B-492A-95DF-9118DBBE8F13}.Release|x86.Build.0 = Release|Win32
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Debug|x64.ActiveCfg = Debug|x64
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Debug|x64.Build.0 = Debug|x64
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Debug|x86.ActiveCfg = Debug|Win32
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Debug|x86.Build.0 = Debug|Win32
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Release|x64.ActiveCfg = Release|x64
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Release|x64.Build.0 = Release|x64
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Release|x86.ActiveCfg = Release|Win32
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493}.Release|x86.Build.0 = Release|Win32
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Debug|x64.ActiveCfg = Debug|x64
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Debug|x64.Build.0 = Debug|x64
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Debug|x86.ActiveCfg = Debug|Win32
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Debug|x86.Build.0 = Debug|Win32
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Release|x64.ActiveCfg = Release|x64
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Release|x64.Build.0 = Release|x64
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Release|x86.ActiveCfg = Release|Win32
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -489,6 +511,8 @@ Global
 		{61A98A07-9E47-4343-9DE3-D9F15C18290F} = {50C95091-3923-4307-9CF3-9E99E8CAD056}
 		{A0B1A60F-0277-4E98-BF7F-5851BC0F5A2C} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 		{8DAC8C97-4B1B-492A-95DF-9118DBBE8F13} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
+		{2ED350ED-31B9-4E2D-A9DA-646DA9849493} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
+		{9A849364-E945-4404-BCC5-F7AA4AF27A11} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}
