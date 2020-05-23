@@ -145,3 +145,62 @@ public:
         return s.substr(ansStart, ansEnd - ansStart);
     }
 };
+
+//class Solution 
+//{
+//public:
+//    string minWindow(string s, string t) 
+//    {
+//        vector<int> tChars(CHAR_MAX + 1);
+//        for (char i : t)
+//        {
+//            ++tChars[i];
+//        }
+//
+//        bool found = false;
+//        int rightMax = s.size();
+//        int ansLeft = 0;
+//        int ansRight = rightMax;
+//        vector<int> sChars(CHAR_MAX + 1);
+//        auto check = [&tChars, &sChars]()
+//        {
+//            for (int i = 0; i <= CHAR_MAX; ++i)
+//            {
+//                if (tChars[i] > sChars[i])
+//                {
+//                    return false;
+//                }
+//            }
+//
+//            return true;
+//        };
+//        int left = 0;
+//        int right = 0;
+//        while (right < rightMax)
+//        {
+//            ++sChars[s[right]];
+//            ++right;
+//            while (check())
+//            {
+//                found = true;
+//                if (right - left < ansRight - ansLeft)
+//                {
+//                    ansLeft = left;
+//                    ansRight = right;
+//                }
+//
+//                --sChars[s[left]];
+//                ++left;
+//            }
+//        }
+//
+//        if (found)
+//        {
+//            return s.substr(ansLeft, ansRight - ansLeft);
+//        }
+//        else
+//        {
+//            return string();
+//        }
+//    }
+//};
