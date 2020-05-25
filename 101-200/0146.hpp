@@ -162,3 +162,76 @@ private:
     Cache m_tail;
     int m_capacity;
 };
+
+//class LRUCache
+//{
+//    typedef list<pair<int, int>>::iterator Cache;
+//public:
+//    LRUCache(int capacity)
+//    {
+//        m_capacity = capacity;
+//    }
+//
+//    int get(int key)
+//    {
+//        if (m_capacity <= 0 || m_vals.find(key) == m_vals.end())
+//        {
+//            return -1;
+//        }
+//        else
+//        {
+//            moveToFront(m_vals[key]);
+//            return m_vals[key]->second;
+//        }
+//    }
+//
+//    void put(int key, int value)
+//    {
+//        if (m_capacity <= 0)
+//        {
+//            return;
+//        }
+//
+//        if (m_vals.find(key) != m_vals.end())
+//        {
+//            auto cache = m_vals[key];
+//            cache->second = value;
+//            moveToFront(cache);
+//        }
+//        else
+//        {
+//            if (m_vals.size() == m_capacity)
+//            {
+//                eraseBack();
+//            }
+//
+//            m_list.push_front({ key, value });
+//            m_vals[key] = m_list.begin();
+//        }
+//    }
+//
+//private:
+//    void moveToFront(Cache cache)
+//    {
+//        if (cache == m_list.begin())
+//        {
+//            return;
+//        }
+//
+//        auto p = *cache;
+//        m_list.erase(cache);
+//        m_list.push_front(p);
+//        m_vals[p.first] = m_list.begin();
+//    }
+//
+//    void eraseBack()
+//    {
+//        m_vals.erase(m_list.back().first);
+//        m_list.pop_back();
+//    }
+//
+//private:
+//    unordered_map<int, Cache> m_vals;
+//    list<pair<int, int>> m_list;
+//    int m_capacity;
+//};
