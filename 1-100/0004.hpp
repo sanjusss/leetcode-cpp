@@ -22,6 +22,67 @@
 //    }
 //};
 
+//合并
+//class Solution
+//{
+//public:
+//    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
+//    {
+//        int size1 = nums1.size();
+//        int size2 = nums2.size();
+//        int i = 0;
+//        int j = 0;
+//        int mid = (size1 + size2 + 1) / 2;
+//        int ans = 0;
+//        while (i + j < mid)
+//        {
+//            if (i < size1)
+//            {
+//                if (j < size2 && nums1[i] >= nums2[j])
+//                {
+//                    ++j;
+//                    ans = nums2[j];
+//                }
+//                else
+//                {
+//                    ++i;
+//                    ans = nums1[i];
+//                }
+//            }
+//            else
+//            {
+//                ++j;
+//                ans = nums2[j];
+//            }
+//        }
+//
+//        if ((size1 + size2) % 2 == 0)
+//        {
+//            if (i < size1)
+//            {
+//                if (j < size2 && nums1[i] >= nums2[j])
+//                {
+//                    ans += nums2[j];
+//                }
+//                else
+//                {
+//                    ans += nums1[i];
+//                }
+//            }
+//            else
+//            {
+//                ans += nums2[j];
+//            }
+//
+//            return ans / 2.0;
+//        }
+//        else
+//        {
+//            return ans;
+//        }
+//    }
+//};
+
 //二分查找，且不改变原数组
 class Solution
 {
