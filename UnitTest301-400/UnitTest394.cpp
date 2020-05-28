@@ -29,5 +29,15 @@ namespace UnitTest301400
             auto actual = sln.decodeString(s);
             Assert::AreEqual(expected, actual);
         }
+
+        TEST_METHOD(TestMethod3)
+        {
+            string s = "3[a2[c]]";
+            string expected = "accaccacc";
+
+            Solution sln;
+            auto actual = sln.decodeString(s);
+            Assert::AreEqual(expected, actual);
+        }
 	};
 }
