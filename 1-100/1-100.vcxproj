@@ -188,6 +188,7 @@
     <ClInclude Include="0094.hpp" />
     <ClInclude Include="0098.hpp" />
     <ClInclude Include="0049.hpp" />
+    <ClInclude Include="0009.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="0090.hpp" />
