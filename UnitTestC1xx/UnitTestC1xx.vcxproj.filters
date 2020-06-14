@@ -52,6 +52,9 @@
     <Filter Include="源文件\190">
       <UniqueIdentifier>{992b33ad-3ffe-4578-bd7a-84da2f0c29e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\193">
+      <UniqueIdentifier>{c81cc40e-4aa1-4555-bcbc-37a4bdc7a6f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -170,6 +173,9 @@
     </ClCompile>
     <ClCompile Include="UnitTest5403.cpp">
       <Filter>源文件\187</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest5188.cpp">
+      <Filter>源文件\193</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
