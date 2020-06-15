@@ -16,6 +16,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\Json\single_include\nlohmann\json.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)areequal.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)functiontest.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)leetcode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)listnode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)listnodeunittest.hpp" />
