@@ -7,23 +7,23 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest801900
 {
-	TEST_CLASS(UnitTest820)
-	{
-	public:
+    TEST_CLASS(UnitTest820)
+    {
+    public:
 
-		TEST_METHOD(TestMethod1)
-		{
-			check("[\"time\",\"me\",\"bell\"]",
-				10);
-		}
+        TEST_METHOD(TestMethod1)
+        {
+            check("[\"time\",\"me\",\"bell\"]",
+                10);
+        }
 
-	private:
-		void check(string wordsSrc, int expected)
-		{
-			auto words = toStringArray(wordsSrc);
-			Solution sln;
-			auto actual = sln.minimumLengthEncoding(words);
-			Assert::AreEqual(expected, actual);
-		}
-	};
+    private:
+        void check(string wordsSrc, int expected)
+        {
+            auto words = toStringArray(wordsSrc);
+            Solution sln;
+            auto actual = sln.minimumLengthEncoding(words);
+            Assert::AreEqual(expected, actual);
+        }
+    };
 }

@@ -6,19 +6,19 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTestC1xx
 {
-	TEST_CLASS(UnitTest5249)
-	{
-	public:
-		
-		TEST_METHOD(TestMethod1)
-		{
+    TEST_CLASS(UnitTest5249)
+    {
+    public:
+        
+        TEST_METHOD(TestMethod1)
+        {
             string s = "))((";
             string expected = "";
 
             Solution sln;
             auto actual = sln.minRemoveToMakeValid(s);
             Assert::AreEqual(expected, actual);
-		}
+        }
 
         TEST_METHOD(TestMethod2)
         {
@@ -39,5 +39,5 @@ namespace UnitTestC1xx
             auto actual = sln.minRemoveToMakeValid(s);
             Assert::AreEqual(expected, actual);
         }
-	};
+    };
 }

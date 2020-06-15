@@ -7,9 +7,9 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace 程序员面试金典UnitTest01
 {
-	TEST_CLASS(程序员面试金典UnitTest01_06)
-	{
-	public:
+    TEST_CLASS(程序员面试金典UnitTest01_06)
+    {
+    public:
         TEST_METHOD(TestMethod1)
         {
             check("aabcccccaaa",
@@ -34,5 +34,5 @@ namespace 程序员面试金典UnitTest01
             auto actual = sln.compressString(S);
             Assert::AreEqual(expected, actual);
         }
-	};
+    };
 }

@@ -6,18 +6,18 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest1100
 {
-	TEST_CLASS(UnitTest28)
-	{
-	public:
-		
-		TEST_METHOD(TestMethod1)
-		{
+    TEST_CLASS(UnitTest28)
+    {
+    public:
+        
+        TEST_METHOD(TestMethod1)
+        {
             string h = "a";
             string n = "a";
             int expected = 0;
             Solution s;
             int actual = s.strStr(h, n);
             Assert::AreEqual(expected, actual);
-		}
-	};
+        }
+    };
 }

@@ -7,9 +7,9 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest401500
 {
-	TEST_CLASS(UnitTest0415)
-	{
-	public:
+    TEST_CLASS(UnitTest0415)
+    {
+    public:
 
         TEST_METHOD(TestMethod1)
         {
@@ -22,5 +22,5 @@ namespace UnitTest401500
             auto actual = sln.addStrings(num1, num2);
             Assert::AreEqual(expected, actual);
         }
-	};
+    };
 }
