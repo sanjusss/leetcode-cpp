@@ -18,5 +18,8 @@
     <ClInclude Include="1431.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="1475.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
