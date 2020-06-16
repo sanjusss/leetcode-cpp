@@ -4,3 +4,4 @@
 #include "areequal.h"
 #include "listnodeunittest.hpp"
 #include "treenodeunittest.hpp"
+#include "functiontest.hpp"
