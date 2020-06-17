@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="1013.hpp" />
+    <ClInclude Include="1014.hpp" />
     <ClInclude Include="1071.hpp" />
     <ClInclude Include="1095.hpp" />
   </ItemGroup>
