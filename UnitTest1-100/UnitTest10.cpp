@@ -36,6 +36,16 @@ namespace UnitTest1100
             check("mississippi", "mis*is*p*.", false);
         }
 
+        TEST_METHOD(TestMethod6)
+        {
+            check("aaa", "ab*a*c*a", true);
+        }
+
+        TEST_METHOD(TestMethod7)
+        {
+            check("aaa", ".*", true);
+        }
+
         void check(string s, string p, bool expected)
         {
             Solution sln;
