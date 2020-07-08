@@ -144,6 +144,7 @@
     <ClInclude Include="01.07.hpp" />
     <ClInclude Include="08.11.hpp" />
     <ClInclude Include="10.01.hpp" />
+    <ClInclude Include="16.11.hpp" />
     <ClInclude Include="16.18.hpp" />
     <ClInclude Include="17.16.hpp" />
   </ItemGroup>
