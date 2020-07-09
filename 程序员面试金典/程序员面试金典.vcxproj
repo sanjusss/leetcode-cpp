@@ -148,6 +148,9 @@
     <ClInclude Include="16.18.hpp" />
     <ClInclude Include="17.16.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="17.13.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

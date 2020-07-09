@@ -169,6 +169,7 @@
     <ClCompile Include="UnitTest08.11.cpp" />
     <ClCompile Include="UnitTest10.01.cpp" />
     <ClCompile Include="UnitTest16.18.cpp" />
+    <ClCompile Include="UnitTest17.13.cpp" />
     <ClCompile Include="UnitTest17.16.cpp" />
   </ItemGroup>
   <ItemGroup>
