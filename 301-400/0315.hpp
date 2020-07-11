@@ -63,115 +63,112 @@
 //    }
 //};
 
-//class Solution
-//{
-//    struct BSTNode
-//    {
-//        int val;
-//        int count = 0;//所有经过当前节点，且小于等于当前节点的节点数量。
-//        BSTNode* left = nullptr;
-//        BSTNode* right = nullptr;
-//        BSTNode(int n) : val(n) {}
-//        ~BSTNode()
-//        {
-//            delete left;
-//            delete right;
-//        }
-//    };
-//
-//public:
-//    vector<int> countSmaller(vector<int>& nums)
-//    {
-//        int size = nums.size();
-//        vector<int> ans(size);
-//        if (size > 0)
-//        {
-//            BSTNode* root = new BSTNode(nums.back());
-//            for (int i = size - 2; i >= 0; --i)
-//            {
-//                insertNode(root, new BSTNode(nums[i]), ans[i]);
-//            }
-//
-//            delete root;
-//        }
-//
-//        return ans;
-//    }
-//
-//private:
-//    void insertNode(BSTNode* node, BSTNode* target, int& ans)
-//    {
-//        if (target->val > node->val)
-//        {
-//            ans += node->count + 1;
-//            if (node->right == nullptr)
-//            {
-//                node->right = target;
-//            }
-//            else
-//            {
-//                insertNode(node->right, target, ans);
-//            }
-//        }
-//        else
-//        {
-//            ++node->count;
-//            if (node->left == nullptr)
-//            {
-//                node->left = target;
-//            }
-//            else
-//            {
-//                insertNode(node->left, target, ans);
-//            }
-//        }
-//    }
-//};
+class Solution
+{
+    struct BSTNode
+    {
+        int val = 0;
+        int count = 0;//所有经过当前节点，且小于等于当前节点的节点数量。
+        BSTNode* left = nullptr;
+        BSTNode* right = nullptr;
+    };
 
-class Solution {
 public:
-    vector<int> countSmaller(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> ans(n);
-        vector<int> sorting(n);
-        vector<int> temp(n);
-        for (int i = 0; i < n; ++i) {
-            sorting[i] = i;
+    vector<int> countSmaller(vector<int>& nums)
+    {
+        int size = nums.size();
+        vector<int> ans(size);
+        if (size > 0)
+        {
+            vector<BSTNode> nodes(size);
+            BSTNode* root = &(nodes.back());
+            root->val = nums.back();
+            BSTNode* node;
+            for (int i = size - 2; i >= 0; --i)
+            {
+                node = &(nodes[i]);
+                node->val = nums[i];
+                insertNode(root, node, ans[i]);
+            }
         }
 
-        mergeSort(0, n - 1, nums, sorting, ans, temp);
         return ans;
     }
 
 private:
-    void mergeSort(int left, int right, vector<int>& nums, vector<int>& sorting, vector<int>& ans, vector<int>& temp) {
-        if (left >= right) {
-            return;
-        }
-
-        int mid = (left + right) / 2;
-        mergeSort(left, mid, nums, sorting, ans, temp);
-        mergeSort(mid + 1, right, nums, sorting, ans, temp);
-        copy(sorting.begin() + left, sorting.begin() + right + 1, temp.begin() + left);
-        int i = left;
-        int j = mid + 1;
-        int cur = left;
-        while (i <= mid && j <= right) {
-            if (nums[temp[i]] > nums[temp[j]]) {
-                ans[temp[i]] += right - j + 1;
-                sorting[cur++] = temp[i++];
+    void insertNode(BSTNode* node, BSTNode* target, int& ans)
+    {
+        if (target->val > node->val)
+        {
+            ans += node->count + 1;
+            if (node->right == nullptr)
+            {
+                node->right = target;
             }
-            else {
-                sorting[cur++] = temp[j++];
+            else
+            {
+                insertNode(node->right, target, ans);
             }
         }
-
-        while (i <= mid) {
-            sorting[cur++] = temp[i++];
-        }
-
-        while (j <= right) {
-            sorting[cur++] = temp[j++];
+        else
+        {
+            ++node->count;
+            if (node->left == nullptr)
+            {
+                node->left = target;
+            }
+            else
+            {
+                insertNode(node->left, target, ans);
+            }
         }
     }
 };
+
+//class Solution {
+//public:
+//    vector<int> countSmaller(vector<int>& nums) {
+//        int n = nums.size();
+//        vector<int> ans(n);
+//        vector<int> sorting(n);
+//        vector<int> temp(n);
+//        for (int i = 0; i < n; ++i) {
+//            sorting[i] = i;
+//        }
+//
+//        mergeSort(0, n - 1, nums, sorting, ans, temp);
+//        return ans;
+//    }
+//
+//private:
+//    void mergeSort(int left, int right, vector<int>& nums, vector<int>& sorting, vector<int>& ans, vector<int>& temp) {
+//        if (left >= right) {
+//            return;
+//        }
+//
+//        int mid = (left + right) / 2;
+//        mergeSort(left, mid, nums, sorting, ans, temp);
+//        mergeSort(mid + 1, right, nums, sorting, ans, temp);
+//        copy(sorting.begin() + left, sorting.begin() + right + 1, temp.begin() + left);
+//        int i = left;
+//        int j = mid + 1;
+//        int cur = left;
+//        while (i <= mid && j <= right) {
+//            if (nums[temp[i]] > nums[temp[j]]) {
+//                ans[temp[i]] += right - j + 1;
+//                sorting[cur++] = temp[i++];
+//            }
+//            else {
+//                sorting[cur++] = temp[j++];
+//            }
+//        }
+//
+//        while (i <= mid) {
+//            sorting[cur++] = temp[i++];
+//        }
+//
+//        while (j <= right) {
+//            sorting[cur++] = temp[j++];
+//        }
+//    }
+//};
