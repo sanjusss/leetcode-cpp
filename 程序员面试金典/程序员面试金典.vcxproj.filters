@@ -36,6 +36,9 @@
     <ClInclude Include="16.11.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="08.03.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="17.13.hpp">
