@@ -101,6 +101,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14xx", "14xx\14xx.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest14xx", "UnitTest14xx\UnitTest14xx.vcxproj", "{C59A4C19-927B-4797-928A-E8E50003CCB7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C2XX", "C2XX\C2XX.vcxproj", "{920EA9A0-5B3E-49C2-8EEC-587724BFD715}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonCode\CommonCode.vcxitems*{002e4d51-2109-408c-9460-5cabc434d9e8}*SharedItemsImports = 4
@@ -127,6 +129,7 @@ Global
 		CommonCode\CommonCode.vcxitems*{84acfbdb-6ce2-4489-904c-17fe94acca11}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{8ba1f196-b31e-4096-87f9-cce41cd196ab}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{8dac8c97-4b1b-492a-95df-9118dbbe8f13}*SharedItemsImports = 4
+		CommonCode\CommonCode.vcxitems*{920ea9a0-5b3e-49c2-8eec-587724bfd715}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{98e19f4f-e3b9-4ea9-a7b6-c0a3c31d03dd}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{9a849364-e945-4404-bcc5-f7aa4af27a11}*SharedItemsImports = 4
 		CommonCode\CommonCode.vcxitems*{9d8012d7-2f77-4cbd-881b-7f02083532b1}*SharedItemsImports = 4
@@ -490,6 +493,14 @@ Global
 		{C59A4C19-927B-4797-928A-E8E50003CCB7}.Release|x64.Build.0 = Release|x64
 		{C59A4C19-927B-4797-928A-E8E50003CCB7}.Release|x86.ActiveCfg = Release|Win32
 		{C59A4C19-927B-4797-928A-E8E50003CCB7}.Release|x86.Build.0 = Release|Win32
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Debug|x64.ActiveCfg = Debug|x64
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Debug|x64.Build.0 = Debug|x64
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Debug|x86.ActiveCfg = Debug|Win32
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Debug|x86.Build.0 = Debug|Win32
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Release|x64.ActiveCfg = Release|x64
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Release|x64.Build.0 = Release|x64
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Release|x86.ActiveCfg = Release|Win32
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -537,6 +548,7 @@ Global
 		{9A849364-E945-4404-BCC5-F7AA4AF27A11} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
 		{84ACFBDB-6CE2-4489-904C-17FE94ACCA11} = {FCE485B3-0E40-46BF-A581-71B980FAEB28}
 		{C59A4C19-927B-4797-928A-E8E50003CCB7} = {14C9DACF-7564-496C-8273-3F141EFC83C2}
+		{920EA9A0-5B3E-49C2-8EEC-587724BFD715} = {61FF6D5A-8F9B-435E-9499-D028417014F7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A3B4B8A-7AAA-47DE-BF19-3062806B6EC0}
