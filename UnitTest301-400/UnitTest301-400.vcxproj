@@ -114,6 +114,7 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -171,6 +172,7 @@
     <ClCompile Include="UnitTest322.cpp" />
     <ClCompile Include="UnitTest328.cpp" />
     <ClCompile Include="UnitTest329.cpp" />
+    <ClCompile Include="UnitTest336.cpp" />
     <ClCompile Include="UnitTest337.cpp" />
     <ClCompile Include="UnitTest365.cpp" />
     <ClCompile Include="UnitTest371.cpp" />
