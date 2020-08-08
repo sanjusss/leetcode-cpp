@@ -237,6 +237,9 @@
     <ClInclude Include="0100.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0099.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="0090.hpp">
