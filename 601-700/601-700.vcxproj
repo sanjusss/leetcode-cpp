@@ -88,6 +88,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,6 +128,7 @@
     <ClInclude Include="0621.hpp" />
     <ClInclude Include="0622.hpp" />
     <ClInclude Include="0632.hpp" />
+    <ClInclude Include="0647.hpp" />
     <ClInclude Include="0652.hpp" />
     <ClInclude Include="0658.hpp" />
     <ClInclude Include="0679.hpp" />
