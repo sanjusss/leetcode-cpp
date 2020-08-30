@@ -22,6 +22,9 @@
     <Filter Include="头文件\203">
       <UniqueIdentifier>{18193081-b296-48d2-83bd-4d30cca62072}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\204">
+      <UniqueIdentifier>{b97fe439-206c-4f2f-b233-95d72e4bce61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="5475.hpp">
@@ -56,6 +59,12 @@
     </ClInclude>
     <ClInclude Include="5497.hpp">
       <Filter>头文件\203</Filter>
+    </ClInclude>
+    <ClInclude Include="5499.hpp">
+      <Filter>头文件\204</Filter>
+    </ClInclude>
+    <ClInclude Include="5500.hpp">
+      <Filter>头文件\204</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
