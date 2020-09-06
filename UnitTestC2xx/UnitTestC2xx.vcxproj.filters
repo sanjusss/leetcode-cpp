@@ -16,6 +16,9 @@
     <Filter Include="源文件\202">
       <UniqueIdentifier>{ab08473d-6d90-4405-933b-4340b2f86199}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\205">
+      <UniqueIdentifier>{f20802cb-ae5c-444b-9793-079ba3ac6bb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -26,6 +29,9 @@
     </ClCompile>
     <ClCompile Include="UnitTest5489.cpp">
       <Filter>源文件\202</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest5508.cpp">
+      <Filter>源文件\205</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

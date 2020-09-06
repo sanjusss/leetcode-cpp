@@ -154,6 +154,9 @@
     <ClInclude Include="5497.hpp" />
     <ClInclude Include="5499.hpp" />
     <ClInclude Include="5500.hpp" />
+    <ClInclude Include="5507.hpp" />
+    <ClInclude Include="5508.hpp" />
+    <ClInclude Include="5509.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
