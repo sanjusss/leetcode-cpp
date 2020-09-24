@@ -57,5 +57,8 @@
     <ClInclude Include="0538.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="0501.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
