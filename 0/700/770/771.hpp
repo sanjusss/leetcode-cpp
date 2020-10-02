@@ -1,10 +1,10 @@
 #pragma once
 #include "leetcode.h"
 
-//class Solution 
+// class Solution
 //{
-//public:
-//    int numJewelsInStones(string J, string S) 
+// public:
+//    int numJewelsInStones(string J, string S)
 //    {
 //        set<char> js;
 //        for (auto i : J)
@@ -24,20 +24,39 @@
 //        return count;
 //    }
 //};
-class Solution
-{
-public:
-    int numJewelsInStones(string J, string S)
-    {
-        int count = 0;
-        for (auto i : S)
-        {
-            if (J.find_first_of(i) != string::npos)
-            {
-                ++count;
+// class Solution
+// {
+// public:
+//     int numJewelsInStones(string J, string S)
+//     {
+//         int count = 0;
+//         for (auto i : S)
+//         {
+//             if (J.find_first_of(i) != string::npos)
+//             {
+//                 ++count;
+//             }
+//         }
+
+//         return count;
+//     }
+// };
+
+class Solution {
+   public:
+    int numJewelsInStones(string J, string S) {
+        vector<bool> js(128);
+        for (auto i : J) {
+            js[i] = true;
+        }
+
+        int ans = 0;
+        for (auto i : S) {
+            if (js[i]) {
+                ++ans;
             }
         }
 
-        return count;
+        return ans;
     }
 };
