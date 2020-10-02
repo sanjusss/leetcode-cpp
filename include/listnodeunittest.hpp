@@ -1,94 +1,80 @@
 #pragma once
 
-#include <stdexcept>
 #include <memory>
+#include <stdexcept>
 #include <string>
 
 #include "listnode.h"
 
-namespace Microsoft
-{
-    namespace VisualStudio
-    {
-        namespace CppUnitTestFramework
-        {
-            inline void freeListNode(const ListNode* head)
-            {
-                while (head != nullptr)
-                {
-                    auto temp = head;
-                    head = head->next;
-                    delete temp;
-                }
-            }
+namespace std {
+inline std::string to_string(const ListNode* t) {
+    return "\nuse \"ListNode\" or \"shared_ptr<ListNode>\" instead of "
+           "\"ListNode*\" in Assert::areEqual or Assert::notEqual !\n";
+}
 
-            inline std::vector<std::shared_ptr<ListNode>> createListNodeAutoRemovers(ListNode* head)
-            {
-                std::vector<std::shared_ptr<ListNode>> removers;
-                while (head != nullptr)
-                {
-                    removers.push_back(std::shared_ptr<ListNode>(head));
-                    head = head->next;
-                }
+inline std::string to_string(ListNode* t) {
+    return "\nuse \"ListNode\" or \"shared_ptr<ListNode>\" instead of "
+           "\"ListNode*\" in Assert::areEqual or Assert::notEqual !\n";
+}
 
-                return removers;
-            }
+inline std::string to_string(const ListNode& node) {
+    std::string res;
+    res += "[";
 
-            inline std::wstring ToString(const ListNode* t)
-            {
-                return L"\nuse \"ListNode\" or \"shared_ptr<ListNode>\" instead of \"ListNode*\" in Assert::areEqual or Assert::notEqual !\n";
-            }
-
-            inline std::wstring ToString(ListNode* t)
-            {
-                return L"\nuse \"ListNode\" or \"shared_ptr<ListNode>\" instead of \"ListNode*\" in Assert::areEqual or Assert::notEqual !\n";
-            }
-
-            inline std::wstring ToString(const ListNode& node)
-            {
-                std::wstring res;
-                res += L"[";
-
-                const ListNode* head = &node;
-                while (head != nullptr)
-                {
-                    res += std::to_wstring(head->val);
-                    if (head->next != nullptr)
-                    {
-                        res += L",";
-                    }
-
-                    head = head->next;
-                }
-
-                res += L"]";
-                return res;
-            }
-
-            inline bool operator == (const ListNode& a, const ListNode& b)
-            {
-                return ToString(a) == ToString(b);
-            }
-
-            inline bool operator != (const ListNode& a, const ListNode& b)
-            {
-                return ToString(a) != ToString(b);
-            }
-
-            inline std::wstring ToString(const std::shared_ptr<ListNode>& node)
-            {
-                return ToString(*node);
-            }
-
-            inline bool operator == (const std::shared_ptr<ListNode>& a, const std::shared_ptr<ListNode>& b)
-            {
-                return ToString(a) == ToString(b);
-            }
-
-            inline bool operator != (const std::shared_ptr<ListNode>& a, const std::shared_ptr<ListNode>& b)
-            {
-                return ToString(a) != ToString(b);
-            }
+    const ListNode* head = &node;
+    while (head != nullptr) {
+        res += std::to_string(head->val);
+        if (head->next != nullptr) {
+            res += ",";
         }
+
+        head = head->next;
+    }
+
+    res += "]";
+    return res;
+}
+
+inline std::string to_string(const std::shared_ptr<ListNode>& node) {
+    return std::to_string(*node);
+}
+}  // namespace std
+
+namespace leetcode {
+inline void freeListNode(const ListNode* head) {
+    while (head != nullptr) {
+        auto temp = head;
+        head = head->next;
+        delete temp;
     }
 }
+
+inline std::vector<std::shared_ptr<ListNode>> createListNodeAutoRemovers(
+    ListNode* head) {
+    std::vector<std::shared_ptr<ListNode>> removers;
+    while (head != nullptr) {
+        removers.push_back(std::shared_ptr<ListNode>(head));
+        head = head->next;
+    }
+
+    return removers;
+}
+
+inline bool operator==(const ListNode& a, const ListNode& b) {
+    return std::to_string(a) == std::to_string(b);
+}
+
+inline bool operator!=(const ListNode& a, const ListNode& b) {
+    return std::to_string(a) != std::to_string(b);
+}
+
+inline bool operator==(const std::shared_ptr<ListNode>& a,
+                       const std::shared_ptr<ListNode>& b) {
+    return std::to_string(a) == std::to_string(b);
+}
+
+inline bool operator!=(const std::shared_ptr<ListNode>& a,
+                       const std::shared_ptr<ListNode>& b) {
+    return std::to_string(a) != std::to_string(b);
+}
+}  // namespace leetcode

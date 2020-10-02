@@ -1,7 +1,10 @@
 #pragma once
 
-#include "stringconvert.h"
-#include "areequal.h"
-#include "listnodeunittest.hpp"
-#include "treenodeunittest.hpp"
+#include "areequal.hpp"
+#include "caseloader.hpp"
 #include "functiontest.hpp"
+#include "listnodeunittest.hpp"
+#include "stringconvert.hpp"
+#include "treenodeunittest.hpp"
+
+using namespace leetcode;
