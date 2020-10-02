@@ -1,5 +1,6 @@
 /***
  * 测试用例示例文件。
+ * 需要先安装boost库、gcc、gdb
  * 对于测试用例"testxxx.cpp"，打开文件后按F5即可运行测试。
  */
 
@@ -12,7 +13,11 @@
  *  @param params 测试用的参数。依次为被测函数调用的参数，预估值。
  */
 void test_function(const vector<string>& params) {
-    //应把string转为实际参数的类型。
+    /**
+     * 应把string转为实际参数的类型。
+     * include/stringconvert.hpp中有对应的实现。
+     */
+
 }
 
 /**
