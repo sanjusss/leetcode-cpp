@@ -42,6 +42,7 @@ vector<vector<string>> loadParams(const string& codeFile) {
         }
 
         if (param.size() == caseLineSize) {
+            param.push_back(to_string(params.size()));
             params.push_back(move(param));
         }
     }

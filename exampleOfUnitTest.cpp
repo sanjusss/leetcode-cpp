@@ -10,7 +10,7 @@
  *  @brief 
  *  用于测试每套测试用例的函数。不能改写此声明。
  * 
- *  @param params 测试用的参数。依次为被测函数调用的参数，预估值。
+ *  @param params 测试用的参数。依次为被测函数调用的参数，预估值，测试用例的索引。
  */
 void test_function(const vector<string>& params) {
     /**
