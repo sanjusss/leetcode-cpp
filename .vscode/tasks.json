@@ -10,8 +10,7 @@
                 "-o",
                 "${workspaceFolder}/out/${fileBasenameNoExtension}",
                 "-I",
-                "${workspaceFolder}/include",
-                "-lboost_unit_test_framework"
+                "${workspaceFolder}/include"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

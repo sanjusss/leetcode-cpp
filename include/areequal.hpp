@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ostream>
 #include <string>
 #include <vector>
 
@@ -20,6 +21,17 @@ inline std::string to_string(const std::vector<T>& t) {
     res += "]";
     return res;
 }
+
+template <typename T>
+inline std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec) {
+    return os << to_string(vec);
+}
+
+template <typename T>
+inline bool operator==(const std::vector<T>& a, const std::vector<T>& b) {
+    return to_string(a) == to_string(b);
+}
+
 }  // namespace std
 
 namespace leetcode {
