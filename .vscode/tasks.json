@@ -2,8 +2,8 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
+            "label": "GCC构建当前文件",
+            "command": "gcc",
             "args": [
                 "-g",
                 "${file}",

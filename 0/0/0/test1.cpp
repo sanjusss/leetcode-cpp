@@ -12,14 +12,11 @@
  * 
  *  @param params 测试用的参数。依次为被测函数调用的参数，预估值，测试用例的索引。
  */
-void test_function(const vector<string>& params) {
+void test_function(const vector<string>& params, int index) {
     /**
      * 应把string转为实际参数的类型。
      * include/stringconvert.hpp中有对应的实现。
      */
-    int index = stoi(params.back());
-    BOOST_TEST_MESSAGE("test " + to_string(index));
-
     auto nums = toIntArray(params[0]);
     auto target = stoi(params[1]);
     auto expected = toIntArray(params[2]);
@@ -27,7 +24,7 @@ void test_function(const vector<string>& params) {
     auto actual = sln.twoSum(nums, target);
     sort(actual.begin(), actual.end());
     sort(expected.begin(), expected.end());
-    BOOST_CHECK_EQUAL(expected, actual);
+    testCheckEqual(expected, actual);
 }
 
 /**

@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++ - 生成和调试活动文件",
+            "name": "GCC生成和调试当前文件",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/out/unittest",
-            "args": ["--log_level=message"],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -22,8 +22,8 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++ build active file",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "preLaunchTask": "GCC构建当前文件",
+            "miDebuggerPath": "gdb"
         }
     ]
 }
