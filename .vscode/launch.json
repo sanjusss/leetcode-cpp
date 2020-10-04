@@ -8,7 +8,7 @@
             "name": "g++ - 生成和调试活动文件",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/out/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/out/unittest",
             "args": ["--log_level=message"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

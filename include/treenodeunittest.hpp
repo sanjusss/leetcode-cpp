@@ -5,8 +5,56 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "treenode.h"
+
+namespace std {
+inline std::string to_string(const TreeNode* t) {
+    return "\nuse \"TreeNode\" or \"shared_ptr<TreeNode>\" instead of "
+           "\"TreeNode*\" in Assert::areEqual or Assert::notEqual !\n";
+}
+
+inline std::string to_string(TreeNode* t) {
+    return "\nuse \"TreeNode\" or \"shared_ptr<TreeNode>\" instead of "
+           "\"TreeNode*\" in Assert::areEqual or Assert::notEqual !\n";
+}
+
+inline std::string to_string(const TreeNode& root) {
+    std::queue<const TreeNode*> q({&root});
+    std::string mid;
+    while (q.empty() == false) {
+        if (mid.empty() == false) {
+            mid += ",";
+        }
+
+        auto node = q.front();
+        if (node == nullptr) {
+            mid += "null";
+        } else {
+            mid += std::to_string(node->val);
+            q.push(node->left);
+            q.push(node->right);
+        }
+
+        q.pop();
+    }
+
+    return "[" + mid + "]";
+}
+
+inline std::string to_string(const std::shared_ptr<TreeNode>& node) {
+    return to_string(*node);
+}
+
+inline std::ostream& operator<<(std::ostream& os, const TreeNode& node) {
+    return os << to_string(node);
+}
+
+inline std::ostream& operator<<(std::ostream& os, const std::shared_ptr<TreeNode>& node) {
+    return os << to_string(node);
+}
+}  // namespace std
 
 namespace leetcode {
 inline void freeTreeNode(const TreeNode* root) {
@@ -54,59 +102,26 @@ inline std::vector<std::shared_ptr<TreeNode>> createTreeNodeAutoRemovers(
 
     return removers;
 }
-
-inline std::wstring ToString(const TreeNode* t) {
-    return L"\nuse \"TreeNode\" or \"shared_ptr<TreeNode>\" instead of "
-           L"\"TreeNode*\" in Assert::areEqual or Assert::notEqual !\n";
-}
-
-inline std::wstring ToString(TreeNode* t) {
-    return L"\nuse \"TreeNode\" or \"shared_ptr<TreeNode>\" instead of "
-           L"\"TreeNode*\" in Assert::areEqual or Assert::notEqual !\n";
-}
-
-inline std::wstring ToString(const TreeNode& root) {
-    std::queue<const TreeNode*> q({&root});
-    std::wstring mid;
-    while (q.empty() == false) {
-        if (mid.empty() == false) {
-            mid += L",";
-        }
-
-        auto node = q.front();
-        if (node == nullptr) {
-            mid += L"null";
-        } else {
-            mid += std::to_wstring(node->val);
-            q.push(node->left);
-            q.push(node->right);
-        }
-
-        q.pop();
-    }
-
-    return L"[" + mid + L"]";
-}
+}  // namespace leetcode
 
 inline bool operator==(const TreeNode& a, const TreeNode& b) {
-    return ToString(a) == ToString(b);
+    return std::to_string(a) == std::to_string(b);
 }
 
 inline bool operator!=(const TreeNode& a, const TreeNode& b) {
-    return ToString(a) != ToString(b);
+    return std::to_string(a) != std::to_string(b);
 }
 
-inline std::wstring ToString(const std::shared_ptr<TreeNode>& node) {
-    return ToString(*node);
+inline std::string to_string(const std::shared_ptr<TreeNode>& node) {
+    return std::to_string(*node);
 }
 
 inline bool operator==(const std::shared_ptr<TreeNode>& a,
                        const std::shared_ptr<TreeNode>& b) {
-    return ToString(a) == ToString(b);
+    return std::to_string(a) == std::to_string(b);
 }
 
 inline bool operator!=(const std::shared_ptr<TreeNode>& a,
                        const std::shared_ptr<TreeNode>& b) {
-    return ToString(a) != ToString(b);
+    return std::to_string(a) != std::to_string(b);
 }
-}  // namespace leetcode

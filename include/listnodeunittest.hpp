@@ -3,6 +3,7 @@
 #include <memory>
 #include <stdexcept>
 #include <string>
+#include <fstream>
 
 #include "listnode.h"
 
@@ -38,6 +39,15 @@ inline std::string to_string(const ListNode& node) {
 inline std::string to_string(const std::shared_ptr<ListNode>& node) {
     return std::to_string(*node);
 }
+
+inline std::ostream& operator<<(std::ostream& os, const ListNode& node) {
+    return os << to_string(node);
+}
+
+inline std::ostream& operator<<(std::ostream& os, const std::shared_ptr<ListNode>& node) {
+    return os << to_string(node);
+}
+
 }  // namespace std
 
 namespace leetcode {
@@ -59,6 +69,7 @@ inline std::vector<std::shared_ptr<ListNode>> createListNodeAutoRemovers(
 
     return removers;
 }
+}  // namespace leetcode
 
 inline bool operator==(const ListNode& a, const ListNode& b) {
     return std::to_string(a) == std::to_string(b);
@@ -77,4 +88,3 @@ inline bool operator!=(const std::shared_ptr<ListNode>& a,
                        const std::shared_ptr<ListNode>& b) {
     return std::to_string(a) != std::to_string(b);
 }
-}  // namespace leetcode
