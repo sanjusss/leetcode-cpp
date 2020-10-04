@@ -1,7 +1,6 @@
 /***
  * 测试用例示例文件。
- * 需要先安装boost库、gcc、gdb
- * 对于测试用例"testxxx.cpp"，打开文件后按F5即可运行测试。
+ * 目前只支持gcc和mingw
  */
 
 #include "unittest.h"
@@ -16,9 +15,9 @@
 void test_function(const vector<string>& params, int index) {
     /**
      * 应把string转为实际参数的类型。
-     * include/stringconvert.hpp中有对应的实现。
+     * include/inputfromstring.hpp中有对应的实现。
+     * 可以用testCheckEqual检查值是否为预计值。
      */
-
 }
 
 /**
