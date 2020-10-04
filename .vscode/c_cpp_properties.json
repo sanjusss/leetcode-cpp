@@ -7,9 +7,9 @@
                 "${workspaceFolder}/include"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c18",
-            "cppStandard": "c++20",
+            "compilerPath": "gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64"
         }
     ],

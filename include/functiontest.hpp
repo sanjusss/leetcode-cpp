@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 
-#include "json.hpp"
+#include <nlohmann/json.hpp>
 
 namespace leetcode {
 template <class T>

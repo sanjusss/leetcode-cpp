@@ -1,24 +1,51 @@
 #pragma once
-#include <boost/test/included/unit_test.hpp>
-#include <boost/test/parameterized_test.hpp>
+
+#include <exception>
 #include <fstream>
+#include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 
 #include "stringconvert.hpp"
 
-using namespace boost::unit_test;
 using namespace std;
 using namespace leetcode;
 
-#define DEFINE_TESTS_SUITE \
-boost::unit_test::test_suite* init_unit_test_suite(int /*argc*/,\
-                                                   char* /*argv*/[]) {\
-    auto params = loadParams(__FILE__);\
-    boost::unit_test::framework::master_test_suite().add(\
-        BOOST_PARAM_TEST_CASE(&test_function, params.begin(), params.end()));\
-    return 0;\
-}
+#define DEFINE_TESTS_SUITE                                             \
+    int main(int /*argc*/, char* /*argv*/[]) {                         \
+        vector<vector<string>> params = move(loadParams(__FILE__));    \
+        int failed = 0;                                                \
+        int success = 0;                                               \
+        int index = 0;                                                 \
+        for (auto& i : params) {                                       \
+            ++index;                                                   \
+            try {                                                      \
+                test_function(i, index);                               \
+                ++success;                                             \
+            } catch (exception e) {                                    \
+                cout << "Test " << index << " has failed." << e.what() \
+                     << endl;                                          \
+                ++failed;                                              \
+            } catch (...) {                                            \
+                ++failed;                                              \
+            }                                                          \
+        }                                                              \
+                                                                       \
+        cout << "Totoal:" << index << ", success:" << success          \
+             << ", failed:" << failed << endl;                         \
+        return 0;                                                      \
+    }
+
+class TestException : public exception {
+   public:
+    TestException(const string& msg) : m_msg(msg) {}
+
+    virtual const char* what() const noexcept override { return m_msg.c_str(); }
+
+   private:
+    string m_msg;
+};
 
 vector<vector<string>> loadParams(const string& codeFile) {
     auto pos = codeFile.find_last_of('.');
@@ -42,10 +69,32 @@ vector<vector<string>> loadParams(const string& codeFile) {
         }
 
         if (param.size() == caseLineSize) {
-            param.push_back(to_string(params.size()));
             params.push_back(move(param));
         }
     }
 
     return params;
+}
+
+template <class T>
+void testCheckEqual(const T& expected, const T& actual) {
+    if (expected == actual) {
+        return;
+    }
+
+    stringstream ss;
+    ss << "expected: " << expected << " , "
+       << "actual: " << actual;
+    throw TestException(ss.str());
+}
+
+void testCheckEqual(double expected, double actual, double deviation) {
+    if (abs(expected - actual) <= deviation) {
+        return;
+    }
+
+    stringstream ss;
+    ss << "expected: " << expected << " , "
+       << "actual: " << actual;
+    throw TestException(ss.str());
 }
