@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 
-#include <nlohmann/json.hpp>
+#include "inputfromstring.hpp"
 
 namespace leetcode {
 template <class T>
@@ -37,24 +37,15 @@ public:
 
 private:
     void initCalls(const std::string& calls) {
-        auto j = nlohmann::json::parse(calls);
-        m_calls = j.get<std::vector<std::string>>();
+        m_calls = move(toStringArray(calls));
     }
 
     void initInputs(const std::string& inputs) {
-        m_inputs.clear();
-        auto j = nlohmann::json::parse(inputs);
-        for (auto i : j) {
-            m_inputs.push_back(i.dump());
-        }
+        m_inputs = move(toStringArray(inputs));
     }
 
     void initExpecteds(const std::string& expecteds) {
-        m_expecteds.clear();
-        auto j = nlohmann::json::parse(expecteds);
-        for (auto i : j) {
-            m_expecteds.push_back(i.dump());
-        }
+        m_expecteds = move(toStringArray(expecteds));
     }
 
 private:

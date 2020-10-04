@@ -8,6 +8,9 @@
             "name": "GCC生成和调试当前文件",
             "type": "cppdbg",
             "request": "launch",
+            "windows": {
+                "program": "${workspaceFolder}/out/unittest.exe"
+            },
             "program": "${workspaceFolder}/out/unittest",
             "args": [],
             "stopAtEntry": false,

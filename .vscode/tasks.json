@@ -10,7 +10,9 @@
                 "-o",
                 "${workspaceFolder}/out/unittest",
                 "-I",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "-std=c++17",
+                "-lstdc++"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

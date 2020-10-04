@@ -5,7 +5,8 @@
 #include "listnodeunittest.hpp"
 #include "stringconvert.hpp"
 #include "treenodeunittest.hpp"
+#include "inputfromstring.hpp"
+#include "string2array.hpp"
+#include "caseloader.hpp"
 
 using namespace leetcode;
-
-#include "caseloader.hpp"

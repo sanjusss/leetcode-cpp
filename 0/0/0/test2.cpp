@@ -13,7 +13,7 @@
  * 
  *  @param params 测试用的参数。依次为被测函数调用的参数，预估值，测试用例的索引。
  */
-void test_function(const vector<string>& params) {
+void test_function(const vector<string>& params, int index) {
     /**
      * 应把string转为实际参数的类型。
      * include/stringconvert.hpp中有对应的实现。
@@ -23,7 +23,7 @@ void test_function(const vector<string>& params) {
     ListNode* expected = toListNode(params[2]);
     Solution sln;
     ListNode* actual = sln.addTwoNumbers(l1, l2);
-    BOOST_CHECK_EQUAL((const ListNode&)*expected, (const ListNode&)*actual);
+    testCheckEqual((const ListNode&)*expected, (const ListNode&)*actual);
 }
 
 /**
