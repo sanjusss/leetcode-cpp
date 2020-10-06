@@ -1,6 +1,11 @@
 /***
  * 测试用例示例文件。
- * 目前只支持gcc和mingw
+ * 目前只支持gcc和mingw。
+ * 
+ * 每个待测文件需要有一个同名的cases文件。
+ * 例如需要测试"test771.cpp"，需要在相同目录下准备一个"test771.cases"文件。
+ * cases文件第一行格式为"a,b"，a表示test_function中params的大小（即被测函数参数数量+预估值数量），b表示是否删除下面每行首尾的双引号。
+ * 第二行开始是测试用例的内容。每个参数/预估值为一行。
  */
 
 #include "unittest.h"
@@ -12,20 +17,10 @@
  *  @param params 测试用的参数。依次为被测函数调用的参数，预估值。
  *  @param index 测试用例的索引。
  */
-void test_function(const vector<string>& params, int index) {
+DEFINE_TESTS(params, index) {
     /**
      * 应把string转为实际参数的类型。
      * include/inputfromstring.hpp中有对应的实现。
      * 可以用testCheckEqual检查值是否为预计值。
      */
 }
-
-/**
- * 初始化所有测试用例，必须放在最后。
- * 每个待测文件需要有一个同名的cases文件。
- * 例如需要测试"test771.cpp"，需要在相同目录下准备一个"test771.cases"文件。
- * 
- * cases文件第一行格式为"a,b"，a表示test_function中params的大小（即被测函数参数数量+预估值数量），b表示是否删除下面每行首尾的双引号。
- * 第二行开始是测试用例的内容。每个参数/预估值为一行。
- */
-DEFINE_TESTS_SUITE

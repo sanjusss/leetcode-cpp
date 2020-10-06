@@ -1,3 +1,10 @@
+/*
+ * @Author: sanjusss
+ * @Date: 2020-10-02 18:19:02
+ * @LastEditors: sanjusss
+ * @LastEditTime: 2020-10-06 07:27:50
+ * @FilePath: \include\caseloader.hpp
+ */
 #pragma once
 
 #include <exception>
@@ -17,6 +24,10 @@ using namespace leetcode;
         runTests(__FILE__);                    \
         return 0;                              \
     }
+
+#define DEFINE_TESTS(X, Y)   \
+    DEFINE_TESTS_SUITE \
+    void test_function(const vector<string>& X, int Y)
 
 void test_function(const vector<string>& params, int index);
 
