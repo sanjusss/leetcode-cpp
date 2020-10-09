@@ -1,12 +1,11 @@
 #pragma once
 
-#include "stringconvert.hpp"
-#include "string2array.hpp"
 #include "listnode.h"
+#include "string2array.hpp"
+#include "stringconvert.hpp"
 #include "treenode.h"
 
 namespace leetcode {
-
 
 inline std::vector<int> toIntArray(std::string s) { return toArray<int>(s); }
 
@@ -22,35 +21,47 @@ inline std::vector<std::vector<std::string>> toString2DArray(std::string s) {
     return to2DArray<std::string>(s);
 }
 
-inline std::vector<char> toCharArray(std::string s) {
-    return toArray<char>(s);
-}
+inline std::vector<char> toCharArray(std::string s) { return toArray<char>(s); }
 
 inline std::vector<std::vector<char>> toChar2DArray(std::string s) {
     return to2DArray<char>(s);
 }
 
-inline ListNode* toListNode(std::vector<int>& arr) {
+inline ListNode* toListNode(std::vector<int>& arr,
+                            std::vector<ListNode*>* nodes = nullptr) {
     std::shared_ptr<ListNode> root(new ListNode(0));
     auto head = root.get();
     for (auto i : arr) {
         head->next = new ListNode(i);
         head = head->next;
+
+        if (nodes != nullptr) {
+            nodes->push_back(head);
+        }
     }
 
     return root->next;
 }
 
-inline ListNode* toListNode(std::string s) {
+inline ListNode* toListNode(std::string s,
+                            std::vector<ListNode*>* nodes = nullptr) {
     auto arr = toIntArray(s);
-    return toListNode(arr);
+    return toListNode(arr, nodes);
 }
 
-inline std::vector<ListNode*> toListNodeArray(std::string s) {
+inline std::vector<ListNode*> toListNodeArray(
+    std::string s, std::vector<std::vector<ListNode*>>* nodes = nullptr) {
     std::vector<ListNode*> res;
     auto arrs = toInt2DArray(s);
     for (auto& arr : arrs) {
-        res.push_back(toListNode(arr));
+        if (nodes == nullptr) {
+            res.push_back(toListNode(arr));
+        }
+        else {
+            std::vector<ListNode*> row;
+            res.push_back(toListNode(arr, &row));
+            nodes->push_back(move(row));
+        }
     }
 
     return res;
@@ -99,4 +110,4 @@ inline TreeNode* toTreeNode(std::string data) {
 
     return nodes.empty() ? nullptr : nodes.front();
 }
-}
+}  // namespace leetcode
