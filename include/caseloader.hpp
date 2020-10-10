@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2020-10-02 18:19:02
  * @LastEditors: sanjusss
- * @LastEditTime: 2020-10-06 07:27:50
+ * @LastEditTime: 2020-10-10 08:38:20
  * @FilePath: \include\caseloader.hpp
  */
 #pragma once
@@ -80,6 +80,42 @@ void testCheckEqual(double expected, double actual, double deviation) {
     stringstream ss;
     ss << "expected: " << expected << " , "
        << "actual: " << actual;
+    throw TestException(ss.str());
+}
+
+template <class T>
+void testCheckSame(T* expected, T* actual) {
+    if (expected == actual) {
+        return;
+    }
+
+    stringstream ss;
+    ss << "expected: " << expected << "(" << (expected == nullptr ? "null"s : to_string(*expected)) << ") , "
+       << "actual: " << actual << "(" << (actual == nullptr ? "null"s : to_string(*actual)) << ")";
+    throw TestException(ss.str());
+}
+
+template <>
+void testCheckSame(ListNode* expected, ListNode* actual) {
+    if (expected == actual) {
+        return;
+    }
+
+    stringstream ss;
+     ss << "expected: " << expected << "(" << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
+       << "actual: " << actual << "(" << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
+    throw TestException(ss.str());
+}
+
+template <>
+void testCheckSame(TreeNode* expected, TreeNode* actual) {
+    if (expected == actual) {
+        return;
+    }
+
+    stringstream ss;
+     ss << "expected: " << expected << "(" << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
+       << "actual: " << actual << "(" << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
     throw TestException(ss.str());
 }
 

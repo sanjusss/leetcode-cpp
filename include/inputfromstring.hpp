@@ -7,31 +7,36 @@
 
 namespace leetcode {
 
-inline std::vector<int> toIntArray(std::string s) { return toArray<int>(s); }
+inline std::vector<int> toIntArray(const std::string& s) {
+    return toArray<int>(s);
+}
 
-inline std::vector<std::vector<int>> toInt2DArray(std::string s) {
+inline std::vector<std::vector<int>> toInt2DArray(const std::string& s) {
     return to2DArray<int>(s);
 }
 
-inline std::vector<std::string> toStringArray(std::string s) {
+inline std::vector<std::string> toStringArray(const std::string& s) {
     return toArray<std::string>(s);
 }
 
-inline std::vector<std::vector<std::string>> toString2DArray(std::string s) {
+inline std::vector<std::vector<std::string>> toString2DArray(
+    const std::string& s) {
     return to2DArray<std::string>(s);
 }
 
-inline std::vector<char> toCharArray(std::string s) { return toArray<char>(s); }
+inline std::vector<char> toCharArray(const std::string& s) {
+    return toArray<char>(s);
+}
 
-inline std::vector<std::vector<char>> toChar2DArray(std::string s) {
+inline std::vector<std::vector<char>> toChar2DArray(const std::string& s) {
     return to2DArray<char>(s);
 }
 
-inline ListNode* toListNode(std::vector<int>& arr,
+inline ListNode* toListNode(const std::vector<int>& arr,
                             std::vector<ListNode*>* nodes = nullptr) {
     std::shared_ptr<ListNode> root(new ListNode(0));
     auto head = root.get();
-    for (auto i : arr) {
+    for (int i : arr) {
         head->next = new ListNode(i);
         head = head->next;
 
@@ -43,21 +48,25 @@ inline ListNode* toListNode(std::vector<int>& arr,
     return root->next;
 }
 
-inline ListNode* toListNode(std::string s,
+inline ListNode* toListNode(const std::string& s,
                             std::vector<ListNode*>* nodes = nullptr) {
+    if (s == "null") {
+        return nullptr;
+    }
+
     auto arr = toIntArray(s);
     return toListNode(arr, nodes);
 }
 
 inline std::vector<ListNode*> toListNodeArray(
-    std::string s, std::vector<std::vector<ListNode*>>* nodes = nullptr) {
+    const std::string& s,
+    std::vector<std::vector<ListNode*>>* nodes = nullptr) {
     std::vector<ListNode*> res;
     auto arrs = toInt2DArray(s);
     for (auto& arr : arrs) {
         if (nodes == nullptr) {
             res.push_back(toListNode(arr));
-        }
-        else {
+        } else {
             std::vector<ListNode*> row;
             res.push_back(toListNode(arr, &row));
             nodes->push_back(move(row));
