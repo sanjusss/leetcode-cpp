@@ -2,11 +2,12 @@
  * @Author: sanjusss
  * @Date: 2020-10-02 18:19:02
  * @LastEditors: sanjusss
- * @LastEditTime: 2020-10-10 08:38:20
+ * @LastEditTime: 2020-10-11 09:51:19
  * @FilePath: \include\caseloader.hpp
  */
 #pragma once
 
+#include <chrono>
 #include <exception>
 #include <fstream>
 #include <iostream>
@@ -25,8 +26,8 @@ using namespace leetcode;
         return 0;                              \
     }
 
-#define DEFINE_TESTS(X, Y)   \
-    DEFINE_TESTS_SUITE \
+#define DEFINE_TESTS(X, Y) \
+    DEFINE_TESTS_SUITE     \
     void test_function(const vector<string>& X, int Y)
 
 void test_function(const vector<string>& params, int index);
@@ -90,8 +91,10 @@ void testCheckSame(T* expected, T* actual) {
     }
 
     stringstream ss;
-    ss << "expected: " << expected << "(" << (expected == nullptr ? "null"s : to_string(*expected)) << ") , "
-       << "actual: " << actual << "(" << (actual == nullptr ? "null"s : to_string(*actual)) << ")";
+    ss << "expected: " << expected << "("
+       << (expected == nullptr ? "null"s : to_string(*expected)) << ") , "
+       << "actual: " << actual << "("
+       << (actual == nullptr ? "null"s : to_string(*actual)) << ")";
     throw TestException(ss.str());
 }
 
@@ -102,8 +105,10 @@ void testCheckSame(ListNode* expected, ListNode* actual) {
     }
 
     stringstream ss;
-     ss << "expected: " << expected << "(" << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
-       << "actual: " << actual << "(" << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
+    ss << "expected: " << expected << "("
+       << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
+       << "actual: " << actual << "("
+       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
     throw TestException(ss.str());
 }
 
@@ -114,8 +119,10 @@ void testCheckSame(TreeNode* expected, TreeNode* actual) {
     }
 
     stringstream ss;
-     ss << "expected: " << expected << "(" << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
-       << "actual: " << actual << "(" << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
+    ss << "expected: " << expected << "("
+       << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
+       << "actual: " << actual << "("
+       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
     throw TestException(ss.str());
 }
 
@@ -127,9 +134,14 @@ void runTests(const string& codeFile) {
     for (auto& i : params) {
         ++index;
         try {
+            auto begin = chrono::system_clock::now();
             test_function(i, index);
+            auto end = chrono::system_clock::now();
             ++success;
-            cout << "Test " << index << " passed." << endl;
+            cout << "Test " << index << " passed.("
+                 << chrono::duration_cast<chrono::milliseconds>(end - begin)
+                        .count()
+                 << " ms)" << endl;
         } catch (exception& e) {
             cout << "Test " << index << " has failed. " << e.what() << endl;
             ++failed;
