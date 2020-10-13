@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2020-10-02 18:19:02
  * @LastEditors: sanjusss
- * @LastEditTime: 2020-10-11 09:51:19
+ * @LastEditTime: 2020-10-13 09:23:18
  * @FilePath: \include\caseloader.hpp
  */
 #pragma once
@@ -71,6 +71,16 @@ void testCheckEqual(const T& expected, const T& actual) {
     ss << "expected: " << expected << " , "
        << "actual: " << actual;
     throw TestException(ss.str());
+}
+
+template <>
+void testCheckEqual(ListNode* const& expected, ListNode* const& actual) {
+    testCheckEqual(*expected, *actual);
+}
+
+template <>
+void testCheckEqual(TreeNode* const& expected, TreeNode* const& actual) {
+    testCheckEqual(*expected, *actual);
 }
 
 void testCheckEqual(double expected, double actual, double deviation) {
