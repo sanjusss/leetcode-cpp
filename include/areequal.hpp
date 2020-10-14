@@ -5,6 +5,10 @@
 #include <vector>
 
 namespace std {
+inline std::string to_string(const std::string& s) { 
+    return "\"" + s + "\""; 
+}
+
 template <typename T>
 inline std::string to_string(const std::vector<T>& t) {
     std::string res;

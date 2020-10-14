@@ -136,6 +136,13 @@ void testCheckSame(TreeNode* expected, TreeNode* actual) {
     throw TestException(ss.str());
 }
 
+template <class T, class U = std::less<>>
+void testCheckEquivalent(vector<T> a, vector<T> b) {
+    sort(a.begin(), a.end(), U());
+    sort(b.begin(), b.end(), U());
+    testCheckEqual(a, b);
+}
+
 void runTests(const string& codeFile) {
     vector<vector<string>> params = move(loadParams(codeFile));
     int failed = 0;
