@@ -30,6 +30,9 @@ using namespace leetcode;
     DEFINE_TESTS_SUITE     \
     void test_function(const vector<string>& X, int Y)
 
+#define AREEQUAL(x, y) testCheckEqual(x, y)
+#define ARESAME(x,y) testCheckSame(x, y)
+
 void test_function(const vector<string>& params, int index);
 
 vector<vector<string>> loadParams(const string& codeFile) {
