@@ -31,7 +31,8 @@ using namespace leetcode;
     void test_function(const vector<string>& X, int Y)
 
 #define AREEQUAL(x, y) testCheckEqual(x, y)
-#define ARESAME(x,y) testCheckSame(x, y)
+#define ARESAME(x, y) testCheckSame(x, y)
+#define AREEQUIVALENT(x, y) testCheckEquivalent(x, y)
 
 void test_function(const vector<string>& params, int index);
 
