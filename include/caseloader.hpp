@@ -140,10 +140,17 @@ void testCheckSame(TreeNode* expected, TreeNode* actual) {
     throw TestException(ss.str());
 }
 
-template <class T, class U = std::less<>>
-void testCheckEquivalent(vector<T> a, vector<T> b) {
-    sort(a.begin(), a.end(), U());
-    sort(b.begin(), b.end(), U());
+template <class T, class W>
+void testCheckEquivalent(vector<T>& a, vector<T>& b, W cmp) {
+    sort(a.begin(), a.end(), cmp);
+    sort(b.begin(), b.end(), cmp);
+    testCheckEqual(a, b);
+}
+
+template <class T>
+void testCheckEquivalent(vector<T>& a, vector<T>& b) {
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
     testCheckEqual(a, b);
 }
 
