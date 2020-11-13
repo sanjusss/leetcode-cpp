@@ -140,6 +140,22 @@ void testCheckSame(TreeNode* expected, TreeNode* actual) {
     throw TestException(ss.str());
 }
 
+void testCheckSame(const vector<ListNode*>& expected, ListNode* actual) {
+    auto head = actual;
+    vector<ListNode*> nodes = toListNodeArray(actual);
+
+    if (expected.size() != nodes.size()) {
+        stringstream ss;
+        ss << "expected nodes' count : " << expected.size() << ", "
+        << "actual: nodes' count" << nodes.size();
+        throw TestException(ss.str());
+    }
+
+    for (int i = 0; i < expected.size(); ++i) {
+        testCheckSame(expected[i], nodes[i]);
+    }
+}
+
 template <class T, class W>
 void testCheckEquivalent(vector<T> a, vector<T> b, W cmp) {
     sort(a.begin(), a.end(), cmp);
@@ -152,6 +168,22 @@ void testCheckEquivalent(vector<T> a, vector<T> b) {
     sort(a.begin(), a.end());
     sort(b.begin(), b.end());
     testCheckEqual(a, b);
+}
+
+void testCheckEquivalent(const vector<ListNode*>& expected, ListNode* actual) {
+    vector<int> a;
+    for (auto i : expected) {
+        a.push_back(i->val);
+    }
+
+    auto b = toIntArray(actual);
+    testCheckEquivalent(a, b);
+}
+
+void testCheckEquivalent(ListNode* expected, ListNode* actual) {
+    auto a = toIntArray(expected);
+    auto b = toIntArray(actual);
+    testCheckEquivalent(a, b);
 }
 
 void runTests(const string& codeFile) {

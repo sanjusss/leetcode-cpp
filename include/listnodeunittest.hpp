@@ -1,9 +1,9 @@
 #pragma once
 
+#include <fstream>
 #include <memory>
 #include <stdexcept>
 #include <string>
-#include <fstream>
 
 #include "listnode.h"
 
@@ -36,13 +36,9 @@ inline std::string to_string(const ListNode& node) {
     return res;
 }
 
-inline std::string to_string(const std::shared_ptr<ListNode>& node) {
-    return std::to_string(*node);
-}
+inline std::string to_string(const std::shared_ptr<ListNode>& node) { return std::to_string(*node); }
 
-inline std::ostream& operator<<(std::ostream& os, const ListNode& node) {
-    return os << to_string(node);
-}
+inline std::ostream& operator<<(std::ostream& os, const ListNode& node) { return os << to_string(node); }
 
 inline std::ostream& operator<<(std::ostream& os, const std::shared_ptr<ListNode>& node) {
     return os << to_string(node);
@@ -59,8 +55,7 @@ inline void freeListNode(const ListNode* head) {
     }
 }
 
-inline std::vector<std::shared_ptr<ListNode>> createListNodeAutoRemovers(
-    ListNode* head) {
+inline std::vector<std::shared_ptr<ListNode>> createListNodeAutoRemovers(ListNode* head) {
     std::vector<std::shared_ptr<ListNode>> removers;
     while (head != nullptr) {
         removers.push_back(std::shared_ptr<ListNode>(head));
@@ -69,22 +64,36 @@ inline std::vector<std::shared_ptr<ListNode>> createListNodeAutoRemovers(
 
     return removers;
 }
+
+inline std::vector<int> toIntArray(ListNode* head) {
+    std::vector<int> res;
+    while (head != nullptr) {
+        res.push_back(head->val);
+        head = head->next;
+    }
+
+    return res;
+}
+
+inline std::vector<ListNode*> toListNodeArray(ListNode* head) {
+    vector<ListNode*> nodes;
+    while (head != nullptr) {
+        nodes.push_back(head);
+        head = head->next;
+    }
+
+    return nodes;
+}
 }  // namespace leetcode
 
-inline bool operator==(const ListNode& a, const ListNode& b) {
+inline bool operator==(const ListNode& a, const ListNode& b) { return std::to_string(a) == std::to_string(b); }
+
+inline bool operator!=(const ListNode& a, const ListNode& b) { return std::to_string(a) != std::to_string(b); }
+
+inline bool operator==(const std::shared_ptr<ListNode>& a, const std::shared_ptr<ListNode>& b) {
     return std::to_string(a) == std::to_string(b);
 }
 
-inline bool operator!=(const ListNode& a, const ListNode& b) {
-    return std::to_string(a) != std::to_string(b);
-}
-
-inline bool operator==(const std::shared_ptr<ListNode>& a,
-                       const std::shared_ptr<ListNode>& b) {
-    return std::to_string(a) == std::to_string(b);
-}
-
-inline bool operator!=(const std::shared_ptr<ListNode>& a,
-                       const std::shared_ptr<ListNode>& b) {
+inline bool operator!=(const std::shared_ptr<ListNode>& a, const std::shared_ptr<ListNode>& b) {
     return std::to_string(a) != std::to_string(b);
 }
