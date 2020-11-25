@@ -72,8 +72,8 @@ void testCheckEqual(const T& expected, const T& actual) {
     }
 
     stringstream ss;
-    ss << "expected: " << expected << " , "
-       << "actual: " << actual;
+    ss << "expected: \"" << expected << "\" , "
+       << "actual: \"" << actual << "\"";
     throw TestException(ss.str());
 }
 
@@ -93,8 +93,8 @@ void testCheckEqual(double expected, double actual, double deviation) {
     }
 
     stringstream ss;
-    ss << "expected: " << expected << " , "
-       << "actual: " << actual;
+    ss << "expected: \"" << expected << "\" , "
+       << "actual: \"" << actual << "\"";
     throw TestException(ss.str());
 }
 
@@ -105,10 +105,10 @@ void testCheckSame(T* expected, T* actual) {
     }
 
     stringstream ss;
-    ss << "expected: " << expected << "("
-       << (expected == nullptr ? "null"s : to_string(*expected)) << ") , "
-       << "actual: " << actual << "("
-       << (actual == nullptr ? "null"s : to_string(*actual)) << ")";
+    ss << "expected: \"" << expected << "("
+       << (expected == nullptr ? "null"s : to_string(*expected)) << ")\" , "
+       << "actual: \"" << actual << "("
+       << (actual == nullptr ? "null"s : to_string(*actual)) << ")\"";
     throw TestException(ss.str());
 }
 
@@ -119,10 +119,10 @@ void testCheckSame(ListNode* expected, ListNode* actual) {
     }
 
     stringstream ss;
-    ss << "expected: " << expected << "("
-       << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
-       << "actual: " << actual << "("
-       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
+    ss << "expected: \"" << expected << "("
+       << (expected == nullptr ? "null"s : to_string(expected->val)) << ")\" , "
+       << "actual: \"" << actual << "("
+       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")\"";
     throw TestException(ss.str());
 }
 
@@ -133,10 +133,10 @@ void testCheckSame(TreeNode* expected, TreeNode* actual) {
     }
 
     stringstream ss;
-    ss << "expected: " << expected << "("
-       << (expected == nullptr ? "null"s : to_string(expected->val)) << ") , "
-       << "actual: " << actual << "("
-       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")";
+    ss << "expected: \"" << expected << "("
+       << (expected == nullptr ? "null"s : to_string(expected->val)) << ")\" , "
+       << "actual: \"" << actual << "("
+       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")\"";
     throw TestException(ss.str());
 }
 
