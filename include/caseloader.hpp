@@ -186,6 +186,14 @@ void testCheckEquivalent(ListNode* expected, ListNode* actual) {
     testCheckEquivalent(a, b);
 }
 
+void testCheckEquivalent(const string& expected, const string& actual) {
+    string a = expected;
+    string b = actual;
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
+    testCheckEqual(a, b);
+}
+
 void runTests(const string& codeFile) {
     vector<vector<string>> params = move(loadParams(codeFile));
     int failed = 0;
