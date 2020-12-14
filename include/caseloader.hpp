@@ -105,10 +105,8 @@ void testCheckSame(T* expected, T* actual) {
     }
 
     stringstream ss;
-    ss << "expected: \"" << expected << "("
-       << (expected == nullptr ? "null"s : to_string(*expected)) << ")\" , "
-       << "actual: \"" << actual << "("
-       << (actual == nullptr ? "null"s : to_string(*actual)) << ")\"";
+    ss << "expected: \"" << expected << "(" << (expected == nullptr ? "null"s : to_string(*expected)) << ")\" , "
+       << "actual: \"" << actual << "(" << (actual == nullptr ? "null"s : to_string(*actual)) << ")\"";
     throw TestException(ss.str());
 }
 
@@ -119,10 +117,8 @@ void testCheckSame(ListNode* expected, ListNode* actual) {
     }
 
     stringstream ss;
-    ss << "expected: \"" << expected << "("
-       << (expected == nullptr ? "null"s : to_string(expected->val)) << ")\" , "
-       << "actual: \"" << actual << "("
-       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")\"";
+    ss << "expected: \"" << expected << "(" << (expected == nullptr ? "null"s : to_string(expected->val)) << ")\" , "
+       << "actual: \"" << actual << "(" << (actual == nullptr ? "null"s : to_string(actual->val)) << ")\"";
     throw TestException(ss.str());
 }
 
@@ -133,10 +129,8 @@ void testCheckSame(TreeNode* expected, TreeNode* actual) {
     }
 
     stringstream ss;
-    ss << "expected: \"" << expected << "("
-       << (expected == nullptr ? "null"s : to_string(expected->val)) << ")\" , "
-       << "actual: \"" << actual << "("
-       << (actual == nullptr ? "null"s : to_string(actual->val)) << ")\"";
+    ss << "expected: \"" << expected << "(" << (expected == nullptr ? "null"s : to_string(expected->val)) << ")\" , "
+       << "actual: \"" << actual << "(" << (actual == nullptr ? "null"s : to_string(actual->val)) << ")\"";
     throw TestException(ss.str());
 }
 
@@ -147,7 +141,7 @@ void testCheckSame(const vector<ListNode*>& expected, ListNode* actual) {
     if (expected.size() != nodes.size()) {
         stringstream ss;
         ss << "expected nodes' count : " << expected.size() << ", "
-        << "actual: nodes' count" << nodes.size();
+           << "actual: nodes' count" << nodes.size();
         throw TestException(ss.str());
     }
 
@@ -156,18 +150,52 @@ void testCheckSame(const vector<ListNode*>& expected, ListNode* actual) {
     }
 }
 
+template <class T>
+void throwNotEquivalent(const T& expected, const T& actual) {
+    stringstream ss;
+    ss << "Do not equivalent,"
+       << "expected: \"" << expected << "\" , "
+       << "actual: \"" << actual << "\"";
+    throw TestException(ss.str());
+}
+
+template <class T, class P>
+void testCheckEquivalentWithPrepare(const vector<T>& expected, const vector<T>& actual, P prepare) {
+    auto a = expected;
+    auto b = actual;
+    prepare(a);
+    prepare(b);
+    try {
+        testCheckEqual(a, b);
+    } catch (const TestException&) {
+        throwNotEquivalent(expected, actual);
+    }
+}
+
 template <class T, class W>
-void testCheckEquivalent(vector<T> a, vector<T> b, W cmp) {
+void testCheckEquivalent(const vector<T>& expected, const vector<T>& actual, W cmp) {
+    auto a = expected;
+    auto b = actual;
     sort(a.begin(), a.end(), cmp);
     sort(b.begin(), b.end(), cmp);
-    testCheckEqual(a, b);
+    try {
+        testCheckEqual(a, b);
+    } catch (const TestException&) {
+        throwNotEquivalent(expected, actual);
+    }
 }
 
 template <class T>
-void testCheckEquivalent(vector<T> a, vector<T> b) {
+void testCheckEquivalent(const vector<T>& expected, const vector<T>& actual) {
+    auto a = expected;
+    auto b = actual;
     sort(a.begin(), a.end());
     sort(b.begin(), b.end());
-    testCheckEqual(a, b);
+    try {
+        testCheckEqual(a, b);
+    } catch (const TestException&) {
+        throwNotEquivalent(expected, actual);
+    }
 }
 
 void testCheckEquivalent(const vector<ListNode*>& expected, ListNode* actual) {
@@ -191,7 +219,11 @@ void testCheckEquivalent(const string& expected, const string& actual) {
     string b = actual;
     sort(a.begin(), a.end());
     sort(b.begin(), b.end());
-    testCheckEqual(a, b);
+    try {
+        testCheckEqual(a, b);
+    } catch (const TestException&) {
+        throwNotEquivalent(expected, actual);
+    }
 }
 
 void runTests(const string& codeFile) {
@@ -206,9 +238,7 @@ void runTests(const string& codeFile) {
             test_function(i, index);
             auto end = chrono::system_clock::now();
             ++success;
-            cout << "Test " << index << " passed.("
-                 << chrono::duration_cast<chrono::milliseconds>(end - begin)
-                        .count()
+            cout << "Test " << index << " passed.(" << chrono::duration_cast<chrono::milliseconds>(end - begin).count()
                  << " ms)" << endl;
         } catch (exception& e) {
             cout << "Test " << index << " has failed. " << e.what() << endl;
@@ -218,6 +248,5 @@ void runTests(const string& codeFile) {
         }
     }
 
-    cout << "Totoal:" << index << ", success:" << success
-         << ", failed:" << failed << endl;
+    cout << "Totoal:" << index << ", success:" << success << ", failed:" << failed << endl;
 }

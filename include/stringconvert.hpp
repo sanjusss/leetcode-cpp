@@ -19,12 +19,13 @@
 
 namespace std {
 inline bool stob(const std::string &s) { return s == "true"; }
+
+inline std::ostream &operator<<(std::ostream &os, bool b) { return os << (b ? "true" : "false"); }
 }  // namespace std
 
 namespace leetcode {
 
-inline std::vector<std::string> split(const std::string &s,
-                                      const std::string &seperator) {
+inline std::vector<std::string> split(const std::string &s, const std::string &seperator) {
     std::vector<std::string> output;
 
     std::string::size_type prev_pos = 0, pos = 0;
@@ -66,8 +67,7 @@ inline std::string &ltrim(std::string &s, std::function<bool(char)> condition) {
 
 // trim from end
 inline std::string &rtrim(std::string &s, std::function<bool(char)> condition) {
-    s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(condition)).base(),
-            s.end());
+    s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(condition)).base(), s.end());
     return s;
 }
 
@@ -84,13 +84,11 @@ inline std::string &trim(std::string &s, char c) {
     return trim(s, condition);
 }
 
-inline std::string replaceAllString(std::string str, const std::string &from,
-                                    const std::string &to) {
+inline std::string replaceAllString(std::string str, const std::string &from, const std::string &to) {
     size_t start_pos = 0;
     while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
         str.replace(start_pos, from.length(), to);
-        start_pos +=
-            to.length();  // Handles case where 'to' is a substring of 'from'
+        start_pos += to.length();  // Handles case where 'to' is a substring of 'from'
     }
 
     return str;
