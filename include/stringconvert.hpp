@@ -19,8 +19,6 @@
 
 namespace std {
 inline bool stob(const std::string &s) { return s == "true"; }
-
-inline std::ostream &operator<<(std::ostream &os, bool b) { return os << (b ? "true" : "false"); }
 }  // namespace std
 
 namespace leetcode {
