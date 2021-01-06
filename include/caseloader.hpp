@@ -98,6 +98,28 @@ void testCheckEqual(double expected, double actual, double deviation) {
     throw TestException(ss.str());
 }
 
+void testCheckEqual(const vector<double>& expected, const vector<double>& actual, double deviation) {
+    if (expected.size() == actual.size()) {
+        int size = expected.size();
+        bool success = true;
+        for (int i = 0; i < size; ++i) {
+            if (abs(expected[i] - actual[i]) > deviation) {
+                success = false;
+                break;
+            }
+        }
+
+        if (success) {
+            return;
+        }
+    }
+
+    stringstream ss;
+    ss << "expected: \"" << expected << "\" , "
+       << "actual: \"" << actual << "\"";
+    throw TestException(ss.str());
+}
+
 template <class T>
 void testCheckSame(T* expected, T* actual) {
     if (expected == actual) {
