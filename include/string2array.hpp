@@ -38,6 +38,11 @@ inline std::string toValue(const std::string& s) {
     return s;
 }
 
+template <>
+inline bool toValue(const std::string& s) {
+    return s == "true";
+}
+
 template<class _T>
 static inline _T temp2value(std::string& temp) {
     trim(temp, ' ');
