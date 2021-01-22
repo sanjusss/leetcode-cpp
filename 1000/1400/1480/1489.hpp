@@ -168,13 +168,8 @@ class Solution {
 
     class Tarjan {
     public:
-        Tarjan(int n, const vector<vector<int>>& conn, const vector<vector<int>>& edgeIds, vector<bool>& keyEdges) :
-            m_n(n),
-            m_conn(conn),
-            m_edgeIds(edgeIds),
-            m_keyEdges(keyEdges),
-            m_dfn(n),
-            m_low(n) {
+        Tarjan(int n, const vector<vector<int>>& conn, const vector<vector<int>>& edgeIds, vector<bool>& keyEdges)
+            : m_n(n), m_conn(conn), m_edgeIds(edgeIds), m_keyEdges(keyEdges), m_dfn(n), m_low(n) {
             for (int i = 0; i < n; ++i) {
                 if (m_dfn[i] == 0) {
                     tarjan(i, -1);
@@ -198,7 +193,7 @@ class Solution {
                         m_keyEdges[id] = true;
                     }
                 }
-                else if (id != parent){
+                else if (id != parent) {
                     m_low[node] = min(m_low[node], m_low[next]);
                 }
             }
