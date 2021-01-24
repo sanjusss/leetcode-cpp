@@ -1,3 +1,10 @@
+/*
+ * @Author: sanjusss
+ * @Date: 2021-01-23 09:36:56
+ * @LastEditors: sanjusss
+ * @LastEditTime: 2021-01-23 10:54:31
+ * @FilePath: \include\test.cpp
+ */
 #include <iostream>
 #include <typeinfo>
 #include <vector>
@@ -23,6 +30,10 @@ public:
         (::print<Args>(++i), ...);
     }
 };
+
+void tt(int i) {
+    
+}
 
 int main(int, char**) {
     // Printer<decltype(main)> p;

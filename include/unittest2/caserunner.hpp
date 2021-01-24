@@ -1,3 +1,10 @@
+/*
+ * @Author: sanjusss
+ * @Date: 2021-01-23 09:36:56
+ * @LastEditors: sanjusss
+ * @LastEditTime: 2021-01-23 10:53:04
+ * @FilePath: \include\unittest2\caserunner.hpp
+ */
 #pragma once
 #include <chrono>
 #include <filesystem>
@@ -44,17 +51,7 @@ private:
         vector<string> words = split(line, ",");
 
         int caseLineSize = stoi(words[0]);
-        int actualSize = sizeof...(Args);
-        if (typeid(Res) != typeid(void)) {
-            ++actualSize;
-        }
-
-        if (caseLineSize != actualSize) {
-            throw TestException("Line count sign for each line has ans error.");
-        }
-
         bool needTrim = words.size() < 2 || words[1] != "notrim";
-
         vector<vector<string>> params;
         while (input) {
             vector<string> param;
@@ -84,6 +81,7 @@ private:
             auto end = chrono::system_clock::now();
             cout << "Test " << index << " passed.(" << chrono::duration_cast<chrono::milliseconds>(end - begin).count()
                  << " ms)" << endl;
+
             return true;
         } catch (const std::exception& e) {
             std::cerr << e.what() << '\n';
