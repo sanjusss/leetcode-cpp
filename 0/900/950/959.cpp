@@ -1,4 +1,3 @@
-#pragma once
 #include "leetcode.h"
 
 class Solution {
@@ -93,3 +92,5 @@ private:
         return n * n * (int)dir + n * x + y;
     }
 };
+
+TEST(Solution::regionsBySlashes)

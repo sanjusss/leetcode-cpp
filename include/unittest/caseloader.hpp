@@ -17,6 +17,10 @@
 
 #include "stringconvert.hpp"
 
+namespace std {
+inline bool stob(const std::string &s) { return s == "true"; }
+}  // namespace std
+
 using namespace std;
 using namespace leetcode;
 

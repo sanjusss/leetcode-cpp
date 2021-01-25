@@ -7,13 +7,14 @@
  */
 #pragma once
 #include <chrono>
-#include <filesystem>
+#include <fstream>
+#include <functional>
 #include <iostream>
 #include <string>
+#include <tuple>
+#include <type_traits>
 #include <typeinfo>
 #include <vector>
-#include <tuple>
-#include <functional>
 
 #include "../stringconvert.hpp"
 #include "../testexception.hpp"
@@ -23,29 +24,63 @@
 template <class T, int N>
 class CaseRunner;
 
-template <class Res, class... Args, int Output>
-class CaseRunner<Res(Args...), Output> {
+template <class Res, class ClassName, class... Args, int OutputIndex>
+class CaseRunner<Res (ClassName::*)(Args...), OutputIndex> {
+private:
+    template <class ReturnType, class Invoker, class Input>
+    struct Runner {
+        static ReturnType invoke(Invoker fun, Input& input) {
+            return std::apply(fun, input);
+        }
+    };
+
+    template <class Invoker, class Input>
+    struct Runner<void, Invoker, Input> {
+        static decltype(auto) invoke(Invoker fun, Input& input) {
+            std::apply(fun, input);
+            return std::get<OutputIndex>(input);
+        }
+    };
+
 public:
-    CaseRunner(std::function<Res(Args...)> fun, const std::string& codeFile) {
-        auto params = loadParams(codeFile);
-        for (int i = 0; i < params.size(); ++i) {
-            runCase(fun, i + 1, params[i]);
+    template <class Invoker, class Checker>
+    CaseRunner(Invoker fun, Checker check, const std::string& codeFile) {
+        decltype(loadParams(codeFile)) params;
+        try {
+            params = loadParams(codeFile);
+        } catch (const std::exception&) {
+            std::cout << "Fail to load test cases file." << std::endl;
+            return;
         }
 
-        std::cout << "finished" << std::endl;
+        int success = 0;
+        int fail = 0;
+        for (int i = 0; i < params.size(); ++i) {
+            if (runCase(fun, check, i + 1, params[i])) {
+                ++success;
+            }
+            else {
+                ++fail;
+            }
+        }
+
+        std::cout << params.size() << " finished, " << success << " success, " << fail << " fail." << std::endl;
     }
 
 private:
+    std::string testCasesFile(const std::string& codeFile) {
+        auto dirPos = codeFile.find_last_of("\\/");
+        auto fileName = codeFile.substr(dirPos + 1);
+        auto numPos = fileName.find_first_of("_-.");
+        auto caseFile = codeFile.substr(0, dirPos + 1) + fileName.substr(0, numPos) + ".cases";
+        return caseFile;
+    }
+
     std::vector<std::vector<std::string>> loadParams(const std::string& codeFile) {
         using namespace std;
         using namespace leetcode;
 
-        std::filesystem::path codePath = codeFile;
-        string fileName = codePath.filename().string();
-        auto pos = fileName.find_first_of("_-.");
-        string casesFile = codePath.parent_path().append(fileName.substr(0, pos) + ".cases").string();
-
-        ifstream input(casesFile);
+        ifstream input(testCasesFile(codeFile));
         string line;
         getline(input, line);
         vector<string> words = split(line, ",");
@@ -71,31 +106,32 @@ private:
         return move(params);
     }
 
-    bool runCase(std::function<Res(Args...)> fun, int index, const std::vector<std::string>& params) {
+    template <class Invoker, class Checker>
+    bool runCase(Invoker fun, Checker check, int index, const std::vector<std::string>& params) {
         using namespace std;
         try {
             int i = 0;
-            function<Res()> call = bind(fun, param<Args>(i++, params) ...);
+            auto input =
+                make_tuple(new ClassName(), FromString<remove_cv_t<remove_reference_t<Args>>>::convert(params[i++])...);
             auto begin = chrono::system_clock::now();
-            auto actual = call();
+            auto actual = Runner<Res, Invoker, decltype(input)>::invoke(fun, input);
             auto end = chrono::system_clock::now();
-            cout << "Test " << index << " passed.(" << chrono::duration_cast<chrono::milliseconds>(end - begin).count()
-                 << " ms)" << endl;
+            auto ms = chrono::duration_cast<chrono::milliseconds>(end - begin).count();
 
-            return true;
+            bool success = false;
+            string errorMessage;
+            tie(success, errorMessage) = check(actual, params.back());
+            if (success) {
+                cout << "Test " << index << " passed.(" << ms << " ms)" << endl;
+                return true;
+            }
+            else {
+                cout << "Test " << index << " failed.(" << ms << " ms) " << errorMessage << endl;
+                return false;
+            }
         } catch (const std::exception& e) {
-            std::cerr << e.what() << '\n';
+            cout << "Test " << index << " has an exception :" << e.what() << endl;
             return false;
-        }
-    }
-
-    template <class T>
-    T param(int i, const std::vector<std::string>& params) {
-        if (i == 0) {
-            return FromString<T>::convert(string());
-        }
-        else {
-            return FromString<T>::convert(params[i - 1]);
         }
     }
 };

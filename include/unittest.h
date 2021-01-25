@@ -1,12 +1,12 @@
 #pragma once
 
-#include "areequal.hpp"
-#include "functiontest.hpp"
-#include "listnodeunittest.hpp"
+#include "unittest/areequal.hpp"
+#include "unittest/functiontest.hpp"
+#include "unittest/listnodeunittest.hpp"
 #include "stringconvert.hpp"
-#include "treenodeunittest.hpp"
-#include "inputfromstring.hpp"
-#include "string2array.hpp"
-#include "caseloader.hpp"
+#include "unittest/treenodeunittest.hpp"
+#include "unittest/inputfromstring.hpp"
+#include "unittest/string2array.hpp"
+#include "unittest/caseloader.hpp"
 
 using namespace leetcode;

@@ -25,28 +25,7 @@
  * vector
  */
 template <class T>
-struct FromString {
-private:
-    template <class W>
-    struct DefaultValue {
-        static W value() {
-            return W();
-        }
-    };
-    
-    template <class W>
-    struct DefaultValue<W*> {
-        static W* value() {
-            return new W();
-        }
-    };
-
-public:
-    //默认情况下把T当作指针，创建对应实例。
-    static T convert(const std::string&) {
-        return DefaultValue<T>::value();
-    }
-};
+struct FromString;
 
 template <>
 struct FromString<int32_t> {
@@ -149,6 +128,17 @@ struct FromString<std::vector<T>> {
                 case '\"':
                     if (st.empty() || st.top() != i) {
                         st.push(i);
+                    }
+                    else {
+                        st.pop();
+                    }
+
+                    break;
+
+                case '\\':
+                    if (st.empty() || st.top() != '\\') {
+                        st.push(i);
+                        temp.pop_back();
                     }
                     else {
                         st.pop();

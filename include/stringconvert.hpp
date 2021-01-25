@@ -14,13 +14,6 @@
 #include <string>
 #include <vector>
 
-#include "listnode.h"
-#include "treenode.h"
-
-namespace std {
-inline bool stob(const std::string &s) { return s == "true"; }
-}  // namespace std
-
 namespace leetcode {
 
 inline std::vector<std::string> split(const std::string &s, const std::string &seperator) {
