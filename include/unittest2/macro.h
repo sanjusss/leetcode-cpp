@@ -1,4 +1,5 @@
 #pragma once
+#include "resulttype.h"
 
 /***
  * 定义单元测试main函数。
@@ -13,4 +14,4 @@
         return 0;                                               \
     }
 
-#define TEST(fun) MAIN_DEFINE(fun, &unittest::areEqual<int>, 0)
+#define TEST(fun) MAIN_DEFINE(fun, &unittest::areEqual<ResultType<decltype(fun)>::type>, 0)

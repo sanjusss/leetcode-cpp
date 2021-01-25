@@ -25,7 +25,7 @@ template <class T, int N>
 class CaseRunner;
 
 template <class Res, class ClassName, class... Args, int OutputIndex>
-class CaseRunner<Res (ClassName::*)(Args...), OutputIndex> {
+class CaseRunner<Res(ClassName::*)(Args...), OutputIndex> {
 private:
     template <class ReturnType, class Invoker, class Input>
     struct Runner {
