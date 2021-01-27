@@ -25,7 +25,7 @@ template <class T, int N>
 class CaseRunner;
 
 template <class Res, class ClassName, class... Args, int OutputIndex>
-class CaseRunner<Res(ClassName::*)(Args...), OutputIndex> {
+class CaseRunner<Res (ClassName::*)(Args...), OutputIndex> {
 private:
     template <class ReturnType, class Invoker, class Input>
     struct Runner {
@@ -123,7 +123,7 @@ private:
             int i = 0;
             tuple<ClassName*, remove_cv_t<remove_reference_t<Args>>...> input;
             get<0>(input) = new ClassName();
-            fillAllInputs(input, params, index_sequence_for<remove_cv_t<remove_reference_t<Args>>...>{});
+            fillAllInputs(input, params, index_sequence_for<remove_cv_t<remove_reference_t<Args>>...>());
             auto begin = chrono::system_clock::now();
             auto actual = Runner<Res, Invoker, decltype(input)>::invoke(fun, input);
             auto end = chrono::system_clock::now();
