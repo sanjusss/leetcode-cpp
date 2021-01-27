@@ -106,13 +106,24 @@ private:
         return move(params);
     }
 
+    template <class T, std::size_t N>
+    void fillInput(T& t, const std::vector<std::string>& params) {
+        std::get<N + 1>(t) = FromString<std::tuple_element_t<N + 1, T>>::convert(params[N]);
+    }
+
+    template <class T, std::size_t... I>
+    void fillAllInputs(T& t, const std::vector<std::string>& params, std::index_sequence<I...>) {
+        (fillInput<T, I>(t, params), ...);
+    }
+
     template <class Invoker, class Checker>
     bool runCase(Invoker fun, Checker check, int index, const std::vector<std::string>& params) {
         using namespace std;
         try {
             int i = 0;
-            auto input =
-                make_tuple(new ClassName(), FromString<remove_cv_t<remove_reference_t<Args>>>::convert(params[i++])...);
+            tuple<ClassName*, remove_cv_t<remove_reference_t<Args>>...> input;
+            get<0>(input) = new ClassName();
+            fillAllInputs(input, params, index_sequence_for<remove_cv_t<remove_reference_t<Args>>...>{});
             auto begin = chrono::system_clock::now();
             auto actual = Runner<Res, Invoker, decltype(input)>::invoke(fun, input);
             auto end = chrono::system_clock::now();
