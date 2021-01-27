@@ -107,13 +107,15 @@ private:
     }
 
     template <class T, std::size_t N>
-    void fillInput(T& t, const std::vector<std::string>& params) {
-        std::get<N + 1>(t) = FromString<std::tuple_element_t<N + 1, T>>::convert(params[N]);
+    void fillInput(T& t, std::vector<unittest::FreeHandler>& handlers,const std::vector<std::string>& params) {
+        auto p = FromString<std::tuple_element_t<N + 1, T>>::convert(params[N]);
+        std::get<N + 1>(t) = std::get<0>(p);
+        handlers.emplace_back(std::get<1>(p));
     }
 
     template <class T, std::size_t... I>
-    void fillAllInputs(T& t, const std::vector<std::string>& params, std::index_sequence<I...>) {
-        (fillInput<T, I>(t, params), ...);
+    void fillAllInputs(T& t, std::vector<unittest::FreeHandler>& handlers, const std::vector<std::string>& params, std::index_sequence<I...>) {
+        (fillInput<T, I>(t, handlers, params), ...);
     }
 
     template <class Invoker, class Checker>
@@ -121,17 +123,28 @@ private:
         using namespace std;
         try {
             int i = 0;
+            std::vector<unittest::FreeHandler> freeHandlers;
             tuple<ClassName*, remove_cv_t<remove_reference_t<Args>>...> input;
-            get<0>(input) = new ClassName();
-            fillAllInputs(input, params, index_sequence_for<remove_cv_t<remove_reference_t<Args>>...>());
+            ClassName instance;
+            get<0>(input) = &instance;
+            fillAllInputs(input, freeHandlers, params, index_sequence_for<remove_cv_t<remove_reference_t<Args>>...>());
             auto begin = chrono::system_clock::now();
             auto actual = Runner<Res, Invoker, decltype(input)>::invoke(fun, input);
             auto end = chrono::system_clock::now();
             auto ms = chrono::duration_cast<chrono::milliseconds>(end - begin).count();
 
-            bool success = false;
-            string errorMessage;
-            tie(success, errorMessage) = check(actual, params.back());
+            auto [success, errorMessage, finalFree] = check(actual, params.back());
+            try {
+                for (auto& handler : freeHandlers) {
+                    handler();
+                }
+
+                finalFree();
+            }
+            catch (...) {
+                cout << "Error occurs when free params' memory." << endl;
+            }
+            
             if (success) {
                 cout << "Test " << index << " passed.(" << ms << " ms)" << endl;
                 return true;
