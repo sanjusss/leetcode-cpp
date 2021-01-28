@@ -15,3 +15,4 @@
     }
 
 #define TEST(fun) MAIN_DEFINE(fun, &unittest::areEqual<ResultType<decltype(fun)>::type>, 0)
+#define TEST_EQUIVALENT(fun) MAIN_DEFINE(fun, &unittest::areEquivalentDefault<ResultType<decltype(fun)>::type>, 0)
