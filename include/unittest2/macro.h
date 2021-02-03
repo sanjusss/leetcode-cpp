@@ -17,4 +17,4 @@
 #define TEST(fun) MAIN_DEFINE((fun), (&unittest::areEqual<ResultType<decltype(fun)>::type>), 0)
 #define TEST_N(fun, n) MAIN_DEFINE((fun), (&unittest::areEqual<ArgumentType<decltype(fun), n >::type>), n)
 #define TEST_EQUIVALENT(fun) MAIN_DEFINE((fun), (&unittest::areEquivalentDefault<ResultType<decltype(fun)>::type>), 0)
-#define TEST_N_EQUIVALENT(fun, n) MAIN_DEFINE((fun), (&unittest::areEquivalentDefault<ArgumentType<decltype(fun), n >::type>), 0)
+#define TEST_N_EQUIVALENT(fun, n) MAIN_DEFINE((fun), (&unittest::areEquivalentDefault<ArgumentType<decltype(fun), n >::type>), n)
