@@ -2,14 +2,6 @@
 
 #include <type_traits>
 
-template <class T>
-struct ResultType;
-
-template <class Res, class ClassName, class... Args>
-struct ResultType<Res(ClassName::*)(Args...)> {
-    typedef Res type;
-};
-
 template <std::size_t N, class... Args>
 struct ArgumentType_N;
 
@@ -27,5 +19,5 @@ struct ArgumentType;
 
 template <class Res, class ClassName, class... Args, std::size_t N>
 struct ArgumentType<Res(ClassName::*)(Args...), N> {
-    typedef typename ArgumentType_N<N - 1, std::remove_cv_t<std::remove_reference_t<Args>>...>::type type;
+    typedef typename ArgumentType_N<N, std::remove_cv_t<std::remove_reference_t<Res>>, std::remove_cv_t<std::remove_reference_t<Args>>...>::type type;
 };

@@ -41,9 +41,43 @@ inline std::tuple<bool, std::string, unittest::FreeHandler> areEquivalent(T& act
 }
 
 template <class T>
+struct SortArray {
+    static void sort(std::vector<T>& arr) {
+        std::sort(arr.begin(), arr.end());
+    }
+};
+
+template <>
+struct SortArray<ListNode*> {
+    static void sort(std::vector<ListNode*>& arr) {
+        std::sort(arr.begin(), arr.end(), [](ListNode* a, ListNode* b) {
+            return ToString<ListNode*>::convert(a) < ToString<ListNode*>::convert(b);
+        });
+    }
+};
+
+template <>
+struct SortArray<TreeNode*> {
+    static void sort(std::vector<TreeNode*>& arr) {
+        std::sort(arr.begin(), arr.end(), [](TreeNode* a, TreeNode* b) {
+            return ToString<TreeNode*>::convert(a) < ToString<TreeNode*>::convert(b);
+        });
+    }
+};
+
+template <class T>
+struct SortArray<std::vector<T>> {
+    static void sort(std::vector<std::vector<T>>& arr) {
+        std::sort(arr.begin(), arr.end(), [](const std::vector<T>& a, const std::vector<T>& b) {
+            return ToString<std::vector<T>>::convert(a) < ToString<std::vector<T>>::convert(b);
+        });
+    }
+};
+
+template <class T>
 inline std::tuple<bool, std::string, unittest::FreeHandler> areEquivalentDefault(T& actual,
                                                                                  const std::string& expectedString) {
-    return areEquivalent(actual, expectedString, [](T& arr) { std::sort(arr.begin(), arr.end()); });
+    return areEquivalent(actual, expectedString, &SortArray<typename T::value_type>::sort);
 }
 
 }  // namespace unittest

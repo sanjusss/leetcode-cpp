@@ -14,7 +14,18 @@
         return 0;                                               \
     }
 
-#define TEST(fun) MAIN_DEFINE((fun), (&unittest::areEqual<ResultType<decltype(fun)>::type>), 0)
-#define TEST_N(fun, n) MAIN_DEFINE((fun), (&unittest::areEqual<ArgumentType<decltype(fun), n >::type>), n)
-#define TEST_EQUIVALENT(fun) MAIN_DEFINE((fun), (&unittest::areEquivalentDefault<ResultType<decltype(fun)>::type>), 0)
-#define TEST_N_EQUIVALENT(fun, n) MAIN_DEFINE((fun), (&unittest::areEquivalentDefault<ArgumentType<decltype(fun), n >::type>), n)
+#define TEST_N(fun, n) MAIN_DEFINE((fun), (&unittest::areEqual<ArgumentType<decltype(fun), n>::type>), n)
+#define TEST(fun) TEST_N((fun), 0)
+
+#define TEST_N_EQUIVALENT(fun, n) \
+    MAIN_DEFINE((fun), (&unittest::areEquivalentDefault<ArgumentType<decltype(fun), n>::type>), n)
+#define TEST_EQUIVALENT(fun) TEST_N_EQUIVALENT((fun), 0)
+
+#define TEST_N_EQUIVALENT_PRE(fun, pre, n)                                                                            \
+    template <class T>                                                                                                \
+    inline std::tuple<bool, std::string, unittest::FreeHandler> areEquivalentPre(T& actual,                           \
+                                                                                 const std::string& expectedString) { \
+        return unittest::areEquivalent(actual, expectedString, pre);                                                            \
+    }                                                                                                                 \
+    MAIN_DEFINE((fun), (&areEquivalentPre<ArgumentType<decltype(fun), n>::type>), n)
+#define TEST_EQUIVALENT_PRE(fun, pre) TEST_N_EQUIVALENT_PRE((fun), (pre), n)
