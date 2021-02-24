@@ -18,7 +18,7 @@ inline std::tuple<bool, std::string, unittest::FreeHandler> areEqual(const T& ac
     }
     else {
         return { false,
-                 "Not equal, expected: \"" + expectedString + "\", actual: \"" + ToString<T>::convert(actual) + "\".",
+                 "Not equal, \n\t\texpected:\t\"" + expectedString + "\", \n\t\tactual:\t\t\"" + ToString<T>::convert(actual) + "\".",
                  handler };
     }
 }
@@ -35,7 +35,7 @@ inline std::tuple<bool, std::string, unittest::FreeHandler> areEquivalent(T& act
         return { true, string(), handler };
     }
     else {
-        return { false, "Not equivalent, expected: \"" + expectedString + "\", actual: \"" + actualString + "\".",
+        return { false, "Not equivalent, \n\t\texpected:\t\"" + expectedString + "\", \n\t\tactual:\t\t\"" + actualString + "\".",
                  handler };
     }
 }
