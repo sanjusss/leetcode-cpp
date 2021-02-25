@@ -15,6 +15,7 @@
 #include <type_traits>
 #include <typeinfo>
 #include <vector>
+#include <any>
 
 #include "../stringconvert.hpp"
 #include "../testexception.hpp"
@@ -133,7 +134,8 @@ private:
             auto end = chrono::system_clock::now();
             auto ms = chrono::duration_cast<chrono::milliseconds>(end - begin).count();
 
-            auto [success, errorMessage, finalFree] = check(actual, params.back());
+            std::any anyInput = std::ref(input);
+            auto [success, errorMessage, finalFree] = check(actual, params.back(), anyInput);
             try {
                 for (auto& handler : freeHandlers) {
                     handler();

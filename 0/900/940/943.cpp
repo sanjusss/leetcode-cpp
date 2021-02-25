@@ -117,4 +117,22 @@ public:
     }
 };
 
-TEST(&Solution::shortestSuperstring)
+bool verifyResult(const string& actual, const string& expected, any& input) {
+    if (actual == expected) {
+        return true;
+    }
+    else if (actual.size() != expected.size()) {
+        return false;
+    }
+
+    auto& words = get<1>(any_cast<reference_wrapper<tuple<Solution*,vector<string>>>>(input).get());
+    for (auto& i : words) {
+        if (actual.find(i) == string::npos) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+TEST_VERIFY(&Solution::shortestSuperstring, &verifyResult)

@@ -21,11 +21,20 @@
     MAIN_DEFINE((fun), (&unittest::areEquivalentDefault<ArgumentType<decltype(fun), n>::type>), n)
 #define TEST_EQUIVALENT(fun) TEST_N_EQUIVALENT((fun), 0)
 
-#define TEST_N_EQUIVALENT_PRE(fun, pre, n)                                                                            \
-    template <class T>                                                                                                \
-    inline std::tuple<bool, std::string, unittest::FreeHandler> areEquivalentPre(T& actual,                           \
-                                                                                 const std::string& expectedString) { \
-        return unittest::areEquivalent(actual, expectedString, pre);                                                            \
-    }                                                                                                                 \
+#define TEST_N_EQUIVALENT_PRE(fun, pre, n)                                        \
+    template <class T>                                                            \
+    inline std::tuple<bool, std::string, unittest::FreeHandler> areEquivalentPre( \
+        T& actual, const std::string& expectedString, std::any& input) {          \
+        return unittest::areEquivalent(actual, expectedString, (pre), input);       \
+    }                                                                             \
     MAIN_DEFINE((fun), (&areEquivalentPre<ArgumentType<decltype(fun), n>::type>), n)
-#define TEST_EQUIVALENT_PRE(fun, pre) TEST_N_EQUIVALENT_PRE((fun), (pre), n)
+#define TEST_EQUIVALENT_PRE(fun, pre) TEST_N_EQUIVALENT_PRE((fun), (pre), 0)
+
+#define TEST_N_VERIFY(fun, verify, n)                                             \
+    template <class T>                                                            \
+    inline std::tuple<bool, std::string, unittest::FreeHandler> doPass( \
+        T& actual, const std::string& expectedString, std::any& input) {          \
+        return unittest::tryVerify(actual, expectedString, (verify), input);       \
+    }                                                                             \
+    MAIN_DEFINE((fun), (&doPass<ArgumentType<decltype(fun), n>::type>), n)
+#define TEST_VERIFY(fun, verify) TEST_N_VERIFY((fun), (verify), 0)
