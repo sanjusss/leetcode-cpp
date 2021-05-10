@@ -83,5 +83,12 @@
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, AllowShortBlocksOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, AccessModifierOffset: -4, UseTab: Never, TabWidth: 4, ColumnLimit: 120, UseTab: Never, BinPackParameters: true, Cpp11BracedListStyle: false, BreakBeforeBraces: Custom, BraceWrapping: { BeforeElse: true } }",
     "editor.renderWhitespace": "all",
     "editor.renderLineHighlightOnlyWhenFocus": true,
-    "terminal.integrated.scrollback": 100000
+    "terminal.integrated.scrollback": 100000,
+    "fileheader.customMade": {
+        "Author": "sanjusss",
+        "Date": "Do not edit", // 文件创建时间(不变)
+        "LastEditors": "sanjusss", // 文件最后编辑者
+        "LastEditTime": "Do not edit", // 文件最后编辑时间
+        "FilePath": "no item name" // 文件在项目中的相对路径 自动更新
+      }
 }
