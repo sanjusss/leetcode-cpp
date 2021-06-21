@@ -1,3 +1,10 @@
+/*
+ * @Author: sanjusss
+ * @Date: 2020-10-03 09:09:01
+ * @LastEditors: sanjusss
+ * @LastEditTime: 2021-06-21 10:09:24
+ * @FilePath: \include\leetcode.h
+ */
 #pragma once
 
 #include <algorithm>
@@ -18,6 +25,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include <bit>
 
 #include "listnode.h"
 #include "treenode.h"

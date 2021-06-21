@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2021-06-21 08:30:19
  * @LastEditors: sanjusss
- * @LastEditTime: 2021-06-21 09:37:27
+ * @LastEditTime: 2021-06-21 10:10:44
  * @FilePath: \0\400\400\401.cpp
  */
 #include "leetcode.h"
@@ -48,9 +48,9 @@ class Solution {
 public:
     vector<string> readBinaryWatch(int turnedOn) {
         vector<string> ans;
-        for (int h = 0; h < 12; ++h) {
-            for (int m = 0; m < 60; ++m) {
-                if (__builtin_popcount(h) + __builtin_popcount(m) == turnedOn) {
+        for (uint32_t h = 0; h < 12; ++h) {
+            for (uint32_t m = 0; m < 60; ++m) {
+                if (popcount(h) + popcount(m) == turnedOn) {
                     ans.emplace_back(to_string(h) + (m >= 10 ? ":"s : ":0"s) + to_string(m));
                 }
             }
