@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2021-07-13 13:39:33
  * @LastEditors: sanjusss
- * @LastEditTime: 2021-07-13 17:49:34
+ * @LastEditTime: 2021-07-14 09:38:58
  * @FilePath: \0\200\210\218.cpp
  */
 #include "leetcode.h"
@@ -90,32 +90,75 @@
 //     }
 // };
 
+// class Solution {
+// public:
+//     vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {
+//         map<int, multiset<int>> pts;
+//         for (auto& b : buildings) {
+//             pts[b[0]].insert(-b[2]);
+//             pts[b[1]].insert(b[2]);
+//         }
+
+//         vector<vector<int>> ans;
+//         vector<int> prev(2);
+//         multiset<int> heights({ 0 });
+//         for (auto& [x, ys] : pts) {
+//             for(int y : ys) {
+//                 if (y < 0) {
+//                     heights.insert(-y);
+//                 }
+//                 else {
+//                     heights.erase(heights.find(y));
+//                 }
+//             }
+
+//             if (*heights.rbegin() != prev[1]) {
+//                 prev[0] = x;
+//                 prev[1] = *heights.rbegin();
+//                 ans.push_back(prev);
+//             }
+//         }
+        
+//         return ans;
+//     }
+// };
+
 class Solution {
 public:
     vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {
-        map<int, multiset<int>> pts;
+        vector<pair<int, int>> pts;
+        pts.reserve(buildings.size() * 2);
         for (auto& b : buildings) {
-            pts[b[0]].insert(-b[2]);
-            pts[b[1]].insert(b[2]);
+            pts.emplace_back(b[0], -b[2]);
+            pts.emplace_back(b[1], b[2]);
         }
 
+        sort(pts.begin(), pts.end());
+
         vector<vector<int>> ans;
-        vector<int> prev(2);
-        multiset<int> heights({ 0 });
-        for (auto& [x, ys] : pts) {
-            for(int y : ys) {
-                if (y < 0) {
-                    heights.insert(-y);
-                }
-                else {
-                    heights.erase(heights.find(y));
-                }
+        int prevX = -1;
+        priority_queue<int> heights;
+        heights.push(0);
+        priority_queue<int> removes;
+        for (auto [x, y] : pts) {
+            if (y < 0) {
+                heights.push(-y);
+            }
+            else {
+                removes.push(y);
             }
 
-            if (*heights.rbegin() != prev[1]) {
-                prev[0] = x;
-                prev[1] = *heights.rbegin();
-                ans.push_back(prev);
+            while (!removes.empty() && heights.top() == removes.top()) {
+                removes.pop();
+                heights.pop();
+            }
+
+            if (x == prevX) {
+                ans.back()[1] = max(ans.back()[1], heights.top());
+            }
+            else if (ans.empty() || ans.back()[1] != heights.top()) {
+                prevX = x;
+                ans.emplace_back(vector<int>({ x, heights.top() }));
             }
         }
         
