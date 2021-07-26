@@ -79,7 +79,9 @@
         "mutex": "cpp",
         "scoped_allocator": "cpp",
         "shared_mutex": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp"
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, AllowShortBlocksOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, AccessModifierOffset: -4, UseTab: Never, TabWidth: 4, ColumnLimit: 120, UseTab: Never, BinPackParameters: true, Cpp11BracedListStyle: false, BreakBeforeBraces: Custom, BraceWrapping: { BeforeElse: true } }",
     "editor.renderWhitespace": "all",
