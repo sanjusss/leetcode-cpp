@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2021-01-31 08:39:37
  * @LastEditors: sanjusss
- * @LastEditTime: 2021-01-31 08:47:28
+ * @LastEditTime: 2021-08-15 11:34:18
  * @FilePath: \0\800\830\839.cpp
  */
 #include "leetcode.h"
@@ -37,12 +37,12 @@ class Solution {
                 return false;
             }
 
-            if (m_size[a] > b) {
+            if (m_size[a] > m_size[b]) {
                 swap(a, b);
             }
 
             m_parent[a] = b;
-            m_size[b] += m_size[b];
+            m_size[b] += m_size[a];
             --m_count;
             return true;
         }
