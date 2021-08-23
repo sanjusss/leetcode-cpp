@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2021-08-23 08:34:35
  * @LastEditors: sanjusss
- * @LastEditTime: 2021-08-23 08:37:04
+ * @LastEditTime: 2021-08-23 08:45:07
  * @FilePath: \jianzhioffer\55.cpp
  */
 #include "leetcode.h"
@@ -23,11 +23,11 @@ public:
                 TreeNode* node = q.front();
                 q.pop();
                 if (node->left != nullptr) {
-                    q.push(node);
+                    q.push(node->left);
                 }
 
                 if (node->right != nullptr) {
-                    q.push(node);
+                    q.push(node->right);
                 }
             }
         }
