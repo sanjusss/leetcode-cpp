@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2020-10-03 09:09:01
  * @LastEditors: sanjusss
- * @LastEditTime: 2021-07-30 08:45:00
+ * @LastEditTime: 2021-08-28 11:35:34
  * @FilePath: \include\leetcode.h
  */
 #pragma once
@@ -27,6 +27,7 @@
 #include <vector>
 #include <bit>
 #include <ranges>
+#include <cstring>
 
 #include "listnode.h"
 #include "treenode.h"
