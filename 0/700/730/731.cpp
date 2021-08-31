@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2021-08-31 10:12:21
  * @LastEditors: sanjusss
- * @LastEditTime: 2021-08-31 13:12:48
+ * @LastEditTime: 2021-08-31 13:21:49
  * @FilePath: \0\700\730\731.cpp
  */
 #include "leetcode.h"
@@ -48,6 +48,7 @@ private:
             rightEnd *= 2;
             Node* node = newNode();
             node->left = root;
+            node->book = root->book;
             root = node;
         }
     }
