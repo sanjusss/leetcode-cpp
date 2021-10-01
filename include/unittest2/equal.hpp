@@ -32,7 +32,7 @@ template <>
 struct Equal<float> {
     static bool equal(float a, float b) {
         using namespace std;
-        return (double)abs(a - b) / (double)max(abs(a), abs(b)) < 1e-6;
+        return a == b || (double)abs(a - b) / (double)max(abs(a), abs(b)) < 1e-6;
     }
 };
 
@@ -40,7 +40,7 @@ template <>
 struct Equal<double> {
     static bool equal(double a, double b) {
         using namespace std;
-        return abs(a - b) / max(abs(a), abs(b)) < 1e-10;
+        return a == b || abs(a - b) / max(abs(a), abs(b)) < 1e-10;
     }
 };
 
