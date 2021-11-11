@@ -40,12 +40,11 @@ public:
         int lastMaxTotoal = 0;
         for (int i = 1; i <= n; ++i) {
             swap(cur, prev);
-            fill(cur.begin(), cur.end(), 0);
             int maxMove = i - 1;  // 单次向左移动的最大次数
             lastMaxTotoal = min(k, lastMaxTotoal + maxMove);
             cur[0] = 1;
             for (int total = 1; total <= lastMaxTotoal; ++total) {
-                cur[total] += cur[total - 1];
+                cur[total] = cur[total - 1];
                 cur[total] += prev[total];
                 cur[total] %= mod;
                 if (total > maxMove) {
