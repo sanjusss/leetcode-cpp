@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2022-01-04 15:14:52
  * @LastEditors: sanjusss
- * @LastEditTime: 2022-01-04 17:18:32
+ * @LastEditTime: 2022-01-04 22:11:18
  * @FilePath: \0\900\910\913.cpp
  */
 #include "leetcode.h"
@@ -11,12 +11,12 @@ class Solution {
 public:
     int catMouseGame(vector<vector<int>>& graph) {
         int n = graph.size();
-        vector<vector<vector<int>>> dp(2, vector<vector<int>>(n, vector<int>(n, -1)));
+        vector<vector<vector<pair<int, int>>>> dp(2, vector<vector<pair<int, int>>>(n, vector<pair<int, int>>(n, { INT_MAX, -1 })));
         vector<vector<vector<bool>>> passed(2, vector<vector<bool>>(n, vector<bool>(n)));
         function<int(int, int, int)> dfs = [&](int round, int mouse, int cat) -> int {
             int r = round % 2;
-            if (dp[r][mouse][cat] >= 0) {
-                return dp[r][mouse][cat];
+            if (dp[r][mouse][cat].first <= round && dp[r][mouse][cat].second >= 0) {
+                return dp[r][mouse][cat].second;
             }
             else if (passed[r][mouse][cat]) {
                 return 0;
@@ -70,7 +70,7 @@ public:
                 ans = r ? 1 : 2;
             }
 
-            dp[r][mouse][cat] = ans;
+            dp[r][mouse][cat] = { round, ans };
             return ans;
         };
 
