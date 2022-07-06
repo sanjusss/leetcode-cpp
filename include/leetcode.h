@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2020-10-03 09:09:01
  * @LastEditors: sanjusss
- * @LastEditTime: 2021-12-16 09:29:31
+ * @LastEditTime: 2022-07-06 10:54:45
  * @FilePath: \include\leetcode.h
  */
 #pragma once
@@ -29,6 +29,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include <charconv>
 #ifndef M_PI
     #define M_PI 3.14159265358979323846
 #endif

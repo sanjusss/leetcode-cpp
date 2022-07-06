@@ -82,7 +82,14 @@
         "ranges": "cpp",
         "compare": "cpp",
         "concepts": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "charconv": "cpp",
+        "cerrno": "cpp",
+        "climits": "cpp",
+        "ios": "cpp",
+        "numbers": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, AllowShortBlocksOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, AccessModifierOffset: -4, UseTab: Never, TabWidth: 4, ColumnLimit: 120, UseTab: Never, BinPackParameters: true, Cpp11BracedListStyle: false, BreakBeforeBraces: Custom, BraceWrapping: { BeforeElse: true } }",
     "editor.renderWhitespace": "all",
