@@ -1,58 +1,28 @@
 /*
  * @Author: sanjusss
- * @Date: 2022-02-07 10:43:10
+ * @Date: 2022-08-19 08:30:22
  * @LastEditors: sanjusss
- * @LastEditTime: 2022-02-07 10:59:16
+ * @LastEditTime: 2022-08-19 08:32:26
  * @FilePath: \1000\1400\1450\1450.cpp
  */
 #include "leetcode.h"
 
 class Solution {
 public:
-    string longestDiverseString(int a, int b, int c) {
-        priority_queue<pair<int, char>> q;
-        if (a > 0) {
-            q.emplace(a, 'a');
+    int busyStudent(vector<int>& startTime, vector<int>& endTime, int queryTime) {
+        vector<int> vs(1002);
+        for (int i : startTime) {
+            ++vs[i];
         }
 
-        if (b > 0) {
-            q.emplace(b, 'b');
+        for (int i : endTime) {
+            --vs[i + 1];
         }
 
-        if (c > 0) {
-            q.emplace(c, 'c');
+        for (int i = 1; i <= queryTime; ++i) {
+            vs[i] += vs[i - 1];
         }
 
-        string ans;
-        while (!q.empty()) {
-            auto [cnt, i] = q.top();
-            q.pop();
-            ans.push_back(i);
-            if (--cnt == 0) {
-                continue;
-            }
-
-            if (q.empty()) {
-                ans.push_back(i);
-            }
-            else if (q.top().first < cnt) {
-                ans.push_back(i);
-                auto [cj, j] = q.top();
-                q.pop();
-                ans.push_back(j);
-                if (--cj > 0) {
-                    q.emplace(cj, j);
-                }
-
-                if (--cnt > 0) {
-                    q.emplace(cnt, i);
-                }
-            }
-            else {
-                q.emplace(cnt, i);
-            }
-        }
-
-        return ans;
+        return vs[queryTime];
     }
 };
