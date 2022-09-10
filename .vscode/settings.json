@@ -101,5 +101,7 @@
         "LastEditors": "sanjusss", // 文件最后编辑者
         "LastEditTime": "Do not edit", // 文件最后编辑时间
         "FilePath": "no item name" // 文件在项目中的相对路径 自动更新
-      }
+      },
+    
+      "C_Cpp.intelliSenseEngine": "Default"
 }
