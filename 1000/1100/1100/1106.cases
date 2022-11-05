@@ -1,0 +1,9 @@
+2
+"!(&(f,t))"
+true
+"|(&(t,f,t),!(t))"
+false
+"|(f,f,f,t)"
+true
+"&(|(f))"
+false
