@@ -213,12 +213,12 @@ struct FromString<ListNode*> {
             head = head->next;
         }
 
-        unittest::FreeHandler freeNodes = [nodes, handler]() {
+        unittest::FreeHandler freeNodes = [nodes, h = handler]() {
             for (auto& node : nodes) {
                 delete node;
             }
 
-            handler();
+            h();
         };
         return { root.next, freeNodes } ;
     }

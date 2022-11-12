@@ -27,6 +27,15 @@
             ],
             "preLaunchTask": "GCC构建当前文件",
             "miDebuggerPath": "gdb"
-        }
+        },
+        {
+            "name": "LLDB生成和调试当前文件",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/unittest",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "GCC构建当前文件",
+        },
     ]
 }

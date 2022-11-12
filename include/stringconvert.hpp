@@ -2,8 +2,8 @@
  * @Author: sanjusss
  * @Date: 2020-10-02 15:59:11
  * @LastEditors: sanjusss
- * @LastEditTime: 2020-10-11 09:24:00
- * @FilePath: \include\stringconvert.hpp
+ * @LastEditTime: 2022-11-06 14:33:23
+ * @FilePath: /include/stringconvert.hpp
  */
 #pragma once
 
@@ -52,13 +52,13 @@ inline std::vector<std::string> split(const std::string &s, char seperator) {
 }
 
 inline std::string &ltrim(std::string &s, std::function<bool(char)> condition) {
-    s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(condition)));
+    s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not_fn(condition)));
     return s;
 }
 
 // trim from end
 inline std::string &rtrim(std::string &s, std::function<bool(char)> condition) {
-    s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(condition)).base(), s.end());
+    s.erase(std::find_if(s.rbegin(), s.rend(), std::not_fn(condition)).base(), s.end());
     return s;
 }
 
