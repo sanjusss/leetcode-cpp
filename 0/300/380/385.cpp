@@ -1,86 +1,96 @@
 /*
  * @Author: sanjusss
- * @Date: 2022-04-15 08:49:54
+ * @Date: 2022-12-28 13:40:01
  * @LastEditors: sanjusss
- * @LastEditTime: 2022-04-15 09:11:15
+ * @LastEditTime: 2022-12-28 14:06:06
  * @FilePath: \0\300\380\385.cpp
  */
 #include "leetcode.h"
 
-// This is the interface that allows for creating nested lists.
-// You should not implement it, or speculate about its implementation
-class NestedInteger {
-  public:
-    // Constructor initializes an empty nested list.
-    NestedInteger();
+// class Solution {
+// public:
+//     string rearrangeString(string s, int k) {
+//         vector<int> cnt(26);
+//         for (char i : s) {
+//             ++cnt[i - 'a'];
+//         }
 
-    // Constructor initializes a single integer.
-    NestedInteger(int value);
+//         vector<int> nexts(26);
+//         string ans;
+//         int n = s.size();
+//         for (int i = 0; i < n; ++i) {
+//             int j = -1;
+//             int c = 0;
+//             for (int p = 0; p < 26; ++p) {
+//                 if (nexts[p] <= i && cnt[p] > c) {
+//                     c = cnt[p];
+//                     j = p;
+//                 }
+//             }
 
-    // Return true if this NestedInteger holds a single integer, rather than a nested list.
-    bool isInteger() const;
+//             if (j < 0) {
+//                 return {};
+//             }
 
-    // Return the single integer that this NestedInteger holds, if it holds a single integer
-    // The result is undefined if this NestedInteger holds a nested list
-    int getInteger() const;
+//             --cnt[j];
+//             nexts[j] = i + k;
+//             ans.push_back('a' + j);
+//         }
 
-    // Set this NestedInteger to hold a single integer.
-    void setInteger(int value);
-
-    // Set this NestedInteger to hold a nested list and adds a nested integer to it.
-    void add(const NestedInteger &ni);
-
-    // Return the nested list that this NestedInteger holds, if it holds a nested list
-    // The result is undefined if this NestedInteger holds a single integer
-    const vector<NestedInteger> &getList() const;
-};
+//         return ans;
+//     }
+// };
 
 class Solution {
 public:
-    NestedInteger deserialize(string s) {
+    string rearrangeString(string s, int k) {
+        vector<int> cnt(26);
+        for (char i : s) {
+            ++cnt[i - 'a'];
+        }
+
+        vector<int> nexts(26);
+        auto cmpNexts = [&nexts](int a, int b) {
+            return nexts[a] > nexts[b];
+        };
+        priority_queue<int, vector<int>, decltype(cmpNexts)> qNexts(cmpNexts);
+        auto cmpCnt = [&cnt](int a, int b) {
+            return cnt[a] < cnt[b];
+        };
+        priority_queue<int, vector<int>, decltype(cmpCnt)> qCnt(cmpCnt);
+        for (int i = 0; i < 26; ++i) {
+            if (cnt[i] > 0) {
+                qCnt.push(i);
+            }
+        }
+
+        string ans;
         int n = s.size();
-        function<int(int, NestedInteger&)> dfs = [&](int i, NestedInteger& node) -> int {
-            if (i == n) {
-                return i;
-            }
-            else if (s[i] != '[') {
-                int sign = 1;
-                if (s[i] == '-') {
-                    ++i;
-                    sign = -1;
+        for (int i = 0; i < n; ++i) {
+            while (!qNexts.empty()) {
+                int j = qNexts.top();
+                if (nexts[j] <= i) {
+                    qNexts.pop();
+                    qCnt.push(j);
                 }
-
-                int val = 0;
-                while (i < n && isdigit(s[i])) {
-                    val *= 10;
-                    val += s[i] - '0';
-                    ++i;
-                } 
-
-                node.setInteger(sign * val);
-                return i;
-            }
-
-            ++i;
-            while (i < n) {
-                if (s[i] == ']') {
-                    ++i;
+                else {
                     break;
                 }
-
-                if (s[i] == ',') {
-                    ++i;
-                }
-
-                NestedInteger child;
-                i = dfs(i, child);
-                node.add(child);
             }
 
-            return i;
-        };
-        NestedInteger ans;
-        dfs(0, ans);
+            if (qCnt.empty()) {
+                return {};
+            }
+
+            auto j = qCnt.top();
+            qCnt.pop();
+            ans.push_back(j + 'a');
+            if (--cnt[j] > 0) {
+                nexts[j] = i + k;
+                qNexts.push(j);
+            }
+        }
+
         return ans;
     }
 };
