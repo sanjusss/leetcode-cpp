@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2023-03-05 10:28:34
  * @LastEditors: sanjusss
- * @LastEditTime: 2023-03-05 10:54:31
+ * @LastEditTime: 2023-03-05 11:21:01
  * @FilePath: \C\C300\C330\C335\3.cpp
  */
 #include "leetcode.h"
@@ -34,14 +34,14 @@ public:
         for (int i = 0; i < n; ++i) {
             int j = nums[i];
             auto& fac = factors[i];
-            if (isPrime[j]) {
-                fac.push_back(j);
-                ++right[j];
-                continue;
-            }
 
             for (int k : primes) {
-                if (k > j) {
+                if (isPrime[j]) {
+                    fac.push_back(j);
+                    ++right[j];
+                    break;
+                }
+                else if (k > j) {
                     break;
                 }
                 else if (j % k != 0) {
