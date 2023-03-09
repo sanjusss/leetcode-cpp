@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2023-03-05 10:28:34
  * @LastEditors: sanjusss
- * @LastEditTime: 2023-03-05 11:21:01
+ * @LastEditTime: 2023-03-09 08:52:14
  * @FilePath: \C\C300\C330\C335\3.cpp
  */
 #include "leetcode.h"
@@ -12,6 +12,8 @@ static constexpr int maxI = 1e6;
 static vector<bool> isPrime(maxI + 1, true);
 
 static int init = []() {
+    isPrime[0] = false;
+    isPrime[1] = false;
     for (int i = 2; i <= maxI; ++i) {
         if (!isPrime[i]) {
             continue;
@@ -33,6 +35,10 @@ public:
         unordered_map<int, int> right;
         for (int i = 0; i < n; ++i) {
             int j = nums[i];
+            if (j == 1) { // 1对互质没影响，直接跳过
+                continue;
+            }
+
             auto& fac = factors[i];
 
             for (int k : primes) {
