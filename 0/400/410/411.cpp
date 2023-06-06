@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2023-06-06 16:53:59
  * @LastEditors: sanjusss
- * @LastEditTime: 2023-06-06 17:20:28
+ * @LastEditTime: 2023-06-07 05:40:25
  * @FilePath: \0\400\410\411.cpp
  */
 #include "leetcode.h"
@@ -23,6 +23,10 @@ public:
                 if (w[i] == target[i]) {
                     mask |= 1 << i;
                 }
+            }
+
+            if (similars[mask]) {
+                continue;
             }
 
             for (int sub = mask; sub > 0; sub = mask & (sub - 1)) {
