@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2023-06-25 10:25:03
  * @LastEditors: sanjusss
- * @LastEditTime: 2023-07-23 16:27:58
+ * @LastEditTime: 2023-07-23 16:37:34
  * @FilePath: \C\C300\C350\C355\4.cpp
  */
 #include "leetcode.h"
@@ -78,7 +78,10 @@ public:
 
             int m = masks[parent[i]] ^ (1 << (s[i] - 'a'));
             for (int k = 0; k < 26; ++k) {
-                ans += cnt[(1 << k) ^ m];
+                auto p = cnt.find((1 << k) ^ m);
+                if (p != cnt.end()) {
+                    ans += p->second;
+                }
             }
             
             ans += cnt[m]++;
