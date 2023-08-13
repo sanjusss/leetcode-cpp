@@ -7,7 +7,7 @@
  */
 #include "leetcode.h"
 
-int64_t pow(int64_t a, int64_t b) {
+int64_t bigpow(int64_t a, int64_t b) {
     static const int64_t mod = 1e9 + 7;
     a %= mod;
     int64_t ans = 1;
