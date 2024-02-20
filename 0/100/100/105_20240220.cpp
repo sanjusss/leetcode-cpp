@@ -2,7 +2,7 @@
  * @Author: sanjusss
  * @Date: 2024-02-20 11:21:02
  * @LastEditors: sanjusss
- * @LastEditTime: 2024-02-20 12:08:12
+ * @LastEditTime: 2024-02-20 12:13:26
  * @FilePath: \0\100\100\105_20240220.cpp
  */
 #include "leetcode.h"
@@ -15,9 +15,8 @@ public:
         for (int i = 0; i < n; ++i) {
             ipos[inorder[i]] = i;
         }
-        
-        function<TreeNode*(int, int, int, int)> dfs = [&](int pb, int pe, int ib,
-                                                          int ie) -> TreeNode* {
+
+        function<TreeNode*(int, int, int, int)> dfs = [&](int pb, int pe, int ib, int ie) -> TreeNode* {
             if (pb >= pe) {
                 return nullptr;
             }
